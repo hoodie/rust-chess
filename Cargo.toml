@@ -1,0 +1,4 @@
+[package]
+name = "chess"
+version = "0.0.1"
+authors = ["Hendrik Sollich <hendrik@hoodie.de>"]
