@@ -1,12 +1,13 @@
+#[derive(Debug)]
 pub struct Player {
     pub color: Color,
     pub direction: i32 }
 
 #[derive(Clone,Copy,Debug)]
-pub enum ChessPiece { King  , Queen , Rook  , Bishop, Knight, Pawn }
+pub enum ChessPiece { King, Queen, Rook, Bishop, Knight, Pawn }
 
-#[derive(Clone,Copy,Debug)]
-pub enum Color { White = 1, Black = -1   }
+#[derive(Clone,Copy,Debug,PartialEq)]
+pub enum Color { White , Black }
 
 #[derive(Clone,Copy,Debug)]
 pub struct Piece {
@@ -44,3 +45,4 @@ pub const WH_BISHOP :Piece = Piece{ sym : '♝', color: Color::White, piece: Che
 pub const WH_KNIGHT :Piece = Piece{ sym : '♞', color: Color::White, piece: ChessPiece::Knight };
 pub const WH_PAWN   :Piece = Piece{ sym : '♟', color: Color::White, piece: ChessPiece::Pawn   };
 // }}}
+

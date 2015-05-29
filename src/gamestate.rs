@@ -1,17 +1,31 @@
 use board::*;
 
 
-#[derive(Debug)]
-pub struct Point (pub i32, pub i32);
-pub struct Move  { from: Point, to: Point }
+#[derive(Copy,Clone,Debug)]
+pub struct Point {pub x:i32, pub y:i32}
 
+#[derive(Debug,Clone)]
+pub struct Move  { from: Point, to: Point , note:&'static str}
+
+#[derive(Debug)]
 pub struct GameState
 {
     pub board: Board,
-    pub current_player: Player
+    pub players: [Player;2],
+    pub current_player: usize
 }
 
-pub type VerifyFn = fn(Move, Player, GameState) -> bool;
+pub type ProduceFn = fn(Point, &Player, &Board, &mut Vec<Move>);
+
+pub fn produce_pawn_moves(pos:Point, player:&Player, board:&Board, moves: &mut Vec<Move>)
+{
+    let Point{x,y} = pos;
+    moves.push(Move{from:pos, to:Point{x:x,y:y+1*player.direction}, note:"normale"});
+    if 4-(player.direction * 3) == pos.y{ // 1->3 7->5
+        moves.push(Move{from:pos, to:Point{x:x,y:y+2*player.direction},note: "rush"});
+    }
+}
+pub fn produce_no_moves(pos:Point, player:&Player, board:&Board, moves: &mut Vec<Move>) {}
 
 impl GameState
 {
@@ -19,33 +33,78 @@ impl GameState
     {
         GameState {
             board: [[Field::Empty; 8]; 8],
-            current_player: Player { color: Color::White, direction: -1}
+            players: [
+                Player { color: Color::Black, direction: 1},
+                Player { color: Color::White, direction: -1}
+            ],
+            current_player: 0
         }
     }
 
-    pub fn get_field(&self,p:Point) -> &Field{
-        &self.board[p.0 as usize][p.1 as usize]
+    pub fn current_player(&self) -> &Player
+    {
+        &self.players[self.current_player]
     }
 
-    fn get_verifiers(piece:ChessPiece) -> VerifyFn
+    pub fn get_field(&self,pos:Point) -> &Field
+    {
+        &self.board[pos.y as usize][pos.x as usize]
+    }
+
+    fn get_move_producer(&self, piece:ChessPiece) -> ProduceFn
     {
         match piece{
-            ChessPiece::Pawn => verify_pawn_move,
-            _ => verify_pawn_move,
+            ChessPiece::Pawn => produce_pawn_moves,
+            _ => produce_no_moves,
         }
     }
 
-    pub fn verify_move(m:Move, p:Player, state:GameState) -> bool{
-        false
+    // TODO make this multithreaded
+    pub fn get_moves(&self, player:&Player) -> Vec<Move>
+    {
+        //iterate over all fields
+        //if my chesspiece get all moves
+        let mut moves = vec!();
+        for y in 0..8 { for x in 0..8 {
+
+            let pos = Point{x:x,y:y};
+            if let &Field::Piece(piece) = self.get_field(pos){
+                if piece.color == player.color{
+                    let move_producer = self.get_move_producer(piece.piece);
+                    move_producer(pos, player, &self.board, &mut moves);
+                }
+            }
+        } }
+        return moves;
     }
 
     pub fn print_board(&self)
     {
-        for col in self.board.iter() {
+        for row in self.board.iter() {
             print!("|");
-            for row in col{ print!("{}", row.char()); }
+            for col in row{ print!("{}", col.char()); }
             println!("|");
         }
+    }
+
+
+    pub fn performe_move(&mut self, &Move{to,from, note}:&Move)
+    {
+        println!("from: {:?}({:?}), to: {:?}({:?})",
+                 from,
+                 self.board[from.y as usize][from.x as usize],
+                 to,
+                 self.board[to.y as usize][to.x as usize],
+                 );
+        let from_field = self.board[from.y as usize][from.x as usize] ;
+        self.board[from.y as usize][from.x as usize] = Field::Empty;
+        self.board[to.y as usize][to.x as usize] = from_field;
+        self.swap_player();
+    }
+
+    fn swap_player(&mut self){
+        if self.current_player == 0 { self.current_player = 1}
+        else { self.current_player = 0}
     }
 
     pub fn init_board(&mut self)
@@ -80,16 +139,11 @@ impl GameState
 }
 
 
-fn verify_on_board(p:Point) -> bool {
-    match p {
-       Point(0...8,0...8) => true,
-       Point(_,_) => false
+fn verify_on_board(pos:Point) -> bool {
+    match pos {
+       Point{x:0...8,y:0...8} => true,
+       Point{x:_,y:_} => false
     }
 }
 
-pub fn verify_pawn_move(m:Move, player:Player, state:GameState) -> bool {
-    true
-        && verify_on_board(m.from)
-        && verify_on_board(m.to)
-}
 

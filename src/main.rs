@@ -2,6 +2,8 @@
 #![allow(unused_variables)]
 #![allow(unused_imports)]
 
+extern crate rand;
+use std::io;
 
 mod board;
 mod gamestate;
@@ -14,9 +16,21 @@ fn main()
     let mut state = GameState::new();
     state.init_board();
     state.print_board();
-    let piece = match state.get_field(Point(1,1)){
+    let piece = match state.get_field(Point{x:1,y:1}){
         &board::Field::Empty    => Option::None,
         &board::Field::Piece(x) => Option::Some(x),
     };
-    println!("{:?}", piece)
+
+    println!("{:?}", piece);
+    for _ in 1..10 {
+        let moves = state.get_moves(&state.current_player());
+        let index = rand::random::<usize>() % moves.len();
+        let move_choice = &moves[index];
+        println!("{:?}", &moves[index]);
+        state.performe_move(move_choice);
+        state.print_board();
+
+        let mut devnull= String::new();
+        io::stdin().read_line(&mut devnull);
+    }
 }
