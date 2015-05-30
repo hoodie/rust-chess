@@ -49,12 +49,36 @@ pub fn produce_bishop_moves(pos:Point, player:&Player, state:&GameState, moves: 
     }
 }
 
-pub fn produce_knight_moves(pos:Point, player:&Player, state:&GameState, moves: &mut Vec<Move>){}
+pub fn produce_knight_moves(pos:Point, player:&Player, state:&GameState, moves: &mut Vec<Move>)
+{
+    for i in 0..4{
+        let x_dir = (i/2)*2-1;
+        let y_dir = (i%2)*2-1;
+
+        for mov in [
+            Move{from:pos, to:Point{ x:pos.x + x_dir*2, y:pos.y + y_dir, }, note:"normale"},
+            Move{from:pos, to:Point{ x:pos.x + x_dir, y:pos.y + y_dir*2, }, note:"normale"}].iter(){
+
+                if GameState::verify_on_board(mov.to) {
+                    let field = state.get_field(mov.to);
+                    match field {
+                        &Field::Empty => moves.push(mov.clone()),
+                        &Field::Piece(piece) => if state.field_contains_occonent(mov.to, state.current_player()){
+                            let mov = Move{note : "capture",..*mov};
+                            moves.push(mov);
+                        }
+                    }
+                }
+            }
+    }
+}
+
 pub fn produce_queen_moves(pos:Point, player:&Player, state:&GameState, moves: &mut Vec<Move>)
 {
     produce_rook_moves(pos,player,state,moves);
     produce_bishop_moves(pos,player,state,moves);
 }
+
 pub fn produce_rook_moves(pos:Point, player:&Player, state:&GameState, moves: &mut Vec<Move>)
 {
     for (x_dir, y_dir) in vec![ (0,1), (1,0), (0,-1), (-1,0) ]{
@@ -160,10 +184,11 @@ impl GameState
     fn get_move_producer(&self, piece:ChessPiece) -> ProduceFn
     {
         match piece{
-            ChessPiece::Pawn => produce_pawn_moves,
-            ChessPiece::Bishop => produce_bishop_moves,
-            ChessPiece::Rook => produce_rook_moves,
-            ChessPiece::Queen=> produce_queen_moves,
+            //ChessPiece::Pawn   => produce_pawn_moves,
+            //ChessPiece::Bishop => produce_bishop_moves,
+            //ChessPiece::Rook   => produce_rook_moves,
+            //ChessPiece::Queen  => produce_queen_moves,
+            ChessPiece::Knight => produce_knight_moves,
             _ => produce_no_moves,
         }
     }
@@ -198,8 +223,8 @@ impl GameState
             }
             println!("|");
         }
-            println!(" | 0 1 2 3 4 5 6 7");
-        }
+        println!(" | 0 1 2 3 4 5 6 7");
+    }
 
     pub fn performe_move(&mut self, &Move{to,from, note}:&Move)
     {
