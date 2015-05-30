@@ -1,11 +1,48 @@
 use board::*;
 
-
 #[derive(Copy,Clone,Debug)]
 pub struct Point {pub x:i32, pub y:i32}
 
 #[derive(Debug,Clone)]
-pub struct Move  { from: Point, to: Point , note:&'static str}
+pub struct Move  { from: Point, to: Point , pub note:&'static str}
+
+pub type ProduceFn = fn(Point, &Player, &GameState, &mut Vec<Move>);
+
+pub fn produce_pawn_moves(pos:Point, player:&Player, state:&GameState, moves: &mut Vec<Move>)
+{
+    let Point{x,y} = pos; //origin
+    let possible_move = Move{from:pos, to:Point{x:x,y:y+1*player.direction}, note:"normale"}; // normal move one forward
+    let possible_rush = Move{from:pos, to:Point{x:x,y:y+2*player.direction},note: "rush"}; //  only from start point
+    let possible_capture_l = Move {
+        from:pos,
+        to:Point{
+            x:x-1*player.direction,
+            y:y+1*player.direction
+        }, note:"capture r"}; // capture to the right
+
+    let possible_capture_r = Move {
+        from:pos,
+        to:Point{
+            x:x+1*player.direction,
+            y:y+1*player.direction
+        }, note:"capture l"}; // capture to the left
+
+    // verify moves
+    if GameState::verify_on_board(possible_move.to) && !state.check_field_contains_occonent(possible_move.to, player){ // no opponent figure directly infront of pawn
+        moves.push(possible_move);
+        // 1->3 7->5 and no opponent figure two fields infront of pawn
+        if GameState::verify_on_board(possible_rush.to)
+            && 4-(player.direction * 3) == pos.y
+            && !state.check_field_contains_occonent(possible_rush.to, player){
+                moves.push(possible_rush); }
+    }
+    //else {println!("cant move from {:?}", &pos )};
+    // verify captures
+    if GameState::verify_on_board(possible_capture_l.to) && state.check_field_contains_occonent(possible_capture_l.to, player){ moves.push(possible_capture_l)};
+    if GameState::verify_on_board(possible_capture_r.to) && state.check_field_contains_occonent(possible_capture_r.to, player){ moves.push(possible_capture_r)};
+}
+
+pub fn produce_no_moves(pos:Point, player:&Player, state:&GameState, moves: &mut Vec<Move>) {}
 
 #[derive(Debug)]
 pub struct GameState
@@ -15,20 +52,9 @@ pub struct GameState
     pub current_player: usize
 }
 
-pub type ProduceFn = fn(Point, &Player, &Board, &mut Vec<Move>);
-
-pub fn produce_pawn_moves(pos:Point, player:&Player, board:&Board, moves: &mut Vec<Move>)
-{
-    let Point{x,y} = pos;
-    moves.push(Move{from:pos, to:Point{x:x,y:y+1*player.direction}, note:"normale"});
-    if 4-(player.direction * 3) == pos.y{ // 1->3 7->5
-        moves.push(Move{from:pos, to:Point{x:x,y:y+2*player.direction},note: "rush"});
-    }
-}
-pub fn produce_no_moves(pos:Point, player:&Player, board:&Board, moves: &mut Vec<Move>) {}
-
 impl GameState
 {
+    //static methods
     pub fn new() -> GameState
     {
         GameState {
@@ -41,9 +67,26 @@ impl GameState
         }
     }
 
+    pub fn verify_on_board(pos:Point) -> bool
+    {
+        match pos {
+            Point{x:0...7,y:0...7} => true,
+            Point{x:_,y:_} => false
+        }
+    }
+
+    // instance methods
     pub fn current_player(&self) -> &Player
     {
         &self.players[self.current_player]
+    }
+
+    pub fn check_field_contains_occonent(&self, pos:Point, player:&Player) -> bool
+    {
+            if let &Field::Piece(piece) = self.get_field(pos){
+            return piece.color != player.color;
+        }
+        return false;
     }
 
     pub fn get_field(&self,pos:Point) -> &Field
@@ -71,7 +114,7 @@ impl GameState
             if let &Field::Piece(piece) = self.get_field(pos){
                 if piece.color == player.color{
                     let move_producer = self.get_move_producer(piece.piece);
-                    move_producer(pos, player, &self.board, &mut moves);
+                    move_producer(pos, player, &self, &mut moves);
                 }
             }
         } }
@@ -80,23 +123,24 @@ impl GameState
 
     pub fn print_board(&self)
     {
-        for row in self.board.iter() {
-            print!("|");
-            for col in row{ print!("{}", col.char()); }
+        for y in (0..8) {
+            let row = self.board[y];
+            print!("{}| ", y);
+            for x in (0..8) {
+                let col = self.board[y][x];
+                print!("{} ", col.char());
+            }
             println!("|");
         }
-    }
-
+            println!(" | A B C D E F G H");
+        }
 
     pub fn performe_move(&mut self, &Move{to,from, note}:&Move)
     {
-        println!("from: {:?}({:?}), to: {:?}({:?})",
-                 from,
-                 self.board[from.y as usize][from.x as usize],
-                 to,
-                 self.board[to.y as usize][to.x as usize],
-                 );
         let from_field = self.board[from.y as usize][from.x as usize] ;
+        let to_field = self.board[to.y as usize][to.x as usize] ;
+
+        println!("\"{}\" {:?} -> {:?}", note, from, to,);
         self.board[from.y as usize][from.x as usize] = Field::Empty;
         self.board[to.y as usize][to.x as usize] = from_field;
         self.swap_player();
@@ -131,19 +175,13 @@ impl GameState
         board[7][6] = Field::Piece(WH_KNIGHT );
         board[7][2] = Field::Piece(WH_BISHOP );
         board[7][5] = Field::Piece(WH_BISHOP );
-        board[7][3] = Field::Piece(WH_KING   );
-        board[7][4] = Field::Piece(WH_QUEEN  );
+        board[7][4] = Field::Piece(WH_KING   );
+        board[7][3] = Field::Piece(WH_QUEEN  );
 
         self.board = board;
     }
 }
 
 
-fn verify_on_board(pos:Point) -> bool {
-    match pos {
-       Point{x:0...8,y:0...8} => true,
-       Point{x:_,y:_} => false
-    }
-}
 
 

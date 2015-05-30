@@ -22,11 +22,11 @@ fn main()
     };
 
     println!("{:?}", piece);
-    for _ in 1..10 {
+    loop {
         let moves = state.get_moves(&state.current_player());
+        if moves.len() == 0 {println!("no more moves for player {:?}", state.current_player().color);break; }
         let index = rand::random::<usize>() % moves.len();
         let move_choice = &moves[index];
-        println!("{:?}", &moves[index]);
         state.performe_move(move_choice);
         state.print_board();
 

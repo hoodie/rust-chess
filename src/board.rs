@@ -1,7 +1,5 @@
 #[derive(Debug)]
-pub struct Player {
-    pub color: Color,
-    pub direction: i32 }
+pub struct Player { pub color: Color, pub direction: i32 }
 
 #[derive(Clone,Copy,Debug)]
 pub enum ChessPiece { King, Queen, Rook, Bishop, Knight, Pawn }
