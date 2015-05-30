@@ -16,13 +16,14 @@ pub struct Piece {
 pub type Board = [[Field;8];8];
 
 #[derive(Clone,Copy,Debug)]
-pub enum Field { Empty,     Piece(Piece) }
+pub enum Field { Outside, Empty, Piece(Piece) }
 
 impl Field
 {
     pub fn char(self) -> char{
         match self {
-            Field::Empty => '⬚',
+            Field::Outside  => '☠', //💀
+            Field::Empty    => '⬚',
             Field::Piece(p) => p.sym,
         }
     }

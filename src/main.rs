@@ -16,12 +16,6 @@ fn main()
     let mut state = GameState::new();
     state.init_board();
     //state.print_board();
-    let piece = match state.get_field(Point{x:1,y:1}){
-        &board::Field::Empty    => Option::None,
-        &board::Field::Piece(x) => Option::Some(x),
-    };
-
-    println!("{:?}", piece);
     let mut count = 0;
     let max_count = 1_000_000;
 
@@ -40,8 +34,9 @@ fn main()
         let move_choice = &moves[index];
         state.performe_move(move_choice);
         count += 1;
+        std::thread::sleep_ms(200);
         state.print_board();
-        let mut devnull= String::new();
-        io::stdin().read_line(&mut devnull);
+        //let mut devnull= String::new();
+        //io::stdin().read_line(&mut devnull);
     }
 }

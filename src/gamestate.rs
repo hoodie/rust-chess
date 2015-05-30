@@ -42,13 +42,6 @@ pub fn produce_pawn_moves(pos:Point, player:&Player, state:&GameState, moves: &m
     if GameState::verify_on_board(possible_capture_r.to) && state.field_contains_occonent(possible_capture_r.to, player){ moves.push(possible_capture_r)};
 }
 
-pub fn produce_bishop_moves(pos:Point, player:&Player, state:&GameState, moves: &mut Vec<Move>)
-{
-    for i in 0..4{
-        produce_moves_for_dir(pos,player,state,moves,(i/2)*2-1, (i%2)*2-1)
-    }
-}
-
 pub fn produce_knight_moves(pos:Point, player:&Player, state:&GameState, moves: &mut Vec<Move>)
 {
     for i in 0..4{
@@ -59,18 +52,22 @@ pub fn produce_knight_moves(pos:Point, player:&Player, state:&GameState, moves: 
             Move{from:pos, to:Point{ x:pos.x + x_dir*2, y:pos.y + y_dir, }, note:"normale"},
             Move{from:pos, to:Point{ x:pos.x + x_dir, y:pos.y + y_dir*2, }, note:"normale"}].iter(){
 
-                if GameState::verify_on_board(mov.to) {
-                    let field = state.get_field(mov.to);
-                    match field {
-                        &Field::Empty => moves.push(mov.clone()),
-                        &Field::Piece(piece) => if state.field_contains_occonent(mov.to, state.current_player()){
-                            let mov = Move{note : "capture",..*mov};
-                            moves.push(mov);
-                        }
+                let field = state.get_field(mov.to);
+                match field {
+                    Field::Outside => () ,
+                    Field::Empty => moves.push(mov.clone()),
+                    Field::Piece(piece) => if state.field_contains_occonent(mov.to, state.current_player()){
+                        let mov = Move{note : "capture",..*mov};
+                        moves.push(mov);
                     }
                 }
             }
     }
+}
+
+pub fn produce_bishop_moves(pos:Point, player:&Player, state:&GameState, moves: &mut Vec<Move>)
+{
+    for i in 0..4{ produce_moves_for_dir(pos,player,state,moves,(i/2)*2-1, (i%2)*2-1) }
 }
 
 pub fn produce_queen_moves(pos:Point, player:&Player, state:&GameState, moves: &mut Vec<Move>)
@@ -89,41 +86,26 @@ pub fn produce_rook_moves(pos:Point, player:&Player, state:&GameState, moves: &m
 fn produce_moves_for_dir (pos:Point, player:&Player, state:&GameState, moves: &mut Vec<Move>, x_dir:i32,y_dir:i32)
 {
 
-        let mut check_pos = pos; // copy?
-        //println!("\nx_dir: {}    y_dir: {}",x_dir, y_dir);
-        //println!("check_pos: {:?}",check_pos);
+    let mut check_pos = pos;
 
-        //for _ in 0..8{
-        loop{
-            check_pos = Point{
-                x: check_pos.x+x_dir,
-                y: check_pos.y+y_dir
-            };
-            //println!("check_pos: {:?}",check_pos);
-            if GameState::verify_on_board(check_pos){
-                let field = state.get_field(check_pos);
-                match field {
-                    &Field::Empty => {
-                        //println!("added(empty)");
-                        let possible_move = Move{from:pos, to:check_pos, note:"normale"}; // normal move one forward
-                        moves.push(possible_move);
-                    }
-                    &Field::Piece(piece) => {
-                        if state.field_contains_occonent(check_pos, state.current_player()){;
-                            //println!("added(player)");
-                            let possible_capture = Move{from:pos, to:check_pos, note:"capture"}; // normal move one forward
-                            moves.push(possible_capture);
-                        }
-                        break; //return to start
-                        //println!("|hit occupied field");
-                    }
-                }
+    loop{
+        check_pos = Point{ x: check_pos.x+x_dir, y: check_pos.y+y_dir };
+        let field = state.get_field(check_pos);
+        match field {
+            Field::Outside => break,
+            Field::Empty => {
+                let possible_move = Move{from:pos, to:check_pos, note:"normale"}; // normal move one forward
+                moves.push(possible_move);
             }
-            else{
-                //println!("|hit end of board");
-                break;
+            Field::Piece(piece) => {
+                if state.field_contains_occonent(check_pos, state.current_player()){;
+                    let possible_capture = Move{from:pos, to:check_pos, note:"capture"}; // normal move one forward
+                    moves.push(possible_capture);
+                }
+                break; //return to start
             }
         }
+    }
 }
 
 //pub fn produce__moves(pos:Point, player:&Player, state:&GameState, moves: &mut Vec<Move>){}
@@ -170,24 +152,27 @@ impl GameState
 
     pub fn field_contains_occonent(&self, pos:Point, player:&Player) -> bool
     {
-            if let &Field::Piece(piece) = self.get_field(pos){
+            if let Field::Piece(piece) = self.get_field(pos){
             return piece.color != player.color;
         }
         return false;
     }
 
-    pub fn get_field(&self,pos:Point) -> &Field
+    pub fn get_field(&self,pos:Point) -> Field
     {
-        &self.board[pos.y as usize][pos.x as usize]
+        match pos {
+            Point{x:0...7,y:0...7} => self.board[pos.y as usize][pos.x as usize],
+            Point{x:_,y:_} => Field::Outside,
+        }
     }
 
     fn get_move_producer(&self, piece:ChessPiece) -> ProduceFn
     {
         match piece{
-            //ChessPiece::Pawn   => produce_pawn_moves,
-            //ChessPiece::Bishop => produce_bishop_moves,
-            //ChessPiece::Rook   => produce_rook_moves,
-            //ChessPiece::Queen  => produce_queen_moves,
+            ChessPiece::Pawn   => produce_pawn_moves,
+            ChessPiece::Bishop => produce_bishop_moves,
+            ChessPiece::Rook   => produce_rook_moves,
+            ChessPiece::Queen  => produce_queen_moves,
             ChessPiece::Knight => produce_knight_moves,
             _ => produce_no_moves,
         }
@@ -198,11 +183,10 @@ impl GameState
     {
         //iterate over all fields
         //if my chesspiece get all moves
-        let mut moves = vec!();
+        let mut moves = vec![];
         for y in 0..8 { for x in 0..8 {
-
             let pos = Point{x:x,y:y};
-            if let &Field::Piece(piece) = self.get_field(pos){
+            if let Field::Piece(piece) = self.get_field(pos){
                 if piece.color == player.color{
                     let move_producer = self.get_move_producer(piece.piece);
                     move_producer(pos, player, &self, &mut moves);
@@ -229,7 +213,7 @@ impl GameState
     pub fn performe_move(&mut self, &Move{to,from, note}:&Move)
     {
         let from_field = self.board[from.y as usize][from.x as usize] ;
-        let to_field = self.board[to.y as usize][to.x as usize] ;
+        let to_field   = self.board[to.y as usize][to.x as usize] ;
 
         if let Field::Piece(piece) = from_field{
             println!("{:?} {:?}: \"{}\" {:?} -> {:?}", self.current_player().color, piece.piece, note, from, to,);
@@ -243,8 +227,7 @@ impl GameState
     }
 
     fn swap_player(&mut self){
-        if self.current_player == 0 { self.current_player = 1}
-        else { self.current_player = 0}
+        self.current_player = ((self.current_player as i32 * -1) + 1) as usize;
     }
 
     pub fn init_board(&mut self)
@@ -255,30 +238,17 @@ impl GameState
             board[6][i] = Field::Piece(WH_PAWN );
         }
 
-        //black side
-        board[0][0] = Field::Piece(BL_ROOK   );
-        board[0][7] = Field::Piece(BL_ROOK   );
-        board[0][1] = Field::Piece(BL_KNIGHT );
-        board[0][6] = Field::Piece(BL_KNIGHT );
-        board[0][2] = Field::Piece(BL_BISHOP );
-        board[0][5] = Field::Piece(BL_BISHOP );
-        board[0][4] = Field::Piece(BL_KING   );
-        board[0][3] = Field::Piece(BL_QUEEN  );
-
-        //white side
-        board[7][0] = Field::Piece(WH_ROOK   );
-        board[7][7] = Field::Piece(WH_ROOK   );
-        board[7][1] = Field::Piece(WH_KNIGHT );
-        board[7][6] = Field::Piece(WH_KNIGHT );
-        board[7][2] = Field::Piece(WH_BISHOP );
-        board[7][5] = Field::Piece(WH_BISHOP );
-        board[7][4] = Field::Piece(WH_KING   );
-        board[7][3] = Field::Piece(WH_QUEEN  );
+        //black side                             //white side
+        board[0][0] = Field::Piece(BL_ROOK   );  board[7][0] = Field::Piece(WH_ROOK   );
+        board[0][7] = Field::Piece(BL_ROOK   );  board[7][7] = Field::Piece(WH_ROOK   );
+        board[0][1] = Field::Piece(BL_KNIGHT );  board[7][1] = Field::Piece(WH_KNIGHT );
+        board[0][6] = Field::Piece(BL_KNIGHT );  board[7][6] = Field::Piece(WH_KNIGHT );
+        board[0][2] = Field::Piece(BL_BISHOP );  board[7][2] = Field::Piece(WH_BISHOP );
+        board[0][5] = Field::Piece(BL_BISHOP );  board[7][5] = Field::Piece(WH_BISHOP );
+        board[0][4] = Field::Piece(BL_KING   );  board[7][4] = Field::Piece(WH_KING   );
+        board[0][3] = Field::Piece(BL_QUEEN  );  board[7][3] = Field::Piece(WH_QUEEN  );
 
         self.board = board;
     }
 }
-
-
-
 
