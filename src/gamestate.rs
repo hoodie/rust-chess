@@ -42,17 +42,30 @@ pub fn produce_pawn_moves(pos:Point, player:&Player, state:&GameState, moves: &m
     if GameState::verify_on_board(possible_capture_r.to) && state.field_contains_occonent(possible_capture_r.to, player){ moves.push(possible_capture_r)};
 }
 
-pub fn produce_bishop_moves(pos:Point, player:&Player, state:&GameState, moves: &mut Vec<Move>){
-    //let possible_move = Move{from:pos, to:Point{x:x,y:y+1*player.direction}, note:"normale"}; // normal move one forward
+pub fn produce_bishop_moves(pos:Point, player:&Player, state:&GameState, moves: &mut Vec<Move>)
+{
     for i in 0..4{
+        produce_moves_for_dir(pos,player,state,moves,(i/2)*2-1, (i%2)*2-1)
+    }
+}
+
+pub fn produce_knight_moves(pos:Point, player:&Player, state:&GameState, moves: &mut Vec<Move>){}
+pub fn produce_rook_moves(pos:Point, player:&Player, state:&GameState, moves: &mut Vec<Move>)
+{
+    for (x_dir, y_dir) in vec![ (0,1), (1,0), (0,-1), (-1,0) ]{
+        produce_moves_for_dir(pos,player,state,moves,x_dir, y_dir)
+    }
+}
+
+fn produce_moves_for_dir (pos:Point, player:&Player, state:&GameState, moves: &mut Vec<Move>, x_dir:i32,y_dir:i32)
+{
+
         let mut check_pos = pos; // copy?
-        let x_dir = (i/2)*2-1;
-        let y_dir = (i%2)*2-1;
         //println!("\nx_dir: {}    y_dir: {}",x_dir, y_dir);
         //println!("check_pos: {:?}",check_pos);
 
-        for _ in 0..8{
-        //loop{
+        //for _ in 0..8{
+        loop{
             check_pos = Point{
                 x: check_pos.x+x_dir,
                 y: check_pos.y+y_dir
@@ -82,10 +95,8 @@ pub fn produce_bishop_moves(pos:Point, player:&Player, state:&GameState, moves: 
                 break;
             }
         }
-    }
 }
-pub fn produce_knight_moves(pos:Point, player:&Player, state:&GameState, moves: &mut Vec<Move>){}
-pub fn produce_rook_moves(pos:Point, player:&Player, state:&GameState, moves: &mut Vec<Move>){}
+
 //pub fn produce__moves(pos:Point, player:&Player, state:&GameState, moves: &mut Vec<Move>){}
 //pub fn produce__moves(pos:Point, player:&Player, state:&GameState, moves: &mut Vec<Move>){}
 //pub fn produce__moves(pos:Point, player:&Player, state:&GameState, moves: &mut Vec<Move>){}
@@ -146,6 +157,7 @@ impl GameState
         match piece{
             ChessPiece::Pawn => produce_pawn_moves,
             ChessPiece::Bishop => produce_bishop_moves,
+            ChessPiece::Rook => produce_rook_moves,
             _ => produce_no_moves,
         }
     }
@@ -211,6 +223,7 @@ impl GameState
             board[1][i] = Field::Piece(BL_PAWN );
             board[6][i] = Field::Piece(WH_PAWN );
         }
+
         //black side
         board[0][0] = Field::Piece(BL_ROOK   );
         board[0][7] = Field::Piece(BL_ROOK   );
