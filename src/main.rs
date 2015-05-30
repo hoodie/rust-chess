@@ -34,7 +34,7 @@ fn main()
         let move_choice = &moves[index];
         game.performe_move(move_choice);
         count += 1;
-        std::thread::sleep_ms(200);
+        //std::thread::sleep_ms(200);
         game.print_board();
         //let mut devnull= String::new();
         //io::stdin().read_line(&mut devnull);
