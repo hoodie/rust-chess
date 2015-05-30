@@ -30,17 +30,17 @@ impl Field
 
 // ChessPieces
 // {{{
-pub const BL_KING   :Piece = Piece{ sym : '♔', color: Color::Black, piece: ChessPiece::King   };
-pub const BL_QUEEN  :Piece = Piece{ sym : '♕', color: Color::Black, piece: ChessPiece::Queen  };
-pub const BL_ROOK   :Piece = Piece{ sym : '♖', color: Color::Black, piece: ChessPiece::Rook   };
-pub const BL_BISHOP :Piece = Piece{ sym : '♗', color: Color::Black, piece: ChessPiece::Bishop };
-pub const BL_KNIGHT :Piece = Piece{ sym : '♘', color: Color::Black, piece: ChessPiece::Knight };
-pub const BL_PAWN   :Piece = Piece{ sym : '♙', color: Color::Black, piece: ChessPiece::Pawn   };
-pub const WH_KING   :Piece = Piece{ sym : '♚', color: Color::White, piece: ChessPiece::King   };
-pub const WH_QUEEN  :Piece = Piece{ sym : '♛', color: Color::White, piece: ChessPiece::Queen  };
-pub const WH_ROOK   :Piece = Piece{ sym : '♜', color: Color::White, piece: ChessPiece::Rook   };
-pub const WH_BISHOP :Piece = Piece{ sym : '♝', color: Color::White, piece: ChessPiece::Bishop };
-pub const WH_KNIGHT :Piece = Piece{ sym : '♞', color: Color::White, piece: ChessPiece::Knight };
-pub const WH_PAWN   :Piece = Piece{ sym : '♟', color: Color::White, piece: ChessPiece::Pawn   };
+pub const BL_KING   :Piece = Piece{ sym : '♚', color: Color::Black, piece: ChessPiece::King   };
+pub const BL_QUEEN  :Piece = Piece{ sym : '♛', color: Color::Black, piece: ChessPiece::Queen  };
+pub const BL_ROOK   :Piece = Piece{ sym : '♜', color: Color::Black, piece: ChessPiece::Rook   };
+pub const BL_BISHOP :Piece = Piece{ sym : '♝', color: Color::Black, piece: ChessPiece::Bishop };
+pub const BL_KNIGHT :Piece = Piece{ sym : '♞', color: Color::Black, piece: ChessPiece::Knight };
+pub const BL_PAWN   :Piece = Piece{ sym : '♟', color: Color::Black, piece: ChessPiece::Pawn   };
+pub const WH_KING   :Piece = Piece{ sym : '♔', color: Color::White, piece: ChessPiece::King   };
+pub const WH_QUEEN  :Piece = Piece{ sym : '♕', color: Color::White, piece: ChessPiece::Queen  };
+pub const WH_ROOK   :Piece = Piece{ sym : '♖', color: Color::White, piece: ChessPiece::Rook   };
+pub const WH_BISHOP :Piece = Piece{ sym : '♗', color: Color::White, piece: ChessPiece::Bishop };
+pub const WH_KNIGHT :Piece = Piece{ sym : '♘', color: Color::White, piece: ChessPiece::Knight };
+pub const WH_PAWN   :Piece = Piece{ sym : '♙', color: Color::White, piece: ChessPiece::Pawn   };
 // }}}
 

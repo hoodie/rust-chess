@@ -58,18 +58,19 @@ pub fn produce_bishop_moves(pos:Point, player:&Player, state:&GameState, moves: 
                 y: check_pos.y+y_dir
             };
             //println!("check_pos: {:?}",check_pos);
-            let possible_move = Move{from:pos, to:check_pos, note:"normale"}; // normal move one forward
             if GameState::verify_on_board(check_pos){
                 let field = state.get_field(check_pos);
                 match field {
                     &Field::Empty => {
                         //println!("added(empty)");
+                        let possible_move = Move{from:pos, to:check_pos, note:"normale"}; // normal move one forward
                         moves.push(possible_move);
                     }
                     &Field::Piece(piece) => {
                         if state.field_contains_occonent(check_pos, state.current_player()){;
                             //println!("added(player)");
-                            moves.push(possible_move);
+                            let possible_capture = Move{from:pos, to:check_pos, note:"capture"}; // normal move one forward
+                            moves.push(possible_capture);
                         }
                         break; //return to start
                         //println!("|hit occupied field");
@@ -143,7 +144,7 @@ impl GameState
     fn get_move_producer(&self, piece:ChessPiece) -> ProduceFn
     {
         match piece{
-            //ChessPiece::Pawn => produce_pawn_moves,
+            ChessPiece::Pawn => produce_pawn_moves,
             ChessPiece::Bishop => produce_bishop_moves,
             _ => produce_no_moves,
         }
@@ -179,7 +180,7 @@ impl GameState
             }
             println!("|");
         }
-            println!(" | A B C D E F G H");
+            println!(" | 0 1 2 3 4 5 6 7");
         }
 
     pub fn performe_move(&mut self, &Move{to,from, note}:&Move)
@@ -187,7 +188,12 @@ impl GameState
         let from_field = self.board[from.y as usize][from.x as usize] ;
         let to_field = self.board[to.y as usize][to.x as usize] ;
 
-        println!("{:?}: \"{}\" {:?} -> {:?}", self.current_player().color, note, from, to,);
+        if let Field::Piece(piece) = from_field{
+            println!("{:?} {:?}: \"{}\" {:?} -> {:?}", self.current_player().color, piece.piece, note, from, to,);
+        } else{
+            println!("{:?} EMPTY: \"{}\" {:?} -> {:?}", self.current_player().color, note, from, to,);
+        }
+
         self.board[from.y as usize][from.x as usize] = Field::Empty;
         self.board[to.y as usize][to.x as usize] = from_field;
         self.swap_player();
@@ -201,10 +207,10 @@ impl GameState
     pub fn init_board(&mut self)
     {
         let mut board = self.board;
-        //for i in 0..8{
-        //    board[1][i] = Field::Piece(BL_PAWN );
-        //    board[6][i] = Field::Piece(WH_PAWN );
-        //}
+        for i in 0..8{
+            board[1][i] = Field::Piece(BL_PAWN );
+            board[6][i] = Field::Piece(WH_PAWN );
+        }
         //black side
         board[0][0] = Field::Piece(BL_ROOK   );
         board[0][7] = Field::Piece(BL_ROOK   );
