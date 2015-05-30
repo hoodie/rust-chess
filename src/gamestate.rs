@@ -50,6 +50,11 @@ pub fn produce_bishop_moves(pos:Point, player:&Player, state:&GameState, moves: 
 }
 
 pub fn produce_knight_moves(pos:Point, player:&Player, state:&GameState, moves: &mut Vec<Move>){}
+pub fn produce_queen_moves(pos:Point, player:&Player, state:&GameState, moves: &mut Vec<Move>)
+{
+    produce_rook_moves(pos,player,state,moves);
+    produce_bishop_moves(pos,player,state,moves);
+}
 pub fn produce_rook_moves(pos:Point, player:&Player, state:&GameState, moves: &mut Vec<Move>)
 {
     for (x_dir, y_dir) in vec![ (0,1), (1,0), (0,-1), (-1,0) ]{
@@ -158,6 +163,7 @@ impl GameState
             ChessPiece::Pawn => produce_pawn_moves,
             ChessPiece::Bishop => produce_bishop_moves,
             ChessPiece::Rook => produce_rook_moves,
+            ChessPiece::Queen=> produce_queen_moves,
             _ => produce_no_moves,
         }
     }
