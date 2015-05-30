@@ -13,29 +13,29 @@ mod tests;
 
 fn main()
 {
-    let mut state = GameState::new();
-    state.init_board();
-    //state.print_board();
+    let mut game = GameState::new();
+    game.init_board();
+    //game.print_board();
     let mut count = 0;
     let max_count = 1_000_000;
 
     loop {
-        let moves = state.get_moves(&state.current_player());
+        let moves = game.get_moves(&game.current_player());
         if moves.len() == 0 {
-            println!("after {}, no more moves for player {:?}", count, state.current_player().color);
-            state.print_board();
+            println!("after {}, no more moves for player {:?}", count, game.current_player().color);
+            game.print_board();
             break; }
         if count >= max_count{
             println!("Terminated after {} rounds ", count);
-            state.print_board();
+            game.print_board();
             break; }
         if count % 10_000 == 0{ println!("Warning! {}k rounds already", count/1000); }
         let index = rand::random::<usize>() % moves.len();
         let move_choice = &moves[index];
-        state.performe_move(move_choice);
+        game.performe_move(move_choice);
         count += 1;
         std::thread::sleep_ms(200);
-        state.print_board();
+        game.print_board();
         //let mut devnull= String::new();
         //io::stdin().read_line(&mut devnull);
     }
