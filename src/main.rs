@@ -24,12 +24,14 @@ fn main()
     println!("{:?}", piece);
     loop {
         let moves = state.get_moves(&state.current_player());
-        if moves.len() == 0 {println!("no more moves for player {:?}", state.current_player().color);break; }
+        if moves.len() == 0 {
+            println!("no more moves for player {:?}", state.current_player().color);
+            state.print_board();
+            break; }
         let index = rand::random::<usize>() % moves.len();
         let move_choice = &moves[index];
         state.performe_move(move_choice);
         state.print_board();
-
         let mut devnull= String::new();
         io::stdin().read_line(&mut devnull);
     }
