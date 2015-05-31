@@ -1,3 +1,9 @@
+#[derive(Copy,Clone,Debug)]
+pub struct Point {pub x:i32, pub y:i32}
+
+#[derive(Debug,Clone)]
+pub struct Move  { pub from: Point, pub to: Point , pub note:&'static str}
+
 #[derive(Debug)]
 pub struct Player { pub color: Color, pub direction: i32 }
 
@@ -44,4 +50,3 @@ pub const WH_BISHOP :Piece = Piece{ sym : '♗', color: Color::White, piece: Che
 pub const WH_KNIGHT :Piece = Piece{ sym : '♘', color: Color::White, piece: ChessPiece::Knight };
 pub const WH_PAWN   :Piece = Piece{ sym : '♙', color: Color::White, piece: ChessPiece::Pawn   };
 // }}}
-

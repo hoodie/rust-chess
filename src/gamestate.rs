@@ -1,11 +1,5 @@
 use board::*;
 
-#[derive(Copy,Clone,Debug)]
-pub struct Point {pub x:i32, pub y:i32}
-
-#[derive(Debug,Clone)]
-pub struct Move  { from: Point, to: Point , pub note:&'static str}
-
 pub type ProduceFn = fn(Point, &Player, &GameState, &mut Vec<Move>);
 
 #[derive(Debug)]
@@ -218,11 +212,11 @@ impl GameState
         let from_field = self.board[from.y as usize][from.x as usize] ;
         let to_field   = self.board[to.y as usize][to.x as usize] ;
 
-        if let Field::Piece(piece) = from_field{
-            println!("{:?} {:?}: \"{}\" {:?} -> {:?}", self.current_player().color, piece.piece, note, from, to,);
-        } else{
-            println!("{:?} EMPTY: \"{}\" {:?} -> {:?}", self.current_player().color, note, from, to,);
-        }
+        //if let Field::Piece(piece) = from_field{
+        //    println!("{:?} {:?}: \"{}\" {:?} -> {:?}", self.current_player().color, piece.piece, note, from, to,);
+        //} else{
+        //    println!("{:?} EMPTY: \"{}\" {:?} -> {:?}", self.current_player().color, note, from, to,);
+        //}
 
         self.board[from.y as usize][from.x as usize] = Field::Empty;
         self.board[to.y as usize][to.x as usize] = from_field;
