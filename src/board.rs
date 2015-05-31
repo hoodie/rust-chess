@@ -7,7 +7,7 @@ pub struct Move  { pub from: Point, pub to: Point , pub note:&'static str}
 #[derive(Debug)]
 pub struct Player { pub color: Color, pub direction: i32 }
 
-#[derive(Clone,Copy,Debug)]
+#[derive(Clone,Copy,Debug,PartialEq)]
 pub enum ChessPiece { King, Queen, Rook, Bishop, Knight, Pawn }
 
 #[derive(Clone,Copy,Debug,PartialEq)]
