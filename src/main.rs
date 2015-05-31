@@ -3,12 +3,12 @@
 #![allow(unused_imports)]
 
 extern crate rand;
-use std::io;
+use std::io::{stdin};
 
 mod board;
 mod gamestate;
-use gamestate::GameState;
 mod tests;
+use gamestate::GameState;
 
 
 fn main()
@@ -35,6 +35,6 @@ fn main()
 
         //let mut devnull= String::new();
         //io::stdin().read_line(&mut devnull);
-        std::thread::sleep_ms(200);
+        std::thread::sleep_ms(150);
     }
 }
