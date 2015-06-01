@@ -35,6 +35,7 @@ impl Field
     }
 }
 
+
 // ChessPieces
 // {{{
 pub const BL_KING   :Piece = Piece{ sym : '♚', color: Color::Black, piece: ChessPiece::King   };

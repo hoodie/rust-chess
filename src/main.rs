@@ -8,6 +8,7 @@ use std::io::{stdin};
 mod board;
 mod gamestate;
 mod tests;
+mod display;
 use gamestate::GameState;
 
 
@@ -35,6 +36,6 @@ fn main()
 
         //let mut devnull= String::new();
         //io::stdin().read_line(&mut devnull);
-        std::thread::sleep_ms(150);
+        //std::thread::sleep_ms(150);
     }
 }

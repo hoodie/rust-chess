@@ -1,3 +1,4 @@
+use display::*;
 use board::*;
 use std::io::{stdin};
 
@@ -123,6 +124,7 @@ impl GameState
 
     fn produce_king_moves(&self, pos:Point, player:&Player, moves: &mut Vec<Move>)
     {
+        // am I threatened
         for i in 0..4{ self.produce_moves_for_dir(pos,player,moves,(i/2)*2-1, (i%2)*2-1, 1) }
         for (x_dir, y_dir) in vec![ (0,1), (1,0), (0,-1), (-1,0) ]{ self.produce_moves_for_dir(pos,player,moves,x_dir, y_dir,1) }
     }
@@ -161,7 +163,7 @@ impl GameState
 
                 (Field::Piece(me), Field::Piece(you))  => {
                     if me.color != you.color && you.piece == ChessPiece::King{
-                        println!("{:?} threatens {:?} (PRESS ENTER)", me.piece, you.piece);
+                        println!("{}({}) threatens {}({}) (PRESS ENTER)", me.piece,mov.from, you.piece, mov.to);
                         let mut devnull= String::new();
                         stdin().read_line(&mut devnull);
                         return true;
@@ -227,14 +229,14 @@ impl GameState
         {
             for y in (0..8) {
                 let row = self.board[y];
-                print!("{}| ", y);
+                print!("{}| ", y+1);
                 for x in (0..8) {
                     let col = self.board[y][x];
                     print!("{} ", col.char());
                 }
                 println!("|");
             }
-            println!(" | 0 1 2 3 4 5 6 7");
+            println!(" | A B C D E F G H");
         }
 
         fn swap_player(&mut self)
@@ -248,9 +250,9 @@ impl GameState
             let to_field   = self.board[to.y as usize][to.x as usize] ;
 
             if let Field::Piece(piece) = from_field{
-                println!("{:?} {:?}: \"{}\" {:?} -> {:?}", self.current_player().color, piece.piece, note, from, to,);
+                println!("{}: \"{}\" {} -> {}", piece, note, from, to,);
             } else{
-                println!("{:?} EMPTY: \"{}\" {:?} -> {:?}", self.current_player().color, note, from, to,);
+                println!("{} EMPTY: \"{}\" {} -> {}", self.current_player().color, note, from, to,);
             }
 
             self.board[from.y as usize][from.x as usize] = Field::Empty;
