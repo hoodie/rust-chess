@@ -12,7 +12,7 @@ impl fmt::Display for Point
 impl fmt::Display for Piece
 {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-        write!(f, "{} {}", self.piece, self.color)
+        write!(f, "{color} {piece}", piece=self.piece, color=self.color)
     }
 }
 

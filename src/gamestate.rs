@@ -1,6 +1,6 @@
 use display::*;
 use board::*;
-use std::io::{stdin};
+use std::io::stdin;
 
 pub type ProduceFn = fn(&GameState, Point, &Player, &mut Vec<Move>);
 
@@ -163,7 +163,7 @@ impl GameState
 
                 (Field::Piece(me), Field::Piece(you))  => {
                     if me.color != you.color && you.piece == ChessPiece::King{
-                        println!("{}({}) threatens {}({}) (PRESS ENTER)", me.piece,mov.from, you.piece, mov.to);
+                        println!("{}({}) threatens {}({}) (PRESS ENTER)", me,mov.from, you, mov.to);
                         let mut devnull= String::new();
                         stdin().read_line(&mut devnull);
                         return true;
@@ -229,14 +229,14 @@ impl GameState
         {
             for y in (0..8) {
                 let row = self.board[y];
-                print!("{}| ", y+1);
+                print!("{}|", y+1);
                 for x in (0..8) {
                     let col = self.board[y][x];
                     print!("{} ", col.char());
                 }
-                println!("|");
+                println!("");
             }
-            println!(" | A B C D E F G H");
+            println!(" |A B C D E F G H");
         }
 
         fn swap_player(&mut self)
