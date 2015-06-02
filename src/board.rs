@@ -4,13 +4,13 @@ pub struct Point {pub x:i32, pub y:i32}
 #[derive(Debug,Clone)]
 pub struct Move  { pub from: Point, pub to: Point , pub note:&'static str}
 
-#[derive(Debug)]
+#[derive(Debug,PartialEq,Eq,Hash,Clone)]
 pub struct Player { pub color: Color, pub direction: i32 }
 
 #[derive(Clone,Copy,Debug,PartialEq)]
 pub enum ChessPiece { King, Queen, Rook, Bishop, Knight, Pawn }
 
-#[derive(Clone,Copy,Debug,PartialEq)]
+#[derive(Clone,Copy,Debug,Hash,Eq,PartialEq)]
 pub enum Color { White , Black }
 
 #[derive(Clone,Copy,Debug)]

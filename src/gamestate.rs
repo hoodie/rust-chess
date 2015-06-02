@@ -1,6 +1,7 @@
 use display::*;
 use board::*;
 use std::io::stdin;
+use std::collections::HashMap;
 
 pub type ProduceFn = fn(&GameState, Point, &Player, &mut Vec<Move>);
 
@@ -11,6 +12,7 @@ pub struct GameState
 {
     pub board: Board,
     pub players: [Player;2],
+    pub moves: HashMap<Player, Vec<Move>>,
     pub current_player: usize
 }
 
@@ -19,14 +21,19 @@ impl GameState
     //static methods
     pub fn new() -> GameState
     {
-        GameState {
+        let mut game = GameState {
             board: [[Field::Empty; 8]; 8],
             players: [
                 Player { color: Color::Black, direction: 1},
                 Player { color: Color::White, direction: -1}
             ],
+            //moves: HashMap::new(),
+            moves: HashMap::with_capacity(2),
             current_player: 0
-        }
+        } ;
+        game.init_board();
+        game.update_moves();
+        game
     }
 
     pub fn verify_on_board(pos:Point) -> bool
@@ -37,18 +44,19 @@ impl GameState
         }
     }
 
+    // TODO
     // takes PlayerA's moves and returns if PlayerB is checkmate or not
-    fn check_mate(&self, player:&Player, moves:&Vec<Move>) -> CheckState
-    {
-        CheckState::Alive
-    }
+    //fn check_mate(&self, player:&Player, moves:&Vec<Move>) -> CheckState
+    //{
+    //    CheckState::Alive
+    //}
 
     // instance methods
     fn produce_pawn_moves(&self, pos:Point, player:&Player, moves: &mut Vec<Move>)
     { // TODO produce_pawn_moves can be shortened
         let Point{x,y} = pos; //origin
         let possible_move = Move{from:pos, to:Point{x:x,y:y+1*player.direction}, note:"normale"}; // normal move one forward
-        let possible_rush = Move{from:pos, to:Point{x:x,y:y+2*player.direction},note: "rush"}; //  only from start point
+        let possible_rush = Move{from:pos, to:Point{x:x,y:y+2*player.direction}, note: "rush"}; //  only from start point
         let possible_capture_l = Move {
             from:pos,
             to:Point{
@@ -207,22 +215,34 @@ impl GameState
             }
         }
 
+        pub fn update_moves(&mut self)
+        {
+            self.moves = HashMap::new();
+            for player in &self.players{
+                let moves = self.possible_moves(player);
+                self.moves.insert(player.clone(), *moves);
+            }
+        }
+
         // TODO make this multithreaded
-        pub fn get_moves(&self, player:&Player) -> Vec<Move>
+        fn possible_moves(&self, player:&Player) -> Box<Vec<Move>>
         {
             //iterate over all fields
             //if my chesspiece get all moves
-            let mut moves = vec![];
-            for y in 0..8 { for x in 0..8 {
-                let pos = Point{x:x,y:y};
-                if let Field::Piece(piece) = self.get_field(pos){
-                    if piece.color == player.color{
-                        let move_producer = self.get_move_producer(piece.piece);
-                        move_producer(&self, pos, player, &mut moves);
+            let mut my_moves = vec![];
+            {
+                let moves = &mut my_moves;
+                for y in 0..8 { for x in 0..8 {
+                    let pos = Point{x:x,y:y};
+                    if let Field::Piece(piece) = self.get_field(pos){
+                        if piece.color == player.color{
+                            let move_producer = self.get_move_producer(piece.piece);
+                            move_producer(&self, pos, player, moves);
+                        }
                     }
-                }
-            } }
-            return moves;
+                } }
+            }
+            return Box::new(my_moves);
         }
 
         pub fn print_board(&self)
@@ -244,10 +264,11 @@ impl GameState
             self.current_player = ((self.current_player as i32 * -1) + 1) as usize;
         }
 
-        pub fn performe_move(&mut self, &Move{to,from, note}:&Move)
+        pub fn performe_move(&mut self, index:usize)
         {
-            let from_field = self.board[from.y as usize][from.x as usize] ;
-            let to_field   = self.board[to.y as usize][to.x as usize] ;
+            let &Move{to,from, note} = &self.moves.get(self.current_player()).unwrap()[index];
+            let from_field = self.board[from.y as usize][from.x as usize];
+            let to_field   = self.board[to.y as usize][to.x as usize];
 
             if let Field::Piece(piece) = from_field{
                 println!("{}: \"{}\" {} -> {}", piece, note, from, to,);
@@ -258,6 +279,7 @@ impl GameState
             self.board[from.y as usize][from.x as usize] = Field::Empty;
             self.board[to.y as usize][to.x as usize] = from_field;
             self.swap_player();
+            self.update_moves();
         }
 
         pub fn init_board(&mut self)
