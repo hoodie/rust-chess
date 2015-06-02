@@ -5,3 +5,4 @@ authors = ["Hendrik Sollich <hendrik@hoodie.de>"]
 
 [dependencies]
 rand = "0.3"
+clap = "0.10"

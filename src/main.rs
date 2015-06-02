@@ -4,7 +4,8 @@
 #![allow(unused_must_use)]
 
 extern crate rand;
-use std::io::{stdin};
+extern crate clap;
+use clap::{App, SubCommand};
 
 mod board;
 mod gamestate;
@@ -13,7 +14,7 @@ mod display;
 use gamestate::GameState;
 
 
-fn main()
+fn run_games()
 {
     let mut game = GameState::new();
     let mut count = 0;
@@ -37,4 +38,19 @@ fn main()
         std::io::stdin().read_line(&mut devnull);
         //std::thread::sleep_ms(150);
     }
+}
+fn main()
+{
+    let matches = App::new("Chess")
+                        .version("0.0.1")
+                        .author("Hendrik Sollich <hendrik@hoodie.de>")
+                        .about("tries to play chess")
+                        .args_from_usage("-i --interactive 'Run Step by Step'")
+                        .get_matches();
+
+
+    if let Some(i) = matches.value_of("iteractive") {
+        println!("Running Interactively");
+    }
+    run_games();
 }
