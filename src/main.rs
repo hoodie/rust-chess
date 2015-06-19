@@ -5,7 +5,7 @@
 
 extern crate rand;
 extern crate clap;
-use clap::{App, SubCommand};
+use clap::{App, SubCommand, Arg};
 
 mod board;
 mod gamestate;
@@ -14,7 +14,7 @@ mod display;
 use gamestate::GameState;
 
 
-fn run_games()
+fn run_games(interactive:bool)
 {
     let mut game = GameState::new();
     let mut count = 0;
@@ -34,9 +34,14 @@ fn run_games()
         game.performe_move(move_choice); count += 1;
         game.print_board();
 
-        let mut devnull= String::new();
-        std::io::stdin().read_line(&mut devnull);
-        //std::thread::sleep_ms(150);
+        if interactive {
+            let mut devnull= String::new();
+            std::io::stdin().read_line(&mut devnull);
+        }
+        else{
+            std::thread::sleep_ms(150);
+        }
+
     }
 }
 fn main()
@@ -45,12 +50,20 @@ fn main()
                         .version("0.0.1")
                         .author("Hendrik Sollich <hendrik@hoodie.de>")
                         .about("tries to play chess")
-                        .args_from_usage("-i --interactive 'Run Step by Step'")
+                        .arg(
+                            Arg::with_name("interactive")
+                            .short("i")
+                            .help("Run step by step interatively instead of automatically")
+                            .long("interactive")
+                            )
                         .get_matches();
 
 
-    if let Some(i) = matches.value_of("iteractive") {
-        println!("Running Interactively");
+    if  matches.is_present("interactive") {
+        println!("Running interactively");
+        run_games(true);
+    } else{
+        println!("Running automatically");
+        run_games(false);
     }
-    run_games();
 }
