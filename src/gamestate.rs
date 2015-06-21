@@ -165,143 +165,143 @@ impl GameState
 
 
 
-        pub fn test_check(&self,mov:&Move) -> bool
-        {
-            match ( self.get_field(mov.from), self.get_field(mov.to) ){
+    pub fn test_check(&self,mov:&Move) -> bool
+    {
+        match ( self.get_field(mov.from), self.get_field(mov.to) ){
 
-                (Field::Piece(me), Field::Piece(you))  => {
-                    if me.color != you.color && you.piece == ChessPiece::King{
-                        println!("{}({}) threatens {}({}) (PRESS ENTER)", me,mov.from, you, mov.to);
-                        let mut devnull= String::new();
-                        stdin().read_line(&mut devnull);
-                        return true;
-                    } false
-                },
-                _ => false
-            }
+            (Field::Piece(me), Field::Piece(you))  => {
+                if me.color != you.color && you.piece == ChessPiece::King{
+                    println!("{}({}) threatens {}({}) (PRESS ENTER)", me,mov.from, you, mov.to);
+                    let mut devnull= String::new();
+                    stdin().read_line(&mut devnull);
+                    return true;
+                } false
+            },
+            _ => false
         }
+    }
 
-        pub fn current_player(&self) -> &Player
-        {
-            &self.players[self.current_player]
+    pub fn current_player(&self) -> &Player
+    {
+        &self.players[self.current_player]
+    }
+
+    pub fn field_contains_opponent(&self, pos:Point, player:&Player) -> bool
+    {
+        if let Field::Piece(piece) = self.get_field(pos){
+            return piece.color != player.color;
         }
+        return false;
+    }
 
-        pub fn field_contains_opponent(&self, pos:Point, player:&Player) -> bool
-        {
-            if let Field::Piece(piece) = self.get_field(pos){
-                return piece.color != player.color;
-            }
-            return false;
+    pub fn get_field(&self,pos:Point) -> Field
+    {
+        match pos {
+            Point{x:0...7,y:0...7} => self.board[pos.y as usize][pos.x as usize],
+            Point{x:_,y:_} => Field::Outside,
         }
+    }
 
-        pub fn get_field(&self,pos:Point) -> Field
-        {
-            match pos {
-                Point{x:0...7,y:0...7} => self.board[pos.y as usize][pos.x as usize],
-                Point{x:_,y:_} => Field::Outside,
-            }
+    fn get_move_producer(&self, piece:ChessPiece) -> ProduceFn
+    {
+        match piece{
+            ChessPiece::Pawn   => GameState::produce_pawn_moves,
+            ChessPiece::Bishop => GameState::produce_bishop_moves,
+            ChessPiece::Rook   => GameState::produce_rook_moves,
+            ChessPiece::Queen  => GameState::produce_queen_moves,
+            ChessPiece::Knight => GameState::produce_knight_moves,
+            ChessPiece::King   => GameState::produce_king_moves,
+            //_ => GameState::produce_no_moves,
         }
+    }
 
-        fn get_move_producer(&self, piece:ChessPiece) -> ProduceFn
-        {
-            match piece{
-                ChessPiece::Pawn   => GameState::produce_pawn_moves,
-                ChessPiece::Bishop => GameState::produce_bishop_moves,
-                ChessPiece::Rook   => GameState::produce_rook_moves,
-                ChessPiece::Queen  => GameState::produce_queen_moves,
-                ChessPiece::Knight => GameState::produce_knight_moves,
-                ChessPiece::King   => GameState::produce_king_moves,
-                //_ => GameState::produce_no_moves,
-            }
+    pub fn update_moves(&mut self)
+    {
+        self.moves = HashMap::new();
+        for player in &self.players{
+            let moves = self.possible_moves(player);
+            self.moves.insert(player.clone(), *moves);
         }
+    }
 
-        pub fn update_moves(&mut self)
+    // TODO make this multithreaded
+    fn possible_moves(&self, player:&Player) -> Box<Vec<Move>>
+    {
+        //iterate over all fields
+        //if my chesspiece get all moves
+        let mut my_moves = vec![];
         {
-            self.moves = HashMap::new();
-            for player in &self.players{
-                let moves = self.possible_moves(player);
-                self.moves.insert(player.clone(), *moves);
-            }
-        }
-
-        // TODO make this multithreaded
-        fn possible_moves(&self, player:&Player) -> Box<Vec<Move>>
-        {
-            //iterate over all fields
-            //if my chesspiece get all moves
-            let mut my_moves = vec![];
-            {
-                let moves = &mut my_moves;
-                for y in 0..8 { for x in 0..8 {
-                    let pos = Point{x:x,y:y};
-                    if let Field::Piece(piece) = self.get_field(pos){
-                        if piece.color == player.color{
-                            let move_producer = self.get_move_producer(piece.piece);
-                            move_producer(&self, pos, player, moves);
-                        }
+            let moves = &mut my_moves;
+            for y in 0..8 { for x in 0..8 {
+                let pos = Point{x:x,y:y};
+                if let Field::Piece(piece) = self.get_field(pos){
+                    if piece.color == player.color{
+                        let move_producer = self.get_move_producer(piece.piece);
+                        move_producer(&self, pos, player, moves);
                     }
-                } }
-            }
-            return Box::new(my_moves);
-        }
-
-        pub fn print_board(&self)
-        {
-            for y in (0..8) {
-                let row = self.board[y];
-                print!("{}|", y+1);
-                for x in (0..8) {
-                    let col = self.board[y][x];
-                    print!("{} ", col.char());
                 }
-                println!("");
+            } }
+        }
+        return Box::new(my_moves);
+    }
+
+    pub fn print_board(&self)
+    {
+        for y in (0..8) {
+            let row = self.board[y];
+            print!("{}|", y+1);
+            for x in (0..8) {
+                let col = self.board[y][x];
+                print!("{} ", col.char());
             }
-            println!(" |A B C D E F G H");
+            println!("");
+        }
+        println!(" |A B C D E F G H");
+    }
+
+    fn swap_player(&mut self)
+    {
+        self.current_player = ((self.current_player as i32 * -1) + 1) as usize;
+    }
+
+    pub fn performe_move(&mut self, index:usize)
+    {
+        let &Move{to,from, note} = &self.moves.get(self.current_player()).unwrap()[index];
+        let from_field = self.board[from.y as usize][from.x as usize];
+        let to_field   = self.board[to.y as usize][to.x as usize];
+
+        if let Field::Piece(piece) = from_field{
+            println!("{}: \"{}\" {} -> {}", piece, note, from, to,);
+        } else{
+            println!("{} EMPTY: \"{}\" {} -> {}", self.current_player().color, note, from, to,);
         }
 
-        fn swap_player(&mut self)
-        {
-            self.current_player = ((self.current_player as i32 * -1) + 1) as usize;
+        self.board[from.y as usize][from.x as usize] = Field::Empty;
+        self.board[to.y as usize][to.x as usize] = from_field;
+        self.swap_player();
+        self.update_moves();
+    }
+
+    pub fn init_board(&mut self)
+    {
+        let mut board = self.board;
+
+        for i in 0..8{
+            board[1][i] = Field::Piece(BL_PAWN );
+            board[6][i] = Field::Piece(WH_PAWN );
         }
 
-        pub fn performe_move(&mut self, index:usize)
-        {
-            let &Move{to,from, note} = &self.moves.get(self.current_player()).unwrap()[index];
-            let from_field = self.board[from.y as usize][from.x as usize];
-            let to_field   = self.board[to.y as usize][to.x as usize];
+        //black side                             //white side
+        board[0][0] = Field::Piece(BL_ROOK   );  board[7][0] = Field::Piece(WH_ROOK   );
+        board[0][7] = Field::Piece(BL_ROOK   );  board[7][7] = Field::Piece(WH_ROOK   );
+        board[0][1] = Field::Piece(BL_KNIGHT );  board[7][1] = Field::Piece(WH_KNIGHT );
+        board[0][6] = Field::Piece(BL_KNIGHT );  board[7][6] = Field::Piece(WH_KNIGHT );
+        board[0][2] = Field::Piece(BL_BISHOP );  board[7][2] = Field::Piece(WH_BISHOP );
+        board[0][5] = Field::Piece(BL_BISHOP );  board[7][5] = Field::Piece(WH_BISHOP );
+        board[0][4] = Field::Piece(BL_KING   );  board[7][4] = Field::Piece(WH_KING   );
+        board[0][3] = Field::Piece(BL_QUEEN  );  board[7][3] = Field::Piece(WH_QUEEN  );
 
-            if let Field::Piece(piece) = from_field{
-                println!("{}: \"{}\" {} -> {}", piece, note, from, to,);
-            } else{
-                println!("{} EMPTY: \"{}\" {} -> {}", self.current_player().color, note, from, to,);
-            }
-
-            self.board[from.y as usize][from.x as usize] = Field::Empty;
-            self.board[to.y as usize][to.x as usize] = from_field;
-            self.swap_player();
-            self.update_moves();
-        }
-
-        pub fn init_board(&mut self)
-        {
-            let mut board = self.board;
-
-            for i in 0..8{
-                board[1][i] = Field::Piece(BL_PAWN );
-                board[6][i] = Field::Piece(WH_PAWN );
-            }
-
-            //black side                             //white side
-            board[0][0] = Field::Piece(BL_ROOK   );  board[7][0] = Field::Piece(WH_ROOK   );
-            board[0][7] = Field::Piece(BL_ROOK   );  board[7][7] = Field::Piece(WH_ROOK   );
-            board[0][1] = Field::Piece(BL_KNIGHT );  board[7][1] = Field::Piece(WH_KNIGHT );
-            board[0][6] = Field::Piece(BL_KNIGHT );  board[7][6] = Field::Piece(WH_KNIGHT );
-            board[0][2] = Field::Piece(BL_BISHOP );  board[7][2] = Field::Piece(WH_BISHOP );
-            board[0][5] = Field::Piece(BL_BISHOP );  board[7][5] = Field::Piece(WH_BISHOP );
-            board[0][4] = Field::Piece(BL_KING   );  board[7][4] = Field::Piece(WH_KING   );
-            board[0][3] = Field::Piece(BL_QUEEN  );  board[7][3] = Field::Piece(WH_QUEEN  );
-
-            self.board = board;
-        }
+        self.board = board;
+    }
 }
 
