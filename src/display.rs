@@ -1,43 +1,39 @@
-use board::*;
 use std::fmt;
 
-impl fmt::Display for Point
-{
+use board::*;
+use piece::*;
+
+impl fmt::Display for Point {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
         let x = "ABCDEFGH".chars().collect::<Vec<char>>();
         write!(f, "({col}{row})", col= x[self.x as usize], row=self.y+1)
     }
 }
 
-impl fmt::Display for Piece
-{
+impl fmt::Display for Piece {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
         write!(f, "{color} {piece}", piece=self.piece, color=self.color)
     }
 }
 
-impl fmt::Display for Color
-{
+impl fmt::Display for Color {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-        use board::Color::*;
         match self {
-            &White  => write!(f, "White"),
-            &Black  => write!(f, "Black")
+            &Color::White  => write!(f, "White"),
+            &Color::Black  => write!(f, "Black")
         }
     }
 }
 
-impl fmt::Display for ChessPiece
-{
+impl fmt::Display for Suit {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-        use board::ChessPiece::*;
-        match self {
-            &King   => write!(f, "King"),
-            &Queen  => write!(f, "Queen"),
-            &Rook   => write!(f, "Rook"),
-            &Bishop => write!(f, "Bishop"),
-            &Knight => write!(f, "Knight"),
-            &Pawn   => write!(f, "Pawn")
+        match *self {
+            Suit::King   => write!(f, "King"),
+            Suit::Queen  => write!(f, "Queen"),
+            Suit::Rook   => write!(f, "Rook"),
+            Suit::Bishop => write!(f, "Bishop"),
+            Suit::Knight => write!(f, "Knight"),
+            Suit::Pawn   => write!(f, "Pawn")
         }
     }
 }

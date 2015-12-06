@@ -1,8 +1,8 @@
 [package]
 name = "chess"
-version = "0.0.1"
+version = "0.1.0"
 authors = ["Hendrik Sollich <hendrik@hoodie.de>"]
 
 [dependencies]
-rand = "0.3"
-clap = "0.11"
+rand = "*"
+clap = "*"

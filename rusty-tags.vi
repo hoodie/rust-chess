@@ -1,0 +1,728 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+AVAILABLE	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/os.rs	/^        static AVAILABLE: AtomicBool = ATOMIC_BOOL_INIT;$/;"	c
+App	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/clap-0.11.0/src/app.rs	/^impl<'a, 'v, 'ab, 'u, 'h, 'ar> App<'a, 'v, 'ab, 'u, 'h, 'ar>{$/;"	i
+App	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/clap-0.11.0/src/app.rs	/^pub struct App<'a, 'v, 'ab, 'u, 'h, 'ar> {$/;"	s
+Arg	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/clap-0.11.0/src/args/arg.rs	/^impl<'n, 'l, 'h, 'g, 'p, 'r> Arg<'n, 'l, 'h, 'g, 'p, 'r> {$/;"	i
+Arg	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/clap-0.11.0/src/args/arg.rs	/^pub struct Arg<'n, 'l, 'h, 'g, 'p, 'r> {$/;"	s
+ArgGroup	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/clap-0.11.0/src/args/group.rs	/^impl<'n, 'ar> ArgGroup<'n, 'ar> {$/;"	i
+ArgGroup	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/clap-0.11.0/src/args/group.rs	/^pub struct ArgGroup<'n, 'ar> {$/;"	s
+ArgMatches	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/clap-0.11.0/src/args/argmatches.rs	/^impl<'n, 'a> ArgMatches<'n, 'a> {$/;"	i
+ArgMatches	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/clap-0.11.0/src/args/argmatches.rs	/^pub struct ArgMatches<'n, 'a> {$/;"	s
+AsciiGenerator	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/lib.rs	/^pub struct AsciiGenerator<'a, R:'a> {$/;"	s
+BL_BISHOP	/home/hendrik/code/rust/chess/src/board.rs	/^pub const BL_BISHOP :Piece = Piece{ sym : '♝', color: Color::Black, piece: Suit::Bishop };$/;"	c
+BL_KING	/home/hendrik/code/rust/chess/src/board.rs	/^pub const BL_KING   :Piece = Piece{ sym : '♚', color: Color::Black, piece: Suit::King   };$/;"	c
+BL_KNIGHT	/home/hendrik/code/rust/chess/src/board.rs	/^pub const BL_KNIGHT :Piece = Piece{ sym : '♞', color: Color::Black, piece: Suit::Knight };$/;"	c
+BL_PAWN	/home/hendrik/code/rust/chess/src/board.rs	/^pub const BL_PAWN   :Piece = Piece{ sym : '♟', color: Color::Black, piece: Suit::Pawn   };$/;"	c
+BL_QUEEN	/home/hendrik/code/rust/chess/src/board.rs	/^pub const BL_QUEEN  :Piece = Piece{ sym : '♛', color: Color::Black, piece: Suit::Queen  };$/;"	c
+BL_ROOK	/home/hendrik/code/rust/chess/src/board.rs	/^pub const BL_ROOK   :Piece = Piece{ sym : '♜', color: Color::Black, piece: Suit::Rook   };$/;"	c
+Board	/home/hendrik/code/rust/chess/src/board.rs	/^pub type Board = [[Field;8];8];$/;"	T
+CHACHA_ROUNDS	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/chacha.rs	/^const CHACHA_ROUNDS: u32 = 20; \/\/ Cryptographically secure from 8 upwards as of this writing$/;"	c
+CHAR_MASK	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/rand_impls.rs	/^        const CHAR_MASK: u32 = 0x001f_ffff;$/;"	c
+CHECKER	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/os.rs	/^        static CHECKER: Once = ONCE_INIT;$/;"	c
+ChaChaRng	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/chacha.rs	/^impl ChaChaRng {$/;"	i
+ChaChaRng	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/chacha.rs	/^pub struct ChaChaRng {$/;"	s
+CheckState	/home/hendrik/code/rust/chess/src/gamestate.rs	/^enum CheckState {CheckMate, Threatened, StaleMate, Alive}$/;"	g
+ChiSquared	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/distributions/gamma.rs	/^impl ChiSquared {$/;"	i
+ChiSquared	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/distributions/gamma.rs	/^pub struct ChiSquared {$/;"	s
+ChiSquaredRepr	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/distributions/gamma.rs	/^enum ChiSquaredRepr {$/;"	g
+Clone for Isaac64Rng	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/isaac.rs	/^impl Clone for Isaac64Rng {$/;"	i
+Clone for IsaacRng	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/isaac.rs	/^impl Clone for IsaacRng {$/;"	i
+Clone for RandSample	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/distributions/mod.rs	/^impl<Sup> Clone for RandSample<Sup> {$/;"	i
+Closed01	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/lib.rs	/^pub struct Closed01<F>(pub F);$/;"	s
+Color	/home/hendrik/code/rust/chess/src/piece.rs	/^pub enum Color { White , Black }$/;"	g
+ConstRand	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/distributions/mod.rs	/^    struct ConstRand(usize);$/;"	s
+ConstRng	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/lib.rs	/^    struct ConstRng { i: u64 }$/;"	s
+ConstantRng	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/rand_impls.rs	/^    struct ConstantRng(u64);$/;"	s
+Copy for RandSample	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/distributions/mod.rs	/^impl<Sup> Copy for RandSample<Sup> {}$/;"	i
+Counter	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/reseeding.rs	/^    struct Counter {$/;"	s
+CountingRng	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/distributions/mod.rs	/^    struct CountingRng { i: u32 }$/;"	s
+DEFAULT_GENERATION_THRESHOLD	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/reseeding.rs	/^const DEFAULT_GENERATION_THRESHOLD: u64 = 32 * 1024;$/;"	c
+Debug for ArgGroup	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/clap-0.11.0/src/args/group.rs	/^impl<'n, 'ar> Debug for ArgGroup<'n, 'ar> {$/;"	i
+Default for Counter	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/reseeding.rs	/^    impl Default for Counter {$/;"	i
+Default for ReseedWithDefault	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/reseeding.rs	/^impl Default for ReseedWithDefault {$/;"	i
+DidYouMeanMessageStyle	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/clap-0.11.0/src/app.rs	/^enum DidYouMeanMessageStyle {$/;"	g
+Display for FlagBuilder	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/clap-0.11.0/src/args/argbuilder/flag.rs	/^impl<'n> Display for FlagBuilder<'n> {$/;"	i
+Display for OptBuilder	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/clap-0.11.0/src/args/argbuilder/option.rs	/^impl<'n> Display for OptBuilder<'n> {$/;"	i
+Display for PosBuilder	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/clap-0.11.0/src/args/argbuilder/positional.rs	/^impl<'n> Display for PosBuilder<'n> {$/;"	i
+Drop for OsRng	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/os.rs	/^    impl Drop for OsRng {$/;"	i
+EMPTY	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/chacha.rs	/^static EMPTY: ChaChaRng = ChaChaRng {$/;"	c
+EMPTY	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/isaac.rs	/^static EMPTY: IsaacRng = IsaacRng {$/;"	c
+EMPTY_64	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/isaac.rs	/^static EMPTY_64: Isaac64Rng = Isaac64Rng {$/;"	c
+Err	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/clap-0.11.0/src/macros.rs	/^            type Err = String;$/;"	T
+Exp	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/distributions/exponential.rs	/^impl Exp {$/;"	i
+Exp	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/distributions/exponential.rs	/^pub struct Exp {$/;"	s
+Exp1	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/distributions/exponential.rs	/^pub struct Exp1(pub f64);$/;"	s
+FILL_BYTES_V_LEN	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/reseeding.rs	/^    const FILL_BYTES_V_LEN: usize = 13579;$/;"	c
+Field	/home/hendrik/code/rust/chess/src/board.rs	/^impl Field {$/;"	i
+Field	/home/hendrik/code/rust/chess/src/board.rs	/^pub enum Field { Outside, Empty, Piece(Piece) }$/;"	g
+FisherF	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/distributions/gamma.rs	/^impl FisherF {$/;"	i
+FisherF	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/distributions/gamma.rs	/^pub struct FisherF {$/;"	s
+FlagBuilder	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/clap-0.11.0/src/args/argbuilder/flag.rs	/^pub struct FlagBuilder<'n> {$/;"	s
+Format	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/clap-0.11.0/src/fmt.rs	/^impl<T: fmt::Display> Format<T> {$/;"	i
+Format	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/clap-0.11.0/src/fmt.rs	/^pub enum Format<T> {$/;"	g
+From	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/clap-0.11.0/src/args/arg.rs	/^impl<'n, 'l, 'h, 'g, 'p, 'r, 'z> From<&'z Arg<'n, 'l, 'h, 'g, 'p, 'r>> for Arg<'n, 'l, 'h, 'g, 'p, 'r> {$/;"	i
+GEN_ASCII_STR_CHARSET	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/lib.rs	/^        const GEN_ASCII_STR_CHARSET: &'static [u8] =$/;"	c
+GameState	/home/hendrik/code/rust/chess/src/gamestate.rs	/^impl GameState {$/;"	i
+GameState	/home/hendrik/code/rust/chess/src/gamestate.rs	/^pub struct GameState {$/;"	s
+Gamma	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/distributions/gamma.rs	/^impl Gamma {$/;"	i
+Gamma	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/distributions/gamma.rs	/^pub struct Gamma {$/;"	s
+GammaLargeShape	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/distributions/gamma.rs	/^impl GammaLargeShape {$/;"	i
+GammaLargeShape	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/distributions/gamma.rs	/^struct GammaLargeShape {$/;"	s
+GammaRepr	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/distributions/gamma.rs	/^enum GammaRepr {$/;"	g
+GammaSmallShape	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/distributions/gamma.rs	/^impl GammaSmallShape {$/;"	i
+GammaSmallShape	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/distributions/gamma.rs	/^struct GammaSmallShape {$/;"	s
+Generator	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/lib.rs	/^pub struct Generator<'a, T, R:'a> {$/;"	s
+IGNORED_BITS	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/lib.rs	/^        const IGNORED_BITS: u32 = 11;$/;"	c
+IGNORED_BITS	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/lib.rs	/^        const IGNORED_BITS: u32 = 8;$/;"	c
+INTERFACE	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/os.rs	/^    const INTERFACE: &'static [u8] = b"nacl-irt-random-0.1\\0";$/;"	c
+IndependentSample	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/distributions/mod.rs	/^pub trait IndependentSample<Support>: Sample<Support> {$/;"	t
+IndependentSample for ChiSquared	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/distributions/gamma.rs	/^impl IndependentSample<f64> for ChiSquared {$/;"	i
+IndependentSample for Exp	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/distributions/exponential.rs	/^impl IndependentSample<f64> for Exp {$/;"	i
+IndependentSample for FisherF	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/distributions/gamma.rs	/^impl IndependentSample<f64> for FisherF {$/;"	i
+IndependentSample for Gamma	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/distributions/gamma.rs	/^impl IndependentSample<f64> for Gamma {$/;"	i
+IndependentSample for GammaLargeShape	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/distributions/gamma.rs	/^impl IndependentSample<f64> for GammaLargeShape {$/;"	i
+IndependentSample for GammaSmallShape	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/distributions/gamma.rs	/^impl IndependentSample<f64> for GammaSmallShape {$/;"	i
+IndependentSample for LogNormal	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/distributions/normal.rs	/^impl IndependentSample<f64> for LogNormal {$/;"	i
+IndependentSample for Normal	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/distributions/normal.rs	/^impl IndependentSample<f64> for Normal {$/;"	i
+IndependentSample for RandSample	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/distributions/mod.rs	/^impl<Sup: Rand> IndependentSample<Sup> for RandSample<Sup> {$/;"	i
+IndependentSample for Range	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/distributions/range.rs	/^impl<Sup: SampleRange> IndependentSample<Sup> for Range<Sup> {$/;"	i
+IndependentSample for StudentT	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/distributions/gamma.rs	/^impl IndependentSample<f64> for StudentT {$/;"	i
+IndependentSample for WeightedChoice	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/distributions/mod.rs	/^impl<'a, T: Clone> IndependentSample<T> for WeightedChoice<'a, T> {$/;"	i
+Isaac64Rng	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/isaac.rs	/^impl Isaac64Rng {$/;"	i
+Isaac64Rng	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/isaac.rs	/^pub struct Isaac64Rng {$/;"	s
+IsaacRng	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/isaac.rs	/^impl IsaacRng {$/;"	i
+IsaacRng	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/isaac.rs	/^pub struct IsaacRng {$/;"	s
+Item	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/clap-0.11.0/src/usageparser.rs	/^    type Item = UsageToken<'u>;$/;"	T
+Item	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/lib.rs	/^    type Item = T;$/;"	T
+Item	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/lib.rs	/^    type Item = char;$/;"	T
+Iterator for AsciiGenerator	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/lib.rs	/^impl<'a, R: Rng> Iterator for AsciiGenerator<'a, R> {$/;"	i
+Iterator for Generator	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/lib.rs	/^impl<'a, T: Rand, R: Rng> Iterator for Generator<'a, T, R> {$/;"	i
+Iterator for UsageParser	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/clap-0.11.0/src/usageparser.rs	/^impl<'u> Iterator for UsageParser<'u> {$/;"	i
+KEY_WORDS	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/chacha.rs	/^const KEY_WORDS    : usize =  8; \/\/ 8 words for the 256-bit key$/;"	c
+LogNormal	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/distributions/normal.rs	/^impl LogNormal {$/;"	i
+LogNormal	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/distributions/normal.rs	/^pub struct LogNormal {$/;"	s
+MANTISSA_BITS	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/lib.rs	/^        const MANTISSA_BITS: u32 = 24;$/;"	c
+MANTISSA_BITS	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/lib.rs	/^        const MANTISSA_BITS: u32 = 53;$/;"	c
+MIDPOINT	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/isaac.rs	/^        const MIDPOINT: usize =  RAND_SIZE_64 \/ 2;$/;"	c
+MIDPOINT	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/isaac.rs	/^        const MIDPOINT: usize = RAND_SIZE_USIZE \/ 2;$/;"	c
+MP_VEC	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/isaac.rs	/^        const MP_VEC: [(usize, usize); 2] = [(0,MIDPOINT), (MIDPOINT, 0)];$/;"	c
+MatchedArg	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/clap-0.11.0/src/args/matchedarg.rs	/^pub struct MatchedArg {$/;"	s
+Move	/home/hendrik/code/rust/chess/src/board.rs	/^pub struct Move {$/;"	s
+MyRng	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/lib.rs	/^    pub struct MyRng<R> { inner: R }$/;"	s
+MyRng	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/reseeding.rs	/^    type MyRng = ReseedingRng<Counter, ReseedWithDefault>;$/;"	T
+NR_GETRANDOM	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/os.rs	/^        const NR_GETRANDOM: libc::c_long = 278;$/;"	c
+NR_GETRANDOM	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/os.rs	/^        const NR_GETRANDOM: libc::c_long = 318;$/;"	c
+NR_GETRANDOM	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/os.rs	/^        const NR_GETRANDOM: libc::c_long = 355;$/;"	c
+NR_GETRANDOM	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/os.rs	/^        const NR_GETRANDOM: libc::c_long = 384;$/;"	c
+NaClIRTRandom	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/os.rs	/^    struct NaClIRTRandom {$/;"	s
+Normal	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/distributions/normal.rs	/^impl Normal {$/;"	i
+Normal	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/distributions/normal.rs	/^pub struct Normal {$/;"	s
+Open01	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/lib.rs	/^pub struct Open01<F>(pub F);$/;"	s
+OptBuilder	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/clap-0.11.0/src/args/argbuilder/option.rs	/^pub struct OptBuilder<'n> {$/;"	s
+OsRng	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/os.rs	/^    impl OsRng {$/;"	i
+OsRng	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/os.rs	/^    pub struct OsRng {$/;"	s
+OsRng	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/os.rs	/^    pub struct OsRng(extern fn(dest: *mut libc::c_void,$/;"	s
+OsRng	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/os.rs	/^    pub struct OsRng;$/;"	s
+OsRng	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/os.rs	/^impl OsRng {$/;"	i
+OsRng	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/os.rs	/^pub struct OsRng(imp::OsRng);$/;"	s
+OsRngInner	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/os.rs	/^    enum OsRngInner {$/;"	g
+Piece	/home/hendrik/code/rust/chess/src/piece.rs	/^pub struct Piece {$/;"	s
+Player	/home/hendrik/code/rust/chess/src/board.rs	/^pub struct Player {$/;"	s
+Point	/home/hendrik/code/rust/chess/src/board.rs	/^pub struct Point {$/;"	s
+PosBuilder	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/clap-0.11.0/src/args/argbuilder/positional.rs	/^pub struct PosBuilder<'n> {$/;"	s
+ProduceFn	/home/hendrik/code/rust/chess/src/gamestate.rs	/^pub type ProduceFn = fn(&GameState, Point, &Player, &mut Vec<Move>);$/;"	T
+RAND_BENCH_N	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/benches/bench.rs	/^const RAND_BENCH_N: u64 = 100;$/;"	c
+RAND_SIZE	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/isaac.rs	/^const RAND_SIZE: u32 = 1 << RAND_SIZE_LEN;$/;"	c
+RAND_SIZE_64	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/isaac.rs	/^const RAND_SIZE_64: usize = 1 << RAND_SIZE_64_LEN;$/;"	c
+RAND_SIZE_64_LEN	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/isaac.rs	/^const RAND_SIZE_64_LEN: usize = 8;$/;"	c
+RAND_SIZE_LEN	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/isaac.rs	/^const RAND_SIZE_LEN: usize = 8;$/;"	c
+RAND_SIZE_USIZE	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/isaac.rs	/^const RAND_SIZE_USIZE: usize = 1 << RAND_SIZE_LEN;$/;"	c
+Rand	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/lib.rs	/^pub trait Rand : Sized {$/;"	t
+Rand	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/rand_impls.rs	/^            impl Rand for $ty {$/;"	i
+Rand	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/rand_impls.rs	/^        impl<T> Rand for [T; $n] where T: Rand {$/;"	i
+Rand	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/rand_impls.rs	/^        impl<T> Rand for [T; $n] {$/;"	i
+Rand	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/rand_impls.rs	/^impl Rand for () {$/;"	i
+Rand for ChaChaRng	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/chacha.rs	/^impl Rand for ChaChaRng {$/;"	i
+Rand for Closed01	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/rand_impls.rs	/^            impl Rand for Closed01<$ty> {$/;"	i
+Rand for ConstRand	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/distributions/mod.rs	/^    impl Rand for ConstRand {$/;"	i
+Rand for Exp1	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/distributions/exponential.rs	/^impl Rand for Exp1 {$/;"	i
+Rand for Isaac64Rng	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/isaac.rs	/^impl Rand for Isaac64Rng {$/;"	i
+Rand for IsaacRng	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/isaac.rs	/^impl Rand for IsaacRng {$/;"	i
+Rand for Open01	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/rand_impls.rs	/^            impl Rand for Open01<$ty> {$/;"	i
+Rand for Option	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/rand_impls.rs	/^impl<T:Rand> Rand for Option<T> {$/;"	i
+Rand for StandardNormal	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/distributions/normal.rs	/^impl Rand for StandardNormal {$/;"	i
+Rand for XorShiftRng	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/lib.rs	/^impl Rand for XorShiftRng {$/;"	i
+Rand for bool	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/rand_impls.rs	/^impl Rand for bool {$/;"	i
+Rand for char	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/rand_impls.rs	/^impl Rand for char {$/;"	i
+Rand for i16	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/rand_impls.rs	/^impl Rand for i16 {$/;"	i
+Rand for i32	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/rand_impls.rs	/^impl Rand for i32 {$/;"	i
+Rand for i64	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/rand_impls.rs	/^impl Rand for i64 {$/;"	i
+Rand for i8	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/rand_impls.rs	/^impl Rand for i8 {$/;"	i
+Rand for isize	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/rand_impls.rs	/^impl Rand for isize {$/;"	i
+Rand for u16	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/rand_impls.rs	/^impl Rand for u16 {$/;"	i
+Rand for u32	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/rand_impls.rs	/^impl Rand for u32 {$/;"	i
+Rand for u64	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/rand_impls.rs	/^impl Rand for u64 {$/;"	i
+Rand for u8	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/rand_impls.rs	/^impl Rand for u8 {$/;"	i
+Rand for usize	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/rand_impls.rs	/^impl Rand for usize {$/;"	i
+RandSample	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/distributions/mod.rs	/^impl<Sup> RandSample<Sup> {$/;"	i
+RandSample	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/distributions/mod.rs	/^pub struct RandSample<Sup> {$/;"	s
+Range	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/distributions/range.rs	/^impl<X: SampleRange + PartialOrd> Range<X> {$/;"	i
+Range	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/distributions/range.rs	/^pub struct Range<X> {$/;"	s
+ReadRng	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/read.rs	/^impl<R: Read> ReadRng<R> {$/;"	i
+ReadRng	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/read.rs	/^pub struct ReadRng<R> {$/;"	s
+ReseedWithDefault	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/reseeding.rs	/^pub struct ReseedWithDefault;$/;"	s
+Reseeder	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/reseeding.rs	/^pub trait Reseeder<R> {$/;"	t
+Reseeder for ReseedWithDefault	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/reseeding.rs	/^impl<R: Rng + Default> Reseeder<R> for ReseedWithDefault {$/;"	i
+ReseedingRng	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/reseeding.rs	/^pub struct ReseedingRng<R, Rsdr> {$/;"	s
+Rng	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/lib.rs	/^impl<'a, R: ?Sized> Rng for &'a mut R where R: Rng {$/;"	i
+Rng	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/lib.rs	/^pub trait Rng {$/;"	t
+Rng for Box	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/lib.rs	/^impl<R: ?Sized> Rng for Box<R> where R: Rng {$/;"	i
+Rng for ChaChaRng	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/chacha.rs	/^impl Rng for ChaChaRng {$/;"	i
+Rng for ConstRng	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/lib.rs	/^    impl Rng for ConstRng {$/;"	i
+Rng for ConstantRng	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/rand_impls.rs	/^    impl Rng for ConstantRng {$/;"	i
+Rng for Counter	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/reseeding.rs	/^    impl Rng for Counter {$/;"	i
+Rng for CountingRng	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/distributions/mod.rs	/^    impl Rng for CountingRng {$/;"	i
+Rng for Isaac64Rng	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/isaac.rs	/^impl Rng for Isaac64Rng {$/;"	i
+Rng for IsaacRng	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/isaac.rs	/^impl Rng for IsaacRng {$/;"	i
+Rng for MyRng	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/lib.rs	/^    impl<R: Rng> Rng for MyRng<R> {$/;"	i
+Rng for OsRng	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/os.rs	/^    impl Rng for OsRng {$/;"	i
+Rng for OsRng	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/os.rs	/^impl Rng for OsRng {$/;"	i
+Rng for ReadRng	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/read.rs	/^impl<R: Read> Rng for ReadRng<R> {$/;"	i
+Rng for StdRng	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/lib.rs	/^impl Rng for StdRng {$/;"	i
+Rng for ThreadRng	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/lib.rs	/^impl Rng for ThreadRng {$/;"	i
+Rng for XorShiftRng	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/lib.rs	/^impl Rng for XorShiftRng {$/;"	i
+SCALE	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/distributions/mod.rs	/^    const SCALE: f64 = (1u64 << 53) as f64;$/;"	c
+SCALE	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/lib.rs	/^        const SCALE: f32 = (1u64 << MANTISSA_BITS) as f32;$/;"	c
+SCALE	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/lib.rs	/^        const SCALE: f64 = (1u64 << MANTISSA_BITS) as f64;$/;"	c
+SCALE	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/rand_impls.rs	/^            const SCALE: $ty = (1u64 << $mantissa_bits) as $ty;$/;"	c
+STATE_WORDS	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/chacha.rs	/^const STATE_WORDS  : usize = 16;$/;"	c
+Sample	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/distributions/mod.rs	/^pub trait Sample<Support> {$/;"	t
+Sample for ChiSquared	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/distributions/gamma.rs	/^impl Sample<f64> for ChiSquared {$/;"	i
+Sample for Exp	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/distributions/exponential.rs	/^impl Sample<f64> for Exp {$/;"	i
+Sample for FisherF	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/distributions/gamma.rs	/^impl Sample<f64> for FisherF {$/;"	i
+Sample for Gamma	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/distributions/gamma.rs	/^impl Sample<f64> for Gamma {$/;"	i
+Sample for GammaLargeShape	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/distributions/gamma.rs	/^impl Sample<f64> for GammaLargeShape {$/;"	i
+Sample for GammaSmallShape	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/distributions/gamma.rs	/^impl Sample<f64> for GammaSmallShape {$/;"	i
+Sample for LogNormal	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/distributions/normal.rs	/^impl Sample<f64> for LogNormal {$/;"	i
+Sample for Normal	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/distributions/normal.rs	/^impl Sample<f64> for Normal {$/;"	i
+Sample for RandSample	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/distributions/mod.rs	/^impl<Sup: Rand> Sample<Sup> for RandSample<Sup> {$/;"	i
+Sample for Range	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/distributions/range.rs	/^impl<Sup: SampleRange> Sample<Sup> for Range<Sup> {$/;"	i
+Sample for StudentT	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/distributions/gamma.rs	/^impl Sample<f64> for StudentT {$/;"	i
+Sample for WeightedChoice	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/distributions/mod.rs	/^impl<'a, T: Clone> Sample<T> for WeightedChoice<'a, T> {$/;"	i
+SampleRange	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/distributions/range.rs	/^        impl SampleRange for $ty {$/;"	i
+SampleRange	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/distributions/range.rs	/^pub trait SampleRange : Sized {$/;"	t
+SecRandom	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/os.rs	/^    enum SecRandom {}$/;"	g
+SecRandomCopyBytes	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/os.rs	/^        fn SecRandomCopyBytes(rnd: *const SecRandom,$/;"	f
+SeedableRng	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/lib.rs	/^pub trait SeedableRng<Seed>: Rng {$/;"	t
+SeedableRng for ChaChaRng	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/chacha.rs	/^impl<'a> SeedableRng<&'a [u32]> for ChaChaRng {$/;"	i
+SeedableRng for Counter	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/reseeding.rs	/^    impl SeedableRng<u32> for Counter {$/;"	i
+SeedableRng for Isaac64Rng	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/isaac.rs	/^impl<'a> SeedableRng<&'a [u64]> for Isaac64Rng {$/;"	i
+SeedableRng for IsaacRng	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/isaac.rs	/^impl<'a> SeedableRng<&'a [u32]> for IsaacRng {$/;"	i
+SeedableRng for StdRng	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/lib.rs	/^impl<'a> SeedableRng<&'a [usize]> for StdRng {$/;"	i
+SeedableRng for XorShiftRng	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/lib.rs	/^impl SeedableRng<[u32; 4]> for XorShiftRng {$/;"	i
+StandardNormal	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/distributions/normal.rs	/^pub struct StandardNormal(pub f64);$/;"	s
+StdRng	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/lib.rs	/^impl StdRng {$/;"	i
+StdRng	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/lib.rs	/^pub struct StdRng {$/;"	s
+StudentT	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/distributions/gamma.rs	/^impl StudentT {$/;"	i
+StudentT	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/distributions/gamma.rs	/^pub struct StudentT {$/;"	s
+SubCommand	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/clap-0.11.0/src/args/subcommand.rs	/^impl<'n, 'a> SubCommand<'n, 'a> {$/;"	i
+SubCommand	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/clap-0.11.0/src/args/subcommand.rs	/^pub struct SubCommand<'n, 'a> {$/;"	s
+Suit	/home/hendrik/code/rust/chess/src/piece.rs	/^pub enum Suit { King, Queen, Rook, Bishop, Knight, Pawn }$/;"	g
+THREAD_RNG_RESEED_THRESHOLD	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/lib.rs	/^const THREAD_RNG_RESEED_THRESHOLD: u64 = 32_768;$/;"	c
+ThreadRng	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/lib.rs	/^pub struct ThreadRng {$/;"	s
+ThreadRngInner	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/lib.rs	/^type ThreadRngInner = reseeding::ReseedingRng<StdRng, ThreadRngReseeder>;$/;"	T
+ThreadRngReseeder	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/lib.rs	/^struct ThreadRngReseeder;$/;"	s
+UsageParser	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/clap-0.11.0/src/usageparser.rs	/^impl<'u> UsageParser<'u> {$/;"	i
+UsageParser	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/clap-0.11.0/src/usageparser.rs	/^pub struct UsageParser<'u> {$/;"	s
+UsageToken	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/clap-0.11.0/src/usageparser.rs	/^pub enum UsageToken<'u> {$/;"	g
+Val1	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/clap-0.11.0/src/lib.rs	/^        enum Val1 {$/;"	g
+Val2	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/clap-0.11.0/src/lib.rs	/^        pub enum Val2 {$/;"	g
+Val3	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/clap-0.11.0/src/lib.rs	/^        enum Val3 {$/;"	g
+Val4	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/clap-0.11.0/src/lib.rs	/^        pub enum Val4 {$/;"	g
+WH_BISHOP	/home/hendrik/code/rust/chess/src/board.rs	/^pub const WH_BISHOP :Piece = Piece{ sym : '♗', color: Color::White, piece: Suit::Bishop };$/;"	c
+WH_KING	/home/hendrik/code/rust/chess/src/board.rs	/^pub const WH_KING   :Piece = Piece{ sym : '♔', color: Color::White, piece: Suit::King   };$/;"	c
+WH_KNIGHT	/home/hendrik/code/rust/chess/src/board.rs	/^pub const WH_KNIGHT :Piece = Piece{ sym : '♘', color: Color::White, piece: Suit::Knight };$/;"	c
+WH_PAWN	/home/hendrik/code/rust/chess/src/board.rs	/^pub const WH_PAWN   :Piece = Piece{ sym : '♙', color: Color::White, piece: Suit::Pawn   };$/;"	c
+WH_QUEEN	/home/hendrik/code/rust/chess/src/board.rs	/^pub const WH_QUEEN  :Piece = Piece{ sym : '♕', color: Color::White, piece: Suit::Queen  };$/;"	c
+WH_ROOK	/home/hendrik/code/rust/chess/src/board.rs	/^pub const WH_ROOK   :Piece = Piece{ sym : '♖', color: Color::White, piece: Suit::Rook   };$/;"	c
+Weighted	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/distributions/mod.rs	/^pub struct Weighted<T> {$/;"	s
+WeightedChoice	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/distributions/mod.rs	/^impl<'a, T: Clone> WeightedChoice<'a, T> {$/;"	i
+WeightedChoice	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/distributions/mod.rs	/^pub struct WeightedChoice<'a, T:'a> {$/;"	s
+XorShiftRng	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/lib.rs	/^impl XorShiftRng {$/;"	i
+XorShiftRng	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/lib.rs	/^pub struct XorShiftRng {$/;"	s
+ZIG_EXP_F	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/distributions/ziggurat_tables.rs	/^pub static ZIG_EXP_F: [f64; 257] =$/;"	c
+ZIG_EXP_R	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/distributions/ziggurat_tables.rs	/^pub const ZIG_EXP_R: f64 = 7.697117470131050077;$/;"	c
+ZIG_EXP_X	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/distributions/ziggurat_tables.rs	/^pub static ZIG_EXP_X: [f64; 257] =$/;"	c
+ZIG_NORM_F	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/distributions/ziggurat_tables.rs	/^pub static ZIG_NORM_F: [f64; 257] =$/;"	c
+ZIG_NORM_R	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/distributions/ziggurat_tables.rs	/^pub const ZIG_NORM_R: f64 = 3.654152885361008796;$/;"	c
+ZIG_NORM_X	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/distributions/ziggurat_tables.rs	/^pub static ZIG_NORM_X: [f64; 257] =$/;"	c
+ZigTable	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/distributions/ziggurat_tables.rs	/^pub type ZigTable = &'static [f64; 257];$/;"	T
+about	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/clap-0.11.0/src/app.rs	/^    pub fn about(mut self, a: &'ab str) -> App<'a, 'v, 'ab, 'u, 'h, 'ar> {$/;"	f
+add	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/clap-0.11.0/src/args/group.rs	/^    pub fn add(mut self, n: &'ar str) -> ArgGroup<'n, 'ar> {$/;"	f
+add_all	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/clap-0.11.0/src/args/group.rs	/^    pub fn add_all(mut self, ns: Vec<&'ar str>) -> ArgGroup<'n, 'ar> {$/;"	f
+add_arg	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/clap-0.11.0/src/app.rs	/^    fn add_arg(&mut self, a: Arg<'ar, 'ar, 'ar, 'ar, 'ar, 'ar>) {$/;"	f
+add_multiple_arg	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/clap-0.11.0/src/lib.rs	/^	fn add_multiple_arg() {$/;"	f
+after_help	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/clap-0.11.0/src/app.rs	/^    pub fn after_help(mut self, h: &'h str) -> App<'a, 'v, 'ab, 'u, 'h, 'ar> {$/;"	f
+app	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/clap-0.11.0/src/lib.rs	/^mod app;$/;"	m
+arg	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/clap-0.11.0/src/app.rs	/^    pub fn arg(mut self, a: Arg<'ar, 'ar, 'ar, 'ar, 'ar, 'ar>) -> App<'a, 'v, 'ab, 'u, 'h, 'ar> {$/;"	f
+arg	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/clap-0.11.0/src/args/mod.rs	/^mod arg;$/;"	m
+arg_enum	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/clap-0.11.0/src/macros.rs	/^macro_rules! arg_enum {$/;"	d
+arg_from_usage	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/clap-0.11.0/src/app.rs	/^    pub fn arg_from_usage(mut self, usage: &'ar str) -> App<'a, 'v, 'ab, 'u, 'h, 'ar> {$/;"	f
+arg_group	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/clap-0.11.0/src/app.rs	/^    pub fn arg_group(mut self, group: ArgGroup<'ar, 'ar>) -> App<'a, 'v, 'ab, 'u, 'h, 'ar> {$/;"	f
+arg_groups	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/clap-0.11.0/src/app.rs	/^    pub fn arg_groups(mut self, groups: Vec<ArgGroup<'ar, 'ar>>) -> App<'a, 'v, 'ab, 'u, 'h, 'ar> {$/;"	f
+arg_required_else_help	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/clap-0.11.0/src/app.rs	/^    pub fn arg_required_else_help(mut self, tf: bool) -> App<'a, 'v, 'ab, 'u, 'h, 'ar> {$/;"	f
+argbuilder	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/clap-0.11.0/src/args/mod.rs	/^mod argbuilder;$/;"	m
+argmatches	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/clap-0.11.0/src/args/mod.rs	/^mod argmatches;$/;"	m
+args	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/clap-0.11.0/src/app.rs	/^    pub fn args(mut self, args: Vec<Arg<'ar, 'ar, 'ar, 'ar, 'ar, 'ar>>)$/;"	f
+args	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/clap-0.11.0/src/lib.rs	/^mod args;$/;"	m
+args_from_usage	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/clap-0.11.0/src/app.rs	/^    pub fn args_from_usage(mut self, usage: &'ar str) -> App<'a, 'v, 'ab, 'u, 'h, 'ar> {$/;"	f
+array_impl	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/rand_impls.rs	/^macro_rules! array_impl {$/;"	d
+author	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/clap-0.11.0/src/app.rs	/^    pub fn author(mut self, a: &'a str) -> App<'a, 'v, 'ab, 'u, 'h, 'ar> {$/;"	f
+bench_gamma_large_shape	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/benches/distributions/gamma.rs	/^fn bench_gamma_large_shape(b: &mut Bencher) {$/;"	f
+bench_gamma_small_shape	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/benches/distributions/gamma.rs	/^fn bench_gamma_small_shape(b: &mut Bencher) {$/;"	f
+bin_name	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/clap-0.11.0/src/app.rs	/^    pub fn bin_name(mut self, a: &str) -> App<'a, 'v, 'ab, 'u, 'h, 'ar> {$/;"	f
+blacklisted_from	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/clap-0.11.0/src/app.rs	/^    fn blacklisted_from(&self, name: &str, matches: &ArgMatches) -> Option<String> {$/;"	f
+board	/home/hendrik/code/rust/chess/src/main.rs	/^mod board;$/;"	m
+chacha	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/lib.rs	/^pub mod chacha;$/;"	m
+char	/home/hendrik/code/rust/chess/src/board.rs	/^    pub fn char(self) -> char{$/;"	f
+check_for_help_and_version	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/clap-0.11.0/src/app.rs	/^    fn check_for_help_and_version(&self, arg: char) {$/;"	f
+choose	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/lib.rs	/^    fn choose<'a, T>(&mut self, values: &'a [T]) -> Option<&'a T> where Self: Sized {$/;"	f
+clone	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/distributions/mod.rs	/^    fn clone(&self) -> Self { *self }$/;"	f
+clone	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/isaac.rs	/^    fn clone(&self) -> Isaac64Rng {$/;"	f
+clone	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/isaac.rs	/^    fn clone(&self) -> IsaacRng {$/;"	f
+conflicts_with	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/clap-0.11.0/src/args/arg.rs	/^    pub fn conflicts_with(mut self, name: &'r str) -> Arg<'n, 'l, 'h, 'g, 'p, 'r> {$/;"	f
+conflicts_with	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/clap-0.11.0/src/args/group.rs	/^    pub fn conflicts_with(mut self, n: &'ar str) -> ArgGroup<'n, 'ar> {$/;"	f
+conflicts_with_all	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/clap-0.11.0/src/args/arg.rs	/^    pub fn conflicts_with_all<T, I>(mut self, names: I)$/;"	f
+conflicts_with_all	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/clap-0.11.0/src/args/group.rs	/^    pub fn conflicts_with_all(mut self, ns: Vec<&'ar str>) -> ArgGroup<'n, 'ar> {$/;"	f
+construct_range	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/distributions/range.rs	/^            fn construct_range(low: $ty, high: $ty) -> Range<$ty> {$/;"	f
+construct_range	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/distributions/range.rs	/^    fn construct_range(low: Self, high: Self) -> Range<Self>;$/;"	f
+core	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/chacha.rs	/^fn core(output: &mut [w32; STATE_WORDS], input: &[w32; STATE_WORDS]) {$/;"	f
+crate_version	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/clap-0.11.0/src/macros.rs	/^macro_rules! crate_version {$/;"	d
+create_app	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/clap-0.11.0/src/lib.rs	/^	fn create_app() {$/;"	f
+create_args_tabs_usage	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/clap-0.11.0/src/lib.rs	/^	fn create_args_tabs_usage() {$/;"	f
+create_flag	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/clap-0.11.0/src/lib.rs	/^	fn create_flag() {$/;"	f
+create_flag_usage	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/clap-0.11.0/src/lib.rs	/^	fn create_flag_usage() {$/;"	f
+create_help_and_version	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/clap-0.11.0/src/app.rs	/^    fn create_help_and_version(&mut self) {$/;"	f
+create_multiple_subcommands	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/clap-0.11.0/src/lib.rs	/^	fn create_multiple_subcommands() {$/;"	f
+create_option	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/clap-0.11.0/src/lib.rs	/^	fn create_option() {$/;"	f
+create_option_usage	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/clap-0.11.0/src/lib.rs	/^	fn create_option_usage() {$/;"	f
+create_option_with_vals	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/clap-0.11.0/src/lib.rs	/^    fn create_option_with_vals() {$/;"	f
+create_positional	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/clap-0.11.0/src/lib.rs	/^	fn create_positional() {$/;"	f
+create_positional_usage	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/clap-0.11.0/src/lib.rs	/^	fn create_positional_usage() {$/;"	f
+create_subcommand	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/clap-0.11.0/src/lib.rs	/^	fn create_subcommand() {$/;"	f
+create_usage	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/clap-0.11.0/src/app.rs	/^    fn create_usage(&self, matches: Option<Vec<&'ar str>>) -> String {$/;"	f
+current_player	/home/hendrik/code/rust/chess/src/gamestate.rs	/^    pub fn current_player(&self) -> &Player {$/;"	f
+default	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/reseeding.rs	/^        fn default() -> Counter {$/;"	f
+default	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/reseeding.rs	/^    fn default() -> ReseedWithDefault { ReseedWithDefault }$/;"	f
+did_you_mean	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/clap-0.11.0/src/app.rs	/^fn did_you_mean<'a, T, I>(_: &str, _: I) -> Option<&'a str>$/;"	f
+did_you_mean	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/clap-0.11.0/src/app.rs	/^fn did_you_mean<'a, T, I>(v: &str, possible_values: I) -> Option<&'a str>$/;"	f
+did_you_mean_suffix	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/clap-0.11.0/src/app.rs	/^    fn did_you_mean_suffix<'z, T, I>(arg: &str, values: I, style: DidYouMeanMessageStyle)$/;"	f
+display	/home/hendrik/code/rust/chess/src/main.rs	/^mod display;$/;"	m
+distributions	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/benches/bench.rs	/^mod distributions;$/;"	m
+distributions	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/lib.rs	/^pub mod distributions;$/;"	m
+double_round	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/chacha.rs	/^macro_rules! double_round{$/;"	d
+drop	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/os.rs	/^        fn drop(&mut self) {$/;"	f
+empty_values	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/clap-0.11.0/src/args/arg.rs	/^    pub fn empty_values(mut self, ev: bool) -> Arg<'n, 'l, 'h, 'g, 'p, 'r> {$/;"	f
+error_on_no_subcommand	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/clap-0.11.0/src/app.rs	/^    pub fn error_on_no_subcommand(mut self, n: bool) -> App<'a, 'v, 'ab, 'u, 'h, 'ar> {$/;"	f
+exit	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/clap-0.11.0/src/app.rs	/^    fn exit(&self, status: i32) {$/;"	f
+exponential	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/benches/distributions/mod.rs	/^mod exponential;$/;"	m
+exponential	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/distributions/mod.rs	/^pub mod exponential;$/;"	m
+field_contains_opponent	/home/hendrik/code/rust/chess/src/gamestate.rs	/^    pub fn field_contains_opponent(&self, pos:Point, player:&Player) -> bool {$/;"	f
+fill	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/read.rs	/^fn fill(r: &mut Read, mut buf: &mut [u8]) -> io::Result<()> {$/;"	f
+fill_bytes	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/lib.rs	/^    fn fill_bytes(&mut self, bytes: &mut [u8]) {$/;"	f
+fill_bytes	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/lib.rs	/^    fn fill_bytes(&mut self, dest: &mut [u8]) {$/;"	f
+fill_bytes	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/os.rs	/^        fn fill_bytes(&mut self, v: &mut [u8]) {$/;"	f
+fill_bytes	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/os.rs	/^    fn fill_bytes(&mut self, v: &mut [u8]) { self.0.fill_bytes(v) }$/;"	f
+fill_bytes	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/read.rs	/^    fn fill_bytes(&mut self, v: &mut [u8]) {$/;"	f
+fill_bytes	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/reseeding.rs	/^    fn fill_bytes(&mut self, dest: &mut [u8]) {$/;"	f
+flag	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/clap-0.11.0/src/args/argbuilder/mod.rs	/^mod flag;$/;"	m
+float_impl	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/distributions/range.rs	/^macro_rules! float_impl {$/;"	d
+float_impls	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/rand_impls.rs	/^macro_rules! float_impls {$/;"	d
+floating_point_edge_cases	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/rand_impls.rs	/^    fn floating_point_edge_cases() {$/;"	f
+fmt	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/clap-0.11.0/src/args/argbuilder/flag.rs	/^    fn fmt(&self, f: &mut Formatter) -> Result {$/;"	f
+fmt	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/clap-0.11.0/src/args/argbuilder/option.rs	/^    fn fmt(&self, f: &mut Formatter) -> Result {$/;"	f
+fmt	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/clap-0.11.0/src/args/argbuilder/positional.rs	/^    fn fmt(&self, f: &mut Formatter) -> Result {$/;"	f
+fmt	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/clap-0.11.0/src/args/group.rs	/^    fn fmt(&self, f: &mut Formatter) -> Result {$/;"	f
+fmt	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/clap-0.11.0/src/fmt.rs	/^    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {$/;"	f
+fmt	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/clap-0.11.0/src/lib.rs	/^mod fmt;$/;"	m
+fmt	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/clap-0.11.0/src/macros.rs	/^            fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {$/;"	f
+fmt	/home/hendrik/code/rust/chess/src/display.rs	/^    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {$/;"	f
+fmt::Display for ChessPiece	/home/hendrik/code/rust/chess/src/display.rs	/^impl fmt::Display for ChessPiece$/;"	i
+fmt::Display for Color	/home/hendrik/code/rust/chess/src/display.rs	/^impl fmt::Display for Color$/;"	i
+fmt::Display for Format	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/clap-0.11.0/src/fmt.rs	/^impl<T: fmt::Display> fmt::Display for Format<T> {$/;"	i
+fmt::Display for Piece	/home/hendrik/code/rust/chess/src/display.rs	/^impl fmt::Display for Piece$/;"	i
+fmt::Display for Point	/home/hendrik/code/rust/chess/src/display.rs	/^impl fmt::Display for Point$/;"	i
+for_match	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/clap-0.11.0/src/macros.rs	/^macro_rules! for_match {$/;"	d
+format	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/clap-0.11.0/src/fmt.rs	/^    fn format(&self) -> &T {$/;"	f
+format	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/clap-0.11.0/src/fmt.rs	/^    fn format(&self) -> ANSIString {$/;"	f
+from	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/clap-0.11.0/src/args/arg.rs	/^    fn from(a: &'z Arg<'n, 'l, 'h, 'g, 'p, 'r>) -> Arg<'n, 'l, 'h, 'g, 'p, 'r> {$/;"	f
+from_seed	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/chacha.rs	/^    fn from_seed(seed: &'a [u32]) -> ChaChaRng {$/;"	f
+from_seed	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/isaac.rs	/^    fn from_seed(seed: &'a [u32]) -> IsaacRng {$/;"	f
+from_seed	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/isaac.rs	/^    fn from_seed(seed: &'a [u64]) -> Isaac64Rng {$/;"	f
+from_seed	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/lib.rs	/^    fn from_seed(seed: &'a [usize]) -> StdRng {$/;"	f
+from_seed	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/lib.rs	/^    fn from_seed(seed: Seed) -> Self;$/;"	f
+from_seed	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/lib.rs	/^    fn from_seed(seed: [u32; 4]) -> XorShiftRng {$/;"	f
+from_seed	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/reseeding.rs	/^        fn from_seed(seed: u32) -> Counter {$/;"	f
+from_seed	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/reseeding.rs	/^    fn from_seed((rsdr, seed): (Rsdr, S)) -> ReseedingRng<R, Rsdr> {$/;"	f
+from_str	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/clap-0.11.0/src/macros.rs	/^            fn from_str(s: &str) -> Result<Self,Self::Err> {$/;"	f
+from_usage	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/clap-0.11.0/src/args/arg.rs	/^    pub fn from_usage(u: &'n str) -> Arg<'n, 'n, 'n, 'g, 'p, 'r> {$/;"	f
+gamestate	/home/hendrik/code/rust/chess/src/main.rs	/^mod gamestate;$/;"	m
+gamma	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/benches/distributions/mod.rs	/^mod gamma;$/;"	m
+gamma	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/distributions/mod.rs	/^pub mod gamma;$/;"	m
+gen	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/lib.rs	/^    fn gen<T: Rand>(&mut self) -> T where Self: Sized {$/;"	f
+gen_ascii_chars	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/lib.rs	/^    fn gen_ascii_chars<'a>(&'a mut self) -> AsciiGenerator<'a, Self> where Self: Sized {$/;"	f
+gen_iter	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/lib.rs	/^    fn gen_iter<'a, T: Rand>(&'a mut self) -> Generator<'a, T, Self> where Self: Sized {$/;"	f
+gen_range	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/lib.rs	/^    fn gen_range<T: PartialOrd + SampleRange>(&mut self, low: T, high: T) -> T where Self: Sized {$/;"	f
+gen_weighted_bool	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/lib.rs	/^    fn gen_weighted_bool(&mut self, n: u32) -> bool where Self: Sized {$/;"	f
+get_field	/home/hendrik/code/rust/chess/src/gamestate.rs	/^    pub fn get_field(&self,pos:Point) -> Field {$/;"	f
+get_group_members	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/clap-0.11.0/src/app.rs	/^    fn get_group_members(&self, group: &str) -> Vec<String> {$/;"	f
+get_group_members_names	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/clap-0.11.0/src/app.rs	/^    fn get_group_members_names(&self, group: &'ar str) -> Vec<&'ar str> {$/;"	f
+get_help	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/clap-0.11.0/src/macros.rs	/^macro_rules! get_help {$/;"	d
+get_matches	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/clap-0.11.0/src/app.rs	/^    pub fn get_matches(mut self) -> ArgMatches<'ar, 'ar> {$/;"	f
+get_matches_from	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/clap-0.11.0/src/app.rs	/^    fn get_matches_from(&mut self, matches: &mut ArgMatches<'ar, 'ar>, it: &mut IntoIter<String>) {$/;"	f
+get_move_producer	/home/hendrik/code/rust/chess/src/gamestate.rs	/^    fn get_move_producer(&self, piece:ChessPiece) -> ProduceFn {$/;"	f
+get_required_from	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/clap-0.11.0/src/app.rs	/^    fn get_required_from(&self, mut reqs: Vec<&'ar str>) -> VecDeque<String> {$/;"	f
+get_spaces	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/clap-0.11.0/src/app.rs	/^    fn get_spaces(&self, num: usize) -> &'static str {$/;"	f
+getrandom	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/os.rs	/^    fn getrandom(_buf: &mut [u8]) -> libc::c_long { -1 }$/;"	f
+getrandom	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/os.rs	/^    fn getrandom(buf: &mut [u8]) -> libc::c_long {$/;"	f
+getrandom_fill_bytes	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/os.rs	/^    fn getrandom_fill_bytes(v: &mut [u8]) {$/;"	f
+getrandom_next_u32	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/os.rs	/^    fn getrandom_next_u32() -> u32 {$/;"	f
+getrandom_next_u64	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/os.rs	/^    fn getrandom_next_u64() -> u64 {$/;"	f
+global	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/clap-0.11.0/src/args/arg.rs	/^    pub fn global(mut self, g: bool) -> Arg<'n, 'l, 'h, 'g, 'p, 'r> {$/;"	f
+group	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/clap-0.11.0/src/args/arg.rs	/^    pub fn group(mut self, name: &'g str) -> Arg<'n, 'l, 'h, 'g, 'p, 'r> {$/;"	f
+group	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/clap-0.11.0/src/args/mod.rs	/^mod group;$/;"	m
+help	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/clap-0.11.0/src/args/arg.rs	/^    pub fn help(mut self, h: &'h str) -> Arg<'n, 'l, 'h, 'g, 'p, 'r> {$/;"	f
+help_short	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/clap-0.11.0/src/app.rs	/^    pub fn help_short(mut self, s: &str) -> App<'a, 'v, 'ab, 'u, 'h, 'ar> {$/;"	f
+imp	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/os.rs	/^mod imp {$/;"	m
+ind	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/isaac.rs	/^        macro_rules! ind {$/;"	d
+ind_sample	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/distributions/exponential.rs	/^    fn ind_sample<R: Rng>(&self, rng: &mut R) -> f64 {$/;"	f
+ind_sample	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/distributions/gamma.rs	/^    fn ind_sample<R: Rng>(&self, rng: &mut R) -> f64 {$/;"	f
+ind_sample	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/distributions/mod.rs	/^    fn ind_sample<R: Rng>(&self, &mut R) -> Support;$/;"	f
+ind_sample	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/distributions/mod.rs	/^    fn ind_sample<R: Rng>(&self, rng: &mut R) -> Sup {$/;"	f
+ind_sample	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/distributions/mod.rs	/^    fn ind_sample<R: Rng>(&self, rng: &mut R) -> T {$/;"	f
+ind_sample	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/distributions/normal.rs	/^    fn ind_sample<R: Rng>(&self, rng: &mut R) -> f64 {$/;"	f
+ind_sample	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/distributions/range.rs	/^    fn ind_sample<R: Rng>(&self, rng: &mut R) -> Sup {$/;"	f
+index	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/clap-0.11.0/src/args/arg.rs	/^    pub fn index(mut self, idx: u8) -> Arg<'n, 'l, 'h, 'g, 'p, 'r> {$/;"	f
+init	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/chacha.rs	/^    fn init(&mut self, key: &[u32; KEY_WORDS]) {$/;"	f
+init	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/isaac.rs	/^        macro_rules! init {$/;"	d
+init	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/isaac.rs	/^    fn init(&mut self, use_rsl: bool) {$/;"	f
+init_board	/home/hendrik/code/rust/chess/src/gamestate.rs	/^    pub fn init_board(&mut self) {$/;"	f
+integer_impl	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/distributions/range.rs	/^macro_rules! integer_impl {$/;"	d
+is_getrandom_available	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/os.rs	/^    fn is_getrandom_available() -> bool { false }$/;"	f
+is_getrandom_available	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/os.rs	/^    fn is_getrandom_available() -> bool {$/;"	f
+is_present	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/clap-0.11.0/src/args/argmatches.rs	/^    pub fn is_present<'na>(&self, name: &'na str) -> bool {$/;"	f
+isaac	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/isaac.rs	/^    fn isaac(&mut self) {$/;"	f
+isaac	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/lib.rs	/^pub mod isaac;$/;"	m
+isaac64	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/isaac.rs	/^    fn isaac64(&mut self) {$/;"	f
+iter_eq	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/lib.rs	/^    pub fn iter_eq<I, J>(i: I, j: J) -> bool$/;"	f
+kSecRandomDefault	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/os.rs	/^    const kSecRandomDefault: *const SecRandom = 0 as *const SecRandom;$/;"	c
+long	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/clap-0.11.0/src/args/arg.rs	/^    pub fn long(mut self, l: &'l str) -> Arg<'n, 'l, 'h, 'g, 'p, 'r> {$/;"	f
+macros	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/clap-0.11.0/src/lib.rs	/^mod macros;$/;"	m
+main	/home/hendrik/code/rust/chess/src/main.rs	/^fn main() {$/;"	f
+matchedarg	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/clap-0.11.0/src/args/mod.rs	/^mod matchedarg;$/;"	m
+max_values	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/clap-0.11.0/src/args/arg.rs	/^    pub fn max_values(mut self, qty: u8) -> Arg<'n, 'l, 'h, 'g, 'p, 'r> {$/;"	f
+memloop	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/isaac.rs	/^            macro_rules! memloop {$/;"	d
+min_values	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/clap-0.11.0/src/args/arg.rs	/^    pub fn min_values(mut self, qty: u8) -> Arg<'n, 'l, 'h, 'g, 'p, 'r> {$/;"	f
+mix	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/isaac.rs	/^        macro_rules! mix {$/;"	d
+multiple	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/clap-0.11.0/src/args/arg.rs	/^    pub fn multiple(mut self, multi: bool) -> Arg<'n, 'l, 'h, 'g, 'p, 'r> {$/;"	f
+mutually_excludes	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/clap-0.11.0/src/args/arg.rs	/^    pub fn mutually_excludes(mut self, name: &'r str) -> Arg<'n, 'l, 'h, 'g, 'p, 'r> {$/;"	f
+mutually_excludes_all	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/clap-0.11.0/src/args/arg.rs	/^    pub fn mutually_excludes_all<T, I>(mut self, names: I)$/;"	f
+nacl_interface_query	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/os.rs	/^        fn nacl_interface_query(name: *const libc::c_char,$/;"	f
+new	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/clap-0.11.0/src/app.rs	/^    pub fn new(n: &'ar str) -> App<'a, 'v, 'ab, 'u, 'h, 'ar> {$/;"	f
+new	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/clap-0.11.0/src/args/arg.rs	/^    pub fn new(n: &'n str) -> Arg<'n, 'l, 'h, 'g, 'p, 'r> {$/;"	f
+new	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/clap-0.11.0/src/args/argmatches.rs	/^    pub fn new() -> ArgMatches<'n, 'a> {$/;"	f
+new	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/clap-0.11.0/src/args/subcommand.rs	/^    pub fn new<'au, 'v, 'ab, 'u, 'h, 'ar>(name: &'ar str) -> App<'au, 'v, 'ab, 'u, 'h, 'ar> {$/;"	f
+new	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/distributions/exponential.rs	/^    pub fn new(lambda: f64) -> Exp {$/;"	f
+new	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/distributions/gamma.rs	/^    pub fn new(k: f64) -> ChiSquared {$/;"	f
+new	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/distributions/gamma.rs	/^    pub fn new(m: f64, n: f64) -> FisherF {$/;"	f
+new	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/distributions/gamma.rs	/^    pub fn new(n: f64) -> StudentT {$/;"	f
+new	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/distributions/gamma.rs	/^    pub fn new(shape: f64, scale: f64) -> Gamma {$/;"	f
+new	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/distributions/mod.rs	/^    pub fn new() -> RandSample<Sup> {$/;"	f
+new	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/distributions/mod.rs	/^    pub fn new(items: &'a mut [Weighted<T>]) -> WeightedChoice<'a, T> {$/;"	f
+new	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/distributions/normal.rs	/^    pub fn new(mean: f64, std_dev: f64) -> LogNormal {$/;"	f
+new	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/distributions/normal.rs	/^    pub fn new(mean: f64, std_dev: f64) -> Normal {$/;"	f
+new	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/distributions/range.rs	/^    pub fn new(low: X, high: X) -> Range<X> {$/;"	f
+new	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/lib.rs	/^    pub fn new() -> io::Result<StdRng> {$/;"	f
+new	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/os.rs	/^        pub fn new() -> io::Result<OsRng> {$/;"	f
+new	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/os.rs	/^    pub fn new() -> io::Result<OsRng> {$/;"	f
+new	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/read.rs	/^    pub fn new(r: R) -> ReadRng<R> {$/;"	f
+new	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/reseeding.rs	/^    pub fn new(rng: R, generation_threshold: u64, reseeder: Rsdr) -> ReseedingRng<R,Rsdr> {$/;"	f
+new	/home/hendrik/code/rust/chess/src/gamestate.rs	/^    pub fn new() -> GameState {$/;"	f
+new_raw	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/distributions/gamma.rs	/^    fn new_raw(shape: f64, scale: f64) -> GammaLargeShape {$/;"	f
+new_raw	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/distributions/gamma.rs	/^    fn new_raw(shape: f64, scale: f64) -> GammaSmallShape {$/;"	f
+new_unseeded	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/chacha.rs	/^    pub fn new_unseeded() -> ChaChaRng {$/;"	f
+new_unseeded	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/isaac.rs	/^    pub fn new_unseeded() -> Isaac64Rng {$/;"	f
+new_unseeded	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/isaac.rs	/^    pub fn new_unseeded() -> IsaacRng {$/;"	f
+new_unseeded	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/lib.rs	/^    pub fn new_unseeded() -> XorShiftRng {$/;"	f
+next	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/clap-0.11.0/src/usageparser.rs	/^    fn next(&mut self) -> Option<UsageToken<'u>> {$/;"	f
+next	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/lib.rs	/^            fn next<T: Rng>(t: &mut T) -> u32 {$/;"	f
+next	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/lib.rs	/^    fn next(&mut self) -> Option<T> {$/;"	f
+next	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/lib.rs	/^    fn next(&mut self) -> Option<char> {$/;"	f
+next_f32	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/lib.rs	/^    fn next_f32(&mut self) -> f32 {$/;"	f
+next_f64	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/lib.rs	/^    fn next_f64(&mut self) -> f64 {$/;"	f
+next_u32	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/chacha.rs	/^    fn next_u32(&mut self) -> u32 {$/;"	f
+next_u32	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/distributions/mod.rs	/^        fn next_u32(&mut self) -> u32 {$/;"	f
+next_u32	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/isaac.rs	/^    fn next_u32(&mut self) -> u32 {$/;"	f
+next_u32	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/lib.rs	/^        fn next_u32(&mut self) -> u32 { self.i as u32 }$/;"	f
+next_u32	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/lib.rs	/^        fn next_u32(&mut self) -> u32 {$/;"	f
+next_u32	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/lib.rs	/^    fn next_u32(&mut self) -> u32 {$/;"	f
+next_u32	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/lib.rs	/^    fn next_u32(&mut self) -> u32;$/;"	f
+next_u32	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/os.rs	/^        fn next_u32(&mut self) -> u32 {$/;"	f
+next_u32	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/os.rs	/^    fn next_u32(&mut self) -> u32 { self.0.next_u32() }$/;"	f
+next_u32	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/rand_impls.rs	/^        fn next_u32(&mut self) -> u32 {$/;"	f
+next_u32	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/read.rs	/^    fn next_u32(&mut self) -> u32 {$/;"	f
+next_u32	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/reseeding.rs	/^        fn next_u32(&mut self) -> u32 {$/;"	f
+next_u32	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/reseeding.rs	/^    fn next_u32(&mut self) -> u32 {$/;"	f
+next_u64	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/distributions/mod.rs	/^        fn next_u64(&mut self) -> u64 {$/;"	f
+next_u64	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/isaac.rs	/^    fn next_u64(&mut self) -> u64 {$/;"	f
+next_u64	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/lib.rs	/^        fn next_u64(&mut self) -> u64 { self.i }$/;"	f
+next_u64	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/lib.rs	/^    fn next_u64(&mut self) -> u64 {$/;"	f
+next_u64	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/os.rs	/^        fn next_u64(&mut self) -> u64 {$/;"	f
+next_u64	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/os.rs	/^    fn next_u64(&mut self) -> u64 { self.0.next_u64() }$/;"	f
+next_u64	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/rand_impls.rs	/^        fn next_u64(&mut self) -> u64 {$/;"	f
+next_u64	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/read.rs	/^    fn next_u64(&mut self) -> u64 {$/;"	f
+next_u64	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/reseeding.rs	/^    fn next_u64(&mut self) -> u64 {$/;"	f
+normal	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/benches/distributions/mod.rs	/^mod normal;$/;"	m
+normal	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/distributions/mod.rs	/^pub mod normal;$/;"	m
+number_of_values	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/clap-0.11.0/src/args/arg.rs	/^    pub fn number_of_values(mut self, qty: u8) -> Arg<'n, 'l, 'h, 'g, 'p, 'r> {$/;"	f
+occurrences_of	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/clap-0.11.0/src/args/argmatches.rs	/^    pub fn occurrences_of<'na>(&self, name: &'na str) -> u8 {$/;"	f
+option	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/clap-0.11.0/src/args/argbuilder/mod.rs	/^mod option;$/;"	m
+os	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/lib.rs	/^pub mod os;$/;"	m
+parse_group_reqs	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/clap-0.11.0/src/macros.rs	/^macro_rules! parse_group_reqs {$/;"	d
+parse_long_arg	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/clap-0.11.0/src/app.rs	/^    fn parse_long_arg(&mut self, matches: &mut ArgMatches<'ar, 'ar> ,full_arg: &String)$/;"	f
+parse_short_arg	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/clap-0.11.0/src/app.rs	/^    fn parse_short_arg(&mut self, matches: &mut ArgMatches<'ar, 'ar> ,full_arg: &String)$/;"	f
+parse_single_short_flag	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/clap-0.11.0/src/app.rs	/^    fn parse_single_short_flag(&mut self, matches: &mut ArgMatches<'ar, 'ar>, arg: char) -> bool {$/;"	f
+pdf	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/distributions/exponential.rs	/^        fn pdf(x: f64) -> f64 {$/;"	f
+pdf	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/distributions/normal.rs	/^        fn pdf(x: f64) -> f64 {$/;"	f
+performe_move	/home/hendrik/code/rust/chess/src/gamestate.rs	/^    pub fn performe_move(&mut self, index:usize) {$/;"	f
+piece	/home/hendrik/code/rust/chess/src/main.rs	/^mod piece;$/;"	m
+positional	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/clap-0.11.0/src/args/argbuilder/mod.rs	/^mod positional;$/;"	m
+possible_moves	/home/hendrik/code/rust/chess/src/gamestate.rs	/^    fn possible_moves(&self, player:&Player) -> Box<Vec<Move>> {$/;"	f
+possible_values	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/clap-0.11.0/src/args/arg.rs	/^    pub fn possible_values<T, I>(mut self, names: I)$/;"	f
+possible_values_error	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/clap-0.11.0/src/app.rs	/^    fn possible_values_error(&self, arg: &str, opt: &str, p_vals: &BTreeSet<&str>,$/;"	f
+print_board	/home/hendrik/code/rust/chess/src/gamestate.rs	/^    pub fn print_board(&self) {$/;"	f
+print_help	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/clap-0.11.0/src/app.rs	/^    fn print_help(&self) {$/;"	f
+print_usage	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/clap-0.11.0/src/app.rs	/^    fn print_usage(&self, more_info: bool, matches: Option<Vec<&str>>) {$/;"	f
+print_version	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/clap-0.11.0/src/app.rs	/^    fn print_version(&self, quit: bool) {$/;"	f
+produce_bishop_moves	/home/hendrik/code/rust/chess/src/gamestate.rs	/^    fn produce_bishop_moves(&self, pos:Point, player:&Player, moves: &mut Vec<Move>) {$/;"	f
+produce_king_moves	/home/hendrik/code/rust/chess/src/gamestate.rs	/^    fn produce_king_moves(&self, pos:Point, player:&Player, moves: &mut Vec<Move>) {$/;"	f
+produce_knight_moves	/home/hendrik/code/rust/chess/src/gamestate.rs	/^    fn produce_knight_moves(&self, pos:Point, player:&Player, moves: &mut Vec<Move>) {$/;"	f
+produce_moves_for_dir	/home/hendrik/code/rust/chess/src/gamestate.rs	/^    fn produce_moves_for_dir (&self, pos:Point, player:&Player, moves: &mut Vec<Move>, x_dir:i32,y_dir:i32, dist:i32) {$/;"	f
+produce_pawn_moves	/home/hendrik/code/rust/chess/src/gamestate.rs	/^    fn produce_pawn_moves(&self, pos:Point, player:&Player, moves: &mut Vec<Move>) {$/;"	f
+produce_queen_moves	/home/hendrik/code/rust/chess/src/gamestate.rs	/^    fn produce_queen_moves(&self, pos:Point, player:&Player, moves: &mut Vec<Move>) {$/;"	f
+produce_rook_moves	/home/hendrik/code/rust/chess/src/gamestate.rs	/^    fn produce_rook_moves(&self, pos:Point, player:&Player, moves: &mut Vec<Move>) {$/;"	f
+propogate_globals	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/clap-0.11.0/src/app.rs	/^    fn propogate_globals(&mut self) {$/;"	f
+quarter_round	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/chacha.rs	/^macro_rules! quarter_round{$/;"	d
+rand	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/chacha.rs	/^    fn rand<R: Rng>(other: &mut R) -> ChaChaRng {$/;"	f
+rand	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/distributions/exponential.rs	/^    fn rand<R:Rng>(rng: &mut R) -> Exp1 {$/;"	f
+rand	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/distributions/mod.rs	/^        fn rand<R: Rng>(_: &mut R) -> ConstRand {$/;"	f
+rand	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/distributions/normal.rs	/^    fn rand<R:Rng>(rng: &mut R) -> StandardNormal {$/;"	f
+rand	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/isaac.rs	/^    fn rand<R: Rng>(other: &mut R) -> Isaac64Rng {$/;"	f
+rand	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/isaac.rs	/^    fn rand<R: Rng>(other: &mut R) -> IsaacRng {$/;"	f
+rand	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/lib.rs	/^    fn rand<R: Rng>(rng: &mut R) -> Self;$/;"	f
+rand	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/lib.rs	/^    fn rand<R: Rng>(rng: &mut R) -> XorShiftRng {$/;"	f
+rand	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/rand_impls.rs	/^                fn rand<R: Rng>(rng: &mut R) -> $ty {$/;"	f
+rand	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/rand_impls.rs	/^                fn rand<R: Rng>(rng: &mut R) -> Closed01<$ty> {$/;"	f
+rand	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/rand_impls.rs	/^                fn rand<R: Rng>(rng: &mut R) -> Open01<$ty> {$/;"	f
+rand	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/rand_impls.rs	/^            fn rand<R: Rng>(_rng: &mut R) -> ( $( $tyvar ),* , ) {$/;"	f
+rand	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/rand_impls.rs	/^            fn rand<R: Rng>(_rng: &mut R) -> [T; $n] { [] }$/;"	f
+rand	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/rand_impls.rs	/^            fn rand<R: Rng>(_rng: &mut R) -> [T; $n] {$/;"	f
+rand	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/rand_impls.rs	/^    fn rand<R: Rng>(_: &mut R) -> () { () }$/;"	f
+rand	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/rand_impls.rs	/^    fn rand<R: Rng>(rng: &mut R) -> Option<T> {$/;"	f
+rand	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/rand_impls.rs	/^    fn rand<R: Rng>(rng: &mut R) -> bool {$/;"	f
+rand	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/rand_impls.rs	/^    fn rand<R: Rng>(rng: &mut R) -> char {$/;"	f
+rand	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/rand_impls.rs	/^    fn rand<R: Rng>(rng: &mut R) -> i16 {$/;"	f
+rand	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/rand_impls.rs	/^    fn rand<R: Rng>(rng: &mut R) -> i32 {$/;"	f
+rand	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/rand_impls.rs	/^    fn rand<R: Rng>(rng: &mut R) -> i64 {$/;"	f
+rand	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/rand_impls.rs	/^    fn rand<R: Rng>(rng: &mut R) -> i8 {$/;"	f
+rand	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/rand_impls.rs	/^    fn rand<R: Rng>(rng: &mut R) -> isize {$/;"	f
+rand	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/rand_impls.rs	/^    fn rand<R: Rng>(rng: &mut R) -> u16 {$/;"	f
+rand	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/rand_impls.rs	/^    fn rand<R: Rng>(rng: &mut R) -> u32 {$/;"	f
+rand	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/rand_impls.rs	/^    fn rand<R: Rng>(rng: &mut R) -> u64 {$/;"	f
+rand	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/rand_impls.rs	/^    fn rand<R: Rng>(rng: &mut R) -> u8 {$/;"	f
+rand	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/rand_impls.rs	/^    fn rand<R: Rng>(rng: &mut R) -> usize {$/;"	f
+rand_closed	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/rand_impls.rs	/^    fn rand_closed() {$/;"	f
+rand_exp	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/benches/distributions/exponential.rs	/^fn rand_exp(b: &mut Bencher) {$/;"	f
+rand_impls	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/lib.rs	/^mod rand_impls;$/;"	m
+rand_isaac	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/benches/bench.rs	/^fn rand_isaac(b: &mut Bencher) {$/;"	f
+rand_isaac64	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/benches/bench.rs	/^fn rand_isaac64(b: &mut Bencher) {$/;"	f
+rand_normal	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/benches/distributions/normal.rs	/^fn rand_normal(b: &mut Bencher) {$/;"	f
+rand_open	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/rand_impls.rs	/^    fn rand_open() {$/;"	f
+rand_shuffle_100	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/benches/bench.rs	/^fn rand_shuffle_100(b: &mut Bencher) {$/;"	f
+rand_std	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/benches/bench.rs	/^fn rand_std(b: &mut Bencher) {$/;"	f
+rand_xorshift	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/benches/bench.rs	/^fn rand_xorshift(b: &mut Bencher) {$/;"	f
+random	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/lib.rs	/^pub fn random<T: Rand>() -> T {$/;"	f
+range	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/distributions/mod.rs	/^pub mod range;$/;"	m
+read	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/lib.rs	/^pub mod read;$/;"	m
+report_error	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/clap-0.11.0/src/app.rs	/^    fn report_error(&self, msg: String, usage: bool, quit: bool, matches: Option<Vec<&str>>) {$/;"	f
+required	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/clap-0.11.0/src/args/arg.rs	/^    pub fn required(mut self, r: bool) -> Arg<'n, 'l, 'h, 'g, 'p, 'r> {$/;"	f
+required	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/clap-0.11.0/src/args/group.rs	/^    pub fn required(mut self, r: bool) -> ArgGroup<'n, 'ar> {$/;"	f
+requires	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/clap-0.11.0/src/args/arg.rs	/^    pub fn requires(mut self, name: &'r str) -> Arg<'n, 'l, 'h, 'g, 'p, 'r> {$/;"	f
+requires	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/clap-0.11.0/src/args/group.rs	/^    pub fn requires(mut self, n: &'ar str) -> ArgGroup<'n, 'ar> {$/;"	f
+requires_all	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/clap-0.11.0/src/args/arg.rs	/^    pub fn requires_all<T, I>(mut self, names: I)$/;"	f
+requires_all	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/clap-0.11.0/src/args/group.rs	/^    pub fn requires_all(mut self, ns: Vec<&'ar str>) -> ArgGroup<'n, 'ar> {$/;"	f
+reseed	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/chacha.rs	/^    fn reseed(&mut self, seed: &'a [u32]) {$/;"	f
+reseed	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/isaac.rs	/^    fn reseed(&mut self, seed: &'a [u32]) {$/;"	f
+reseed	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/isaac.rs	/^    fn reseed(&mut self, seed: &'a [u64]) {$/;"	f
+reseed	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/lib.rs	/^    fn reseed(&mut self, Seed);$/;"	f
+reseed	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/lib.rs	/^    fn reseed(&mut self, rng: &mut StdRng) {$/;"	f
+reseed	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/lib.rs	/^    fn reseed(&mut self, seed: &'a [usize]) {$/;"	f
+reseed	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/lib.rs	/^    fn reseed(&mut self, seed: [u32; 4]) {$/;"	f
+reseed	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/reseeding.rs	/^        fn reseed(&mut self, seed: u32) {$/;"	f
+reseed	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/reseeding.rs	/^    fn reseed(&mut self, (rsdr, seed): (Rsdr, S)) {$/;"	f
+reseed	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/reseeding.rs	/^    fn reseed(&mut self, rng: &mut R) {$/;"	f
+reseed	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/reseeding.rs	/^    fn reseed(&mut self, rng: &mut R);$/;"	f
+reseed_if_necessary	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/reseeding.rs	/^    pub fn reseed_if_necessary(&mut self) {$/;"	f
+reseeding	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/lib.rs	/^pub mod reseeding;$/;"	m
+reseeding::Reseeder for ThreadRngReseeder	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/lib.rs	/^impl reseeding::Reseeder<StdRng> for ThreadRngReseeder {$/;"	i
+rng	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/lib.rs	/^    pub fn rng() -> MyRng<::ThreadRng> {$/;"	f
+rngstepn	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/isaac.rs	/^                macro_rules! rngstepn {$/;"	d
+rngstepn	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/isaac.rs	/^            macro_rules! rngstepn {$/;"	d
+rngstepp	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/isaac.rs	/^                macro_rules! rngstepp {$/;"	d
+rngstepp	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/isaac.rs	/^            macro_rules! rngstepp {$/;"	d
+run_games	/home/hendrik/code/rust/chess/src/main.rs	/^fn run_games(interactive:bool) {$/;"	f
+sample	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/distributions/exponential.rs	/^    fn sample<R: Rng>(&mut self, rng: &mut R) -> f64 { self.ind_sample(rng) }$/;"	f
+sample	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/distributions/gamma.rs	/^    fn sample<R: Rng>(&mut self, rng: &mut R) -> f64 { self.ind_sample(rng) }$/;"	f
+sample	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/distributions/mod.rs	/^    fn sample<R: Rng>(&mut self, rng: &mut R) -> Sup { self.ind_sample(rng) }$/;"	f
+sample	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/distributions/mod.rs	/^    fn sample<R: Rng>(&mut self, rng: &mut R) -> Support;$/;"	f
+sample	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/distributions/mod.rs	/^    fn sample<R: Rng>(&mut self, rng: &mut R) -> T { self.ind_sample(rng) }$/;"	f
+sample	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/distributions/normal.rs	/^    fn sample<R: Rng>(&mut self, rng: &mut R) -> f64 { self.ind_sample(rng) }$/;"	f
+sample	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/distributions/range.rs	/^    fn sample<R: Rng>(&mut self, rng: &mut R) -> Sup { self.ind_sample(rng) }$/;"	f
+sample	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/lib.rs	/^pub fn sample<T, I: Iterator<Item=T>, R: Rng>(rng: &mut R,$/;"	f
+sample_range	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/distributions/range.rs	/^            fn sample_range<R: Rng>(r: &Range<$ty>, rng: &mut R) -> $ty {$/;"	f
+sample_range	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/distributions/range.rs	/^    fn sample_range<R: Rng>(r: &Range<Self>, rng: &mut R) -> Self;$/;"	f
+set_counter	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/chacha.rs	/^    pub fn set_counter(&mut self, counter_low: u64, counter_high: u64) {$/;"	f
+short	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/clap-0.11.0/src/args/arg.rs	/^    pub fn short(mut self, s: &str) -> Arg<'n, 'l, 'h, 'g, 'p, 'r> {$/;"	f
+shuffle	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/lib.rs	/^    fn shuffle<T>(&mut self, values: &mut [T]) where Self: Sized {$/;"	f
+simple_enum	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/clap-0.11.0/src/macros.rs	/^macro_rules! simple_enum {$/;"	d
+subcommand	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/clap-0.11.0/src/app.rs	/^    pub fn subcommand(mut self, subcmd: App<'a, 'v, 'ab, 'u, 'h, 'ar>)$/;"	f
+subcommand	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/clap-0.11.0/src/args/argmatches.rs	/^    pub fn subcommand(&self) -> (&str, Option<&ArgMatches>) {$/;"	f
+subcommand	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/clap-0.11.0/src/args/mod.rs	/^mod subcommand;$/;"	m
+subcommand_matches	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/clap-0.11.0/src/args/argmatches.rs	/^    pub fn subcommand_matches<'na>(&self, name: &'na str) -> Option<&ArgMatches> {$/;"	f
+subcommand_name	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/clap-0.11.0/src/args/argmatches.rs	/^    pub fn subcommand_name(&self) -> Option<&str> {$/;"	f
+subcommand_required	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/clap-0.11.0/src/app.rs	/^    pub fn subcommand_required(mut self, n: bool) -> App<'a, 'v, 'ab, 'u, 'h, 'ar> {$/;"	f
+subcommand_required_else_help	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/clap-0.11.0/src/app.rs	/^    pub fn subcommand_required_else_help(mut self, tf: bool) -> App<'a, 'v, 'ab, 'u, 'h, 'ar> {$/;"	f
+subcommands	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/clap-0.11.0/src/app.rs	/^    pub fn subcommands(mut self, subcmds: Vec<App<'a, 'v, 'ab, 'u, 'h, 'ar>>)$/;"	f
+subcommands_negate_reqs	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/clap-0.11.0/src/app.rs	/^    pub fn subcommands_negate_reqs(mut self, n: bool) -> App<'a, 'v, 'ab, 'u, 'h, 'ar> {$/;"	f
+swap_player	/home/hendrik/code/rust/chess/src/gamestate.rs	/^    fn swap_player(&mut self) {$/;"	f
+syscall	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/os.rs	/^            fn syscall(number: libc::c_long, ...) -> libc::c_long;$/;"	f
+t	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/distributions/mod.rs	/^        macro_rules! t {$/;"	d
+t	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/distributions/range.rs	/^        macro_rules! t {$/;"	d
+takes_value	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/clap-0.11.0/src/args/arg.rs	/^    pub fn takes_value(mut self, tv: bool) -> Arg<'n, 'l, 'h, 'g, 'p, 'r> {$/;"	f
+test	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/chacha.rs	/^mod test {$/;"	m
+test	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/distributions/exponential.rs	/^mod test {$/;"	m
+test	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/distributions/gamma.rs	/^mod test {$/;"	m
+test	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/isaac.rs	/^mod test {$/;"	m
+test	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/lib.rs	/^mod test {$/;"	m
+test	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/os.rs	/^mod test {$/;"	m
+test	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/read.rs	/^mod test {$/;"	m
+test	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/reseeding.rs	/^mod test {$/;"	m
+test_check	/home/hendrik/code/rust/chess/src/gamestate.rs	/^    pub fn test_check(&self,mov:&Move) -> bool {$/;"	f
+test_chi_squared_invalid_dof	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/distributions/gamma.rs	/^    fn test_chi_squared_invalid_dof() {$/;"	f
+test_chi_squared_large	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/distributions/gamma.rs	/^    fn test_chi_squared_large() {$/;"	f
+test_chi_squared_one	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/distributions/gamma.rs	/^    fn test_chi_squared_one() {$/;"	f
+test_chi_squared_small	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/distributions/gamma.rs	/^    fn test_chi_squared_small() {$/;"	f
+test_choose	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/lib.rs	/^    fn test_choose() {$/;"	f
+test_enums	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/clap-0.11.0/src/lib.rs	/^    fn test_enums() {$/;"	f
+test_exp	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/distributions/exponential.rs	/^    fn test_exp() {$/;"	f
+test_exp_invalid_lambda_neg	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/distributions/exponential.rs	/^    fn test_exp_invalid_lambda_neg() {$/;"	f
+test_exp_invalid_lambda_zero	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/distributions/exponential.rs	/^    fn test_exp_invalid_lambda_zero() {$/;"	f
+test_f	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/distributions/gamma.rs	/^    fn test_f() {$/;"	f
+test_fill_bytes_default	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/lib.rs	/^    fn test_fill_bytes_default() {$/;"	f
+test_floats	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/distributions/range.rs	/^    fn test_floats() {$/;"	f
+test_gen_ascii_str	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/lib.rs	/^    fn test_gen_ascii_str() {$/;"	f
+test_gen_f64	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/lib.rs	/^    fn test_gen_f64() {$/;"	f
+test_gen_range	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/lib.rs	/^    fn test_gen_range() {$/;"	f
+test_gen_range_panic_int	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/lib.rs	/^    fn test_gen_range_panic_int() {$/;"	f
+test_gen_range_panic_usize	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/lib.rs	/^    fn test_gen_range_panic_usize() {$/;"	f
+test_gen_vec	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/lib.rs	/^    fn test_gen_vec() {$/;"	f
+test_gen_weighted_bool	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/lib.rs	/^    fn test_gen_weighted_bool() {$/;"	f
+test_integers	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/distributions/range.rs	/^    fn test_integers() {$/;"	f
+test_log_normal	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/distributions/normal.rs	/^    fn test_log_normal() {$/;"	f
+test_log_normal_invalid_sd	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/distributions/normal.rs	/^    fn test_log_normal_invalid_sd() {$/;"	f
+test_normal	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/distributions/normal.rs	/^    fn test_normal() {$/;"	f
+test_normal_invalid_sd	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/distributions/normal.rs	/^    fn test_normal_invalid_sd() {$/;"	f
+test_os_rng	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/os.rs	/^    fn test_os_rng() {$/;"	f
+test_os_rng_tasks	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/os.rs	/^    fn test_os_rng_tasks() {$/;"	f
+test_rand_sample	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/distributions/mod.rs	/^    fn test_rand_sample() {$/;"	f
+test_random	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/lib.rs	/^    fn test_random() {$/;"	f
+test_range_bad_limits_equal	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/distributions/range.rs	/^    fn test_range_bad_limits_equal() {$/;"	f
+test_range_bad_limits_flipped	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/distributions/range.rs	/^    fn test_range_bad_limits_flipped() {$/;"	f
+test_reader_rng_fill_bytes	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/read.rs	/^    fn test_reader_rng_fill_bytes() {$/;"	f
+test_reader_rng_insufficient_bytes	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/read.rs	/^    fn test_reader_rng_insufficient_bytes() {$/;"	f
+test_reader_rng_u32	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/read.rs	/^    fn test_reader_rng_u32() {$/;"	f
+test_reader_rng_u64	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/read.rs	/^    fn test_reader_rng_u64() {$/;"	f
+test_reseeding	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/reseeding.rs	/^    fn test_reseeding() {$/;"	f
+test_rng_32_rand_seeded	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/isaac.rs	/^    fn test_rng_32_rand_seeded() {$/;"	f
+test_rng_32_reseed	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/isaac.rs	/^    fn test_rng_32_reseed() {$/;"	f
+test_rng_32_seeded	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/isaac.rs	/^    fn test_rng_32_seeded() {$/;"	f
+test_rng_32_true_values	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/isaac.rs	/^    fn test_rng_32_true_values() {$/;"	f
+test_rng_64_rand_seeded	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/isaac.rs	/^    fn test_rng_64_rand_seeded() {$/;"	f
+test_rng_64_reseed	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/isaac.rs	/^    fn test_rng_64_reseed() {$/;"	f
+test_rng_64_seeded	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/isaac.rs	/^    fn test_rng_64_seeded() {$/;"	f
+test_rng_64_true_values	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/isaac.rs	/^    fn test_rng_64_true_values() {$/;"	f
+test_rng_clone	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/chacha.rs	/^    fn test_rng_clone() {$/;"	f
+test_rng_clone	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/isaac.rs	/^    fn test_rng_clone() {$/;"	f
+test_rng_fill_bytes	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/reseeding.rs	/^    fn test_rng_fill_bytes() {$/;"	f
+test_rng_rand_seeded	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/chacha.rs	/^    fn test_rng_rand_seeded() {$/;"	f
+test_rng_reseed	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/chacha.rs	/^    fn test_rng_reseed() {$/;"	f
+test_rng_reseed	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/reseeding.rs	/^    fn test_rng_reseed() {$/;"	f
+test_rng_seeded	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/chacha.rs	/^    fn test_rng_seeded() {$/;"	f
+test_rng_seeded	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/reseeding.rs	/^    fn test_rng_seeded() {$/;"	f
+test_rng_trait_object	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/lib.rs	/^    fn test_rng_trait_object() {$/;"	f
+test_rng_true_values	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/chacha.rs	/^    fn test_rng_true_values() {$/;"	f
+test_sample	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/lib.rs	/^    fn test_sample() {$/;"	f
+test_shuffle	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/lib.rs	/^    fn test_shuffle() {$/;"	f
+test_std_rng_reseed	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/lib.rs	/^    fn test_std_rng_reseed() {$/;"	f
+test_std_rng_seeded	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/lib.rs	/^    fn test_std_rng_seeded() {$/;"	f
+test_t	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/distributions/gamma.rs	/^    fn test_t() {$/;"	f
+test_thread_rng	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/lib.rs	/^    fn test_thread_rng() {$/;"	f
+test_weighted_choice	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/distributions/mod.rs	/^    fn test_weighted_choice() {$/;"	f
+test_weighted_choice_no_items	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/distributions/mod.rs	/^    fn test_weighted_choice_no_items() {$/;"	f
+test_weighted_choice_weight_overflows	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/distributions/mod.rs	/^    fn test_weighted_choice_weight_overflows() {$/;"	f
+test_weighted_choice_zero_weight	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/distributions/mod.rs	/^    fn test_weighted_choice_zero_weight() {$/;"	f
+test_weighted_clone_change_item	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/distributions/mod.rs	/^    fn test_weighted_clone_change_item() {$/;"	f
+test_weighted_clone_change_weight	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/distributions/mod.rs	/^    fn test_weighted_clone_change_weight() {$/;"	f
+test_weighted_clone_initialization	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/distributions/mod.rs	/^    fn test_weighted_clone_initialization() {$/;"	f
+tests	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/clap-0.11.0/src/lib.rs	/^mod tests {$/;"	m
+tests	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/distributions/mod.rs	/^mod tests {$/;"	m
+tests	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/distributions/normal.rs	/^mod tests {$/;"	m
+tests	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/distributions/range.rs	/^mod tests {$/;"	m
+tests	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/rand_impls.rs	/^mod tests {$/;"	m
+thread_rng	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/lib.rs	/^pub fn thread_rng() -> ThreadRng {$/;"	f
+tuple_impl	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/rand_impls.rs	/^macro_rules! tuple_impl {$/;"	d
+unique_arg_longs	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/clap-0.11.0/src/lib.rs	/^	fn unique_arg_longs() {$/;"	f
+unique_arg_names	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/clap-0.11.0/src/lib.rs	/^	fn unique_arg_names() {$/;"	f
+unique_arg_shorts	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/clap-0.11.0/src/lib.rs	/^	fn unique_arg_shorts() {$/;"	f
+update	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/chacha.rs	/^    fn update(&mut self) {$/;"	f
+update_moves	/home/hendrik/code/rust/chess/src/gamestate.rs	/^    pub fn update_moves(&mut self) {$/;"	f
+usage	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/clap-0.11.0/src/app.rs	/^    pub fn usage(mut self, u: &'u str) -> App<'a, 'v, 'ab, 'u, 'h, 'ar> {$/;"	f
+usage	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/clap-0.11.0/src/args/argmatches.rs	/^    pub fn usage(&self) -> &str {$/;"	f
+usageparser	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/clap-0.11.0/src/lib.rs	/^mod usageparser;$/;"	m
+validate_blacklist	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/clap-0.11.0/src/app.rs	/^    fn validate_blacklist(&self, matches: &mut ArgMatches<'ar, 'ar>) {$/;"	f
+validate_num_args	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/clap-0.11.0/src/app.rs	/^    fn validate_num_args(&self, matches: &mut ArgMatches<'ar, 'ar>) {$/;"	f
+validate_reqs	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/clap-0.11.0/src/macros.rs	/^macro_rules! validate_reqs {$/;"	d
+validate_required	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/clap-0.11.0/src/app.rs	/^    fn validate_required(&self, matches: &ArgMatches<'ar, 'ar>) -> bool{$/;"	f
+value_names	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/clap-0.11.0/src/args/arg.rs	/^    pub fn value_names<T, I>(mut self, names: I)$/;"	f
+value_of	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/clap-0.11.0/src/args/argmatches.rs	/^    pub fn value_of<'na>(&self, name: &'na str) -> Option<&str> {$/;"	f
+value_t	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/clap-0.11.0/src/macros.rs	/^macro_rules! value_t {$/;"	d
+value_t_or_exit	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/clap-0.11.0/src/macros.rs	/^macro_rules! value_t_or_exit {$/;"	d
+values_of	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/clap-0.11.0/src/args/argmatches.rs	/^    pub fn values_of<'na>(&'a self, name: &'na str) -> Option<Vec<&'a str>> {$/;"	f
+variants	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/clap-0.11.0/src/macros.rs	/^            fn variants() -> Vec<&'static str> {$/;"	f
+variants	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/clap-0.11.0/src/macros.rs	/^            pub fn variants() -> Vec<&'static str> {$/;"	f
+verify_on_board	/home/hendrik/code/rust/chess/src/gamestate.rs	/^    pub fn verify_on_board(pos:Point) -> bool {$/;"	f
+verify_positionals	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/clap-0.11.0/src/app.rs	/^    fn verify_positionals(&mut self) {$/;"	f
+version	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/clap-0.11.0/src/app.rs	/^    pub fn version(mut self, v: &'v str) -> App<'a, 'v, 'ab, 'u, 'h, 'ar>  {$/;"	f
+version_short	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/clap-0.11.0/src/app.rs	/^    pub fn version_short(mut self, s: &str) -> App<'a, 'v, 'ab, 'u, 'h, 'ar> {$/;"	f
+w32	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/lib.rs	/^type w32 = w<u32>;$/;"	T
+w64	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/lib.rs	/^type w64 = w<u64>;$/;"	T
+weak_rng	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/lib.rs	/^pub fn weak_rng() -> XorShiftRng {$/;"	f
+with_name	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/clap-0.11.0/src/args/arg.rs	/^    pub fn with_name(n: &'n str) -> Arg<'n, 'l, 'h, 'g, 'p, 'r> {$/;"	f
+with_name	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/clap-0.11.0/src/args/group.rs	/^    pub fn with_name(n: &'n str) -> ArgGroup<'n, 'ar> {$/;"	f
+with_name	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/clap-0.11.0/src/args/subcommand.rs	/^    pub fn with_name<'au, 'v, 'ab, 'u, 'h, 'ar>(name: &'ar str) -> App<'au, 'v, 'ab, 'u, 'h, 'ar> {$/;"	f
+with_usage	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/clap-0.11.0/src/usageparser.rs	/^    pub fn with_usage(u: &'u str) -> UsageParser<'u> {$/;"	f
+zero_case	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/distributions/exponential.rs	/^        fn zero_case<R:Rng>(rng: &mut R, _u: f64) -> f64 {$/;"	f
+zero_case	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/distributions/normal.rs	/^        fn zero_case<R:Rng>(rng: &mut R, u: f64) -> f64 {$/;"	f
+ziggurat	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/distributions/mod.rs	/^fn ziggurat<R: Rng, P, Z>($/;"	f
+ziggurat_tables	/home/hendrik/.multirust/toolchains/nightly/cargo/registry/src/github.com-0a35038f75765ae4/rand-0.3.11/src/distributions/mod.rs	/^mod ziggurat_tables;$/;"	m

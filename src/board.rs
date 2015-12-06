@@ -1,31 +1,22 @@
+use piece::{Suit, Color, Piece};
+
 #[derive(Copy,Clone,Debug)]
-pub struct Point {pub x:i32, pub y:i32}
+pub struct Point {
+    pub x:i8,
+    pub y:i8
+}
 
 #[derive(Debug,Clone)]
-pub struct Move  { pub from: Point, pub to: Point , pub note:&'static str}
-
-#[derive(Debug,PartialEq,Eq,Hash,Clone)]
-pub struct Player { pub color: Color, pub direction: i32 }
-
-#[derive(Clone,Copy,Debug,PartialEq)]
-pub enum ChessPiece { King, Queen, Rook, Bishop, Knight, Pawn }
-
-#[derive(Clone,Copy,Debug,Hash,Eq,PartialEq)]
-pub enum Color { White , Black }
-
-#[derive(Clone,Copy,Debug)]
-pub struct Piece {
-    pub sym: char,
-    pub color: Color,
-    pub piece:ChessPiece}
-
-pub type Board = [[Field;8];8];
+pub struct Move {
+    pub from: Point,
+    pub to: Point,
+    pub note:&'static str
+}
 
 #[derive(Clone,Copy,Debug)]
 pub enum Field { Outside, Empty, Piece(Piece) }
 
-impl Field
-{
+impl Field {
     pub fn char(self) -> char{
         match self {
             Field::Outside  => '☠', //💀
@@ -35,19 +26,18 @@ impl Field
     }
 }
 
-
 // ChessPieces
 // {{{
-pub const BL_KING   :Piece = Piece{ sym : '♚', color: Color::Black, piece: ChessPiece::King   };
-pub const BL_QUEEN  :Piece = Piece{ sym : '♛', color: Color::Black, piece: ChessPiece::Queen  };
-pub const BL_ROOK   :Piece = Piece{ sym : '♜', color: Color::Black, piece: ChessPiece::Rook   };
-pub const BL_BISHOP :Piece = Piece{ sym : '♝', color: Color::Black, piece: ChessPiece::Bishop };
-pub const BL_KNIGHT :Piece = Piece{ sym : '♞', color: Color::Black, piece: ChessPiece::Knight };
-pub const BL_PAWN   :Piece = Piece{ sym : '♟', color: Color::Black, piece: ChessPiece::Pawn   };
-pub const WH_KING   :Piece = Piece{ sym : '♔', color: Color::White, piece: ChessPiece::King   };
-pub const WH_QUEEN  :Piece = Piece{ sym : '♕', color: Color::White, piece: ChessPiece::Queen  };
-pub const WH_ROOK   :Piece = Piece{ sym : '♖', color: Color::White, piece: ChessPiece::Rook   };
-pub const WH_BISHOP :Piece = Piece{ sym : '♗', color: Color::White, piece: ChessPiece::Bishop };
-pub const WH_KNIGHT :Piece = Piece{ sym : '♘', color: Color::White, piece: ChessPiece::Knight };
-pub const WH_PAWN   :Piece = Piece{ sym : '♙', color: Color::White, piece: ChessPiece::Pawn   };
+pub const BL_KING   :Piece = Piece{ sym : '♚', color: Color::Black, piece: Suit::King   };
+pub const BL_QUEEN  :Piece = Piece{ sym : '♛', color: Color::Black, piece: Suit::Queen  };
+pub const BL_ROOK   :Piece = Piece{ sym : '♜', color: Color::Black, piece: Suit::Rook   };
+pub const BL_BISHOP :Piece = Piece{ sym : '♝', color: Color::Black, piece: Suit::Bishop };
+pub const BL_KNIGHT :Piece = Piece{ sym : '♞', color: Color::Black, piece: Suit::Knight };
+pub const BL_PAWN   :Piece = Piece{ sym : '♟', color: Color::Black, piece: Suit::Pawn   };
+pub const WH_KING   :Piece = Piece{ sym : '♔', color: Color::White, piece: Suit::King   };
+pub const WH_QUEEN  :Piece = Piece{ sym : '♕', color: Color::White, piece: Suit::Queen  };
+pub const WH_ROOK   :Piece = Piece{ sym : '♖', color: Color::White, piece: Suit::Rook   };
+pub const WH_BISHOP :Piece = Piece{ sym : '♗', color: Color::White, piece: Suit::Bishop };
+pub const WH_KNIGHT :Piece = Piece{ sym : '♘', color: Color::White, piece: Suit::Knight };
+pub const WH_PAWN   :Piece = Piece{ sym : '♙', color: Color::White, piece: Suit::Pawn   };
 // }}}

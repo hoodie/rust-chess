@@ -1,30 +1,21 @@
-#![allow(dead_code)]
-#![allow(unused_variables)]
-#![allow(unused_imports)]
-#![allow(unused_must_use)]
-
 extern crate rand;
 extern crate clap;
-use clap::{App, SubCommand, Arg};
+use clap::{App, Arg};
 
-mod board;
-mod gamestate;
-mod tests;
-mod display;
-use gamestate::GameState;
+extern crate chess;
 
+use chess::GameState;
 
-fn run_games(interactive:bool)
-{
+fn run_games(interactive:bool) {
     let mut game = GameState::new();
     let mut count = 0;
     let max_count = 1_000;
 
     loop {
-        let len = game.moves[game.current_player()].len();
+        let len = game.moves[game.get_current_player()].len();
         if len == 0 {
             game.print_board();
-            println!("No more moves for player {:?} after {} rounds", game.current_player().color, count);
+            println!("No more moves for player {:?} after {} rounds", game.get_current_player().color, count);
             break; }
         if count >= max_count{
             game.print_board();
@@ -36,16 +27,15 @@ fn run_games(interactive:bool)
 
         if interactive {
             let mut devnull= String::new();
-            std::io::stdin().read_line(&mut devnull);
+            std::io::stdin().read_line(&mut devnull).unwrap();
         }
         else{
-            std::thread::sleep_ms(150);
+            std::thread::sleep(std::time::Duration::from_millis(150));
         }
 
     }
 }
-fn main()
-{
+fn main() {
     let matches = App::new("Chess")
                         .version("0.0.1")
                         .author("Hendrik Sollich <hendrik@hoodie.de>")
