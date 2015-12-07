@@ -22,12 +22,37 @@ pub struct Point {
 }
 
 /// Holds from, to and a description of the moves.
-#[derive(Debug,Clone)]
+#[derive(Copy,Debug,Clone)] //TODO remove Clone and copy
 pub struct Move {
     pub from: Point,
-    pub to: Point,
-    pub note:&'static str
+    pub to:   Point,
+    pub note:&'static str,
+    pub ty: MoveType
 }
+
+impl Move{
+    pub fn new( from: Point, to:   Point, note:&'static str) -> Self{
+        Move{
+            from:from, to:to,
+            note:note, ty: MoveType::Move
+        }
+    }
+    pub fn capture( from: Point, to:   Point, note:&'static str) -> Self{
+        Move{
+            from:from, to:to,
+            note:note, ty: MoveType::Capture
+        }
+    }
+    pub fn to_capture(&self) -> Self{
+        Move{
+            from:self.from, to:self.to,
+            note:self.note, ty: MoveType::Capture
+        }
+    }
+}
+
+#[derive(Copy,Debug,Clone)] //TODO remove Clone and copy
+pub enum MoveType { Move, Capture }
 
 /// All possible states of a Field.
 #[derive(Clone,Copy,Debug)]
@@ -180,9 +205,14 @@ impl GameState {
         println!(" |A B C D E F G H");
     }
 
-    /// Performs one of the possible moves for the current player.
-    pub fn performe_move(&mut self, index:usize) {
-        let &Move{to,from, note} = &self.moves.get(self.get_current_player()).unwrap()[index];
+    /// Performs one of the possible moves for the current player, by index.
+    pub fn performe_move_index(&mut self, index:usize) {
+        let mov = self.moves.get(self.get_current_player()).unwrap()[index];
+        self.performe_move(&Move{..mov});
+    }
+
+    pub fn performe_move(&mut self, mov:&Move) {
+        let &Move{to,from, note, ty} = mov;
         let from_field = self.board[from.y as usize][from.x as usize];
 
         if let Field::Piece(piece) = from_field{
@@ -234,22 +264,22 @@ impl GameState {
     fn produce_pawn_moves(&self, pos:Point, player:&Player, moves: &mut Vec<Move>) {
         // TODO produce_pawn_moves can be shortened
         let Point{x,y} = pos; //origin
-        let possible_move = Move{from:pos, to:Point{x:x,y:y+1i8*player.direction}, note:"pawn normal"}; // normal move one forward
-        let possible_charge = Move{from:pos, to:Point{x:x,y:y+2i8*player.direction}, note:"pawn charge"};    //  only from start point
+        let possible_move   = Move::new(pos, Point{x:x,y:y+1i8*player.direction},"pawn normal"); // normal move one forward
+        let possible_charge = Move::new(pos, Point{x:x,y:y+2i8*player.direction},"pawn charge");    //  only from start point
 
-        let possible_capture_l = Move {
-            from:pos,
-            to:Point{
+        let possible_capture_l = Move ::capture(
+            pos,
+            Point{
                 x:x-1i8*player.direction,
                 y:y+1i8*player.direction
-            }, note:"capture r"}; // capture to the right
+            },"capture r"); // capture to the right
 
-        let possible_capture_r = Move {
-            from:pos,
-            to:Point{
+        let possible_capture_r = Move::capture(
+            pos,
+            Point{
                 x:x+1i8*player.direction,
                 y:y+1i8*player.direction
-            }, note:"capture l"}; // capture to the left
+            }, "capture l"); // capture to the left
 
         // verify moves
         if self.verify_on_board(possible_move.to) && !self.field_contains_opponent(possible_move.to, player){ // no opponent figure directly infront of pawn
@@ -266,10 +296,8 @@ impl GameState {
 
         // verify captures
         if self.verify_on_board(possible_capture_l.to) && self.field_contains_opponent(possible_capture_l.to, player){
-            //self.test_check(&possible_capture_l);
             moves.push(possible_capture_l)};
         if self.verify_on_board(possible_capture_r.to) && self.field_contains_opponent(possible_capture_r.to, player){
-            //self.test_check(&possible_capture_r);
             moves.push(possible_capture_r)};
     }
 
@@ -279,8 +307,9 @@ impl GameState {
             let y_dir = (i%2)*2-1;
 
             for mov in [
-                Move{from:pos, to:Point{ x:pos.x + x_dir*2, y:pos.y + y_dir, }, note:"knight normal"},
-                Move{from:pos, to:Point{ x:pos.x + x_dir, y:pos.y + y_dir*2, }, note:"knight normal"}].iter(){
+                Move::new(pos, Point{ x:pos.x + x_dir*2, y:pos.y + y_dir, }, "knight normal"),
+                Move::new(pos, Point{ x:pos.x + x_dir, y:pos.y + y_dir*2, }, "knight normal")
+            ].iter(){
 
                     let field = self.get_field(mov.to);
                     match field {
@@ -288,7 +317,7 @@ impl GameState {
                         Field::Empty => moves.push(mov.clone()),
                         Field::Piece(piece) =>
                             if piece.color != player.color{
-                                let mov = Move{note : "capture",..*mov};
+                                let mov = mov.to_capture();
                                 //self.test_check(&mov);
                                 moves.push(mov);
                             }
@@ -329,12 +358,12 @@ impl GameState {
             match field {
                 Field::Outside => break,
                 Field::Empty => {
-                    let possible_move = Move{from:pos, to:check_pos, note:"normal"}; // normal move one forward
+                    let possible_move = Move::new(pos, check_pos, "normal"); // normal move one forward
                     moves.push(possible_move);
                 }
                 Field::Piece(piece) => {
                     if piece.color != player.color{
-                        let possible_capture = Move{from:pos, to:check_pos, note:"capture"}; // normal move one forward
+                        let possible_capture = Move::new(pos, check_pos, "capture"); // normal move one forward
                         //self.test_check(&possible_capture);
                         moves.push(possible_capture);
                     }

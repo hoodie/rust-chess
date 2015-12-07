@@ -28,7 +28,10 @@ impl fmt::Display for Color {
 
 impl fmt::Display for Move {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-        write!(f, "{from} -> {to} ({note})", from=self.from, to=self.to, note=self.note)
+        match self.ty {
+            MoveType::Move    => write!(f, "  {from} -> {to} ({note})", from=self.from, to=self.to, note=self.note),
+            MoveType::Capture => write!(f, "X {from} -> {to} ({note})", from=self.from, to=self.to, note=self.note)
+        }
     }
 }
 

@@ -22,10 +22,11 @@ fn run_games(interactive:bool) {
             println!("Terminated after {} rounds ", count);
             break; }
         let move_choice = rand::random::<usize>() % len;
-        for mov in game.get_current_players_moves(){
-            println!("{}", mov);
-        }
-        game.performe_move(move_choice); count += 1;
+        //for mov in game.get_current_players_moves(){ println!("{}", mov); }
+
+        let mov = game.get_current_players_moves()[move_choice];
+        println!("{}", mov);
+        game.performe_move_index(move_choice); count += 1;
         game.print_board();
 
         if interactive {
