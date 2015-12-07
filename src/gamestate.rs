@@ -71,7 +71,7 @@ impl GameState {
             moves: HashMap::with_capacity(2),
             current_player: 0
         } ;
-        println!("{:?}", game.players);
+        //println!("{:?}", game.players);
         game.init_board();
         game.update_moves();
         game
@@ -101,13 +101,15 @@ impl GameState {
 
     /// Tests whether the current players king is threatened.
     /// TODO disabled because it blocks
+    #[allow(unused_variables)]
+    #[allow(unreachable_code)]
     pub fn test_check(&self,mov:&Move) -> bool {
         return false;
         match ( self.get_field(mov.from), self.get_field(mov.to) ){
 
             (Field::Piece(me), Field::Piece(you))  => {
                 if me.color != you.color && you.piece == Suit::King{
-                    println!("{}({}) threatens {}({}) (PRESS ENTER)", me,mov.from, you, mov.to);
+                    //println!("{}({}) threatens {}({}) (PRESS ENTER)", me,mov.from, you, mov.to);
                     let mut devnull= String::new();
                     stdin().read_line(&mut devnull).unwrap();
                     return true;
@@ -184,9 +186,9 @@ impl GameState {
         let from_field = self.board[from.y as usize][from.x as usize];
 
         if let Field::Piece(piece) = from_field{
-            println!("{}: \"{}\" {} -> {}", piece, note, from, to,);
+           // println!("{}: \"{}\" {} -> {}", piece, note, from, to,);
         } else{
-            println!("{} EMPTY: \"{}\" {} -> {}", self.get_current_player().color, note, from, to,);
+            //println!("{} EMPTY: \"{}\" {} -> {}", self.get_current_player().color, note, from, to,);
         }
 
         self.board[from.y as usize][from.x as usize] = Field::Empty;
@@ -233,7 +235,8 @@ impl GameState {
         // TODO produce_pawn_moves can be shortened
         let Point{x,y} = pos; //origin
         let possible_move = Move{from:pos, to:Point{x:x,y:y+1i8*player.direction}, note:"pawn normal"}; // normal move one forward
-        let possible_rush = Move{from:pos, to:Point{x:x,y:y+2i8*player.direction}, note:"pawn rush"};    //  only from start point
+        let possible_charge = Move{from:pos, to:Point{x:x,y:y+2i8*player.direction}, note:"pawn charge"};    //  only from start point
+
         let possible_capture_l = Move {
             from:pos,
             to:Point{
@@ -250,20 +253,23 @@ impl GameState {
 
         // verify moves
         if self.verify_on_board(possible_move.to) && !self.field_contains_opponent(possible_move.to, player){ // no opponent figure directly infront of pawn
-            self.test_check(&possible_move);
-            // 1->3 7->5 and no opponent figure two fields infront of pawn
-            if self.verify_on_board(possible_rush.to)
-                && 4-(player.direction * 3) == pos.y
-                    && !self.field_contains_opponent(possible_rush.to, player){
-                        moves.push(possible_rush); }
-        }
-        //else {println!("cant move from {:?}", &pos )};
+            moves.push(possible_move);
+
+            if self.verify_on_board(possible_charge.to)
+            && (pos.y - player.direction ) % 7 == 0 // pawns may only charge from their start os
+            {
+                moves.push(possible_charge);
+            }
+        } else {
+            //println!("pawn can't move from {}", &pos )
+        };
+
         // verify captures
         if self.verify_on_board(possible_capture_l.to) && self.field_contains_opponent(possible_capture_l.to, player){
-            self.test_check(&possible_capture_l);
+            //self.test_check(&possible_capture_l);
             moves.push(possible_capture_l)};
         if self.verify_on_board(possible_capture_r.to) && self.field_contains_opponent(possible_capture_r.to, player){
-            self.test_check(&possible_capture_r);
+            //self.test_check(&possible_capture_r);
             moves.push(possible_capture_r)};
     }
 
@@ -273,8 +279,8 @@ impl GameState {
             let y_dir = (i%2)*2-1;
 
             for mov in [
-                Move{from:pos, to:Point{ x:pos.x + x_dir*2, y:pos.y + y_dir, }, note:"normale"},
-                Move{from:pos, to:Point{ x:pos.x + x_dir, y:pos.y + y_dir*2, }, note:"normale"}].iter(){
+                Move{from:pos, to:Point{ x:pos.x + x_dir*2, y:pos.y + y_dir, }, note:"knight normal"},
+                Move{from:pos, to:Point{ x:pos.x + x_dir, y:pos.y + y_dir*2, }, note:"knight normal"}].iter(){
 
                     let field = self.get_field(mov.to);
                     match field {
@@ -283,7 +289,7 @@ impl GameState {
                         Field::Piece(piece) =>
                             if piece.color != player.color{
                                 let mov = Move{note : "capture",..*mov};
-                                self.test_check(&mov);
+                                //self.test_check(&mov);
                                 moves.push(mov);
                             }
                     }
@@ -323,13 +329,13 @@ impl GameState {
             match field {
                 Field::Outside => break,
                 Field::Empty => {
-                    let possible_move = Move{from:pos, to:check_pos, note:"normale"}; // normal move one forward
+                    let possible_move = Move{from:pos, to:check_pos, note:"normal"}; // normal move one forward
                     moves.push(possible_move);
                 }
                 Field::Piece(piece) => {
                     if piece.color != player.color{
                         let possible_capture = Move{from:pos, to:check_pos, note:"capture"}; // normal move one forward
-                        self.test_check(&possible_capture);
+                        //self.test_check(&possible_capture);
                         moves.push(possible_capture);
                     }
                     break; //return to start
