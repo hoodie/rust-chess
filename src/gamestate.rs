@@ -4,13 +4,12 @@ use std::io::stdin;
 use std::collections::HashMap;
 
 use piece::Color::*;
-use piece::{Suit, Piece};
-use player::Player;
+use piece::{Color,Suit, Piece};
 use chesspieces;
 
 
 /// A Function that produces all possible moves for a specific ChessPiece on the Board.
-pub type ProduceFn = fn(&GameState, Point, &Player, &mut Vec<Move>);
+pub type ProduceFn = fn(&GameState, Point, &Color, &mut Vec<Move>);
 
 //enum CheckState {CheckMate, Threatened, StaleMate, Alive}
 
@@ -55,7 +54,7 @@ impl Move{
 pub enum MoveType { Move, Capture }
 
 /// All possible states of a Field.
-#[derive(Clone,Copy,Debug)]
+#[derive(Copy,Clone,Debug)]
 pub enum Field { Outside, Empty, Piece(Piece) }
 
 impl Field {
@@ -69,42 +68,39 @@ impl Field {
     }
 }
 
+pub type Board = [[Field;8];8];
+
 /// Encapsulates the current state of a game.
 #[derive(Debug)]
 pub struct GameState {
     /// The 8x8 Fields.
-    pub board: [[Field;8];8],
-    /// Array of 2 possible players.
-    pub players: [Player;2],
-    /// Always currently possible moves by player.
-    moves: HashMap<Player, Vec<Move>>,
-    /// Index into self.players
-    pub current_player: usize
+    pub board: Board,
+
+    /// Always currently possible moves by color.
+    moves: HashMap<Color, Vec<Move>>,
+
+    /// Whos turn is it?
+    pub current_color: Color
 }
 
 impl GameState {
 
+
     /// Generate a hole new game.
     pub fn new() -> GameState {
         let mut game = GameState {
-            board: [[Field::Empty; 8]; 8],
-            players: [
-                Player::new(Black, 1),
-                Player::new(White, -1),
-            ],
-            //moves: HashMap::new(),
+            board: Self::standard_board(),
             moves: HashMap::with_capacity(2),
-            current_player: 0
+            current_color: Color::White
         } ;
         //println!("{:?}", game.players);
-        game.init_board();
         game.update_moves();
         game
     }
 
     /// Sets up the board.
-    fn init_board(&mut self) {
-        let mut board = self.board;
+    fn standard_board() -> Board {
+        let mut board = [[Field::Empty; 8]; 8];
 
         for i in 0..8{
             board[1][i] = Field::Piece(chesspieces::BL_PAWN );
@@ -121,7 +117,14 @@ impl GameState {
         board[0][4] = Field::Piece(chesspieces::BL_KING   );  board[7][4] = Field::Piece(chesspieces::WH_KING   );
         board[0][3] = Field::Piece(chesspieces::BL_QUEEN  );  board[7][3] = Field::Piece(chesspieces::WH_QUEEN  );
 
-        self.board = board;
+        board
+    }
+
+    fn directition(color:&Color) -> i8{
+        match *color{
+            White => -1,
+            Black => 1
+        }
     }
 
     /// Tests whether the current players king is threatened.
@@ -145,15 +148,13 @@ impl GameState {
     }
 
     /// The player whos turn it currently is.
-    pub fn get_current_player(&self) -> &Player {
-        &self.players[self.current_player]
+    pub fn get_current_color(&self) -> Color {
+        self.current_color
     }
 
     /// The player whos turn it currently is.
-    pub fn get_current_players_moves(&self) -> &Vec<Move> {
-        &self.moves[
-        &self.players[self.current_player]
-        ]
+    pub fn get_current_colors_moves(&self) -> &Vec<Move> {
+        &self.moves[ &self.current_color ]
     }
 
     /// Returns the content of the field at position.
@@ -164,15 +165,15 @@ impl GameState {
         }
     }
 
-    fn field_contains_opponent(&self, pos:Point, player:&Player) -> bool {
+    fn field_contains_opponent(&self, pos:Point, color:&Color) -> bool {
         if let Field::Piece(piece) = self.get_field(pos){
-            return piece.color != player.color;
+            return piece.color != *color;
         }
         false
     }
 
     // TODO make this multithreaded
-    fn possible_moves(&self, player:&Player) -> Box<Vec<Move>> {
+    fn possible_moves(&self, color:&Color) -> Vec<Move> {
         //iterate over all fields
         //if my chesspiece get all moves
         let mut my_moves = vec![];
@@ -181,14 +182,14 @@ impl GameState {
             for y in 0..8 { for x in 0..8 {
                 let pos = Point{x:x,y:y};
                 if let Field::Piece(piece) = self.get_field(pos){
-                    if piece.color == player.color{
+                    if piece.color == *color{
                         let move_producer = self.produce_moves(piece.piece);
-                        move_producer(&self, pos, player, moves);
+                        move_producer(&self, pos, color, moves);
                     }
                 }
             } }
         }
-        return Box::new(my_moves);
+        return my_moves;
     }
 
     /// Prints the board to the command line.
@@ -207,7 +208,7 @@ impl GameState {
 
     /// Performs one of the possible moves for the current player, by index.
     pub fn performe_move_index(&mut self, index:usize) {
-        let mov = self.moves.get(self.get_current_player()).unwrap()[index];
+        let mov = self.moves.get(&self.get_current_color()).unwrap()[index];
         self.performe_move(&Move{..mov});
     }
 
@@ -218,7 +219,7 @@ impl GameState {
         if let Field::Piece(piece) = from_field{
            // println!("{}: \"{}\" {} -> {}", piece, note, from, to,);
         } else{
-            //println!("{} EMPTY: \"{}\" {} -> {}", self.get_current_player().color, note, from, to,);
+            //println!("{} EMPTY: \"{}\" {} -> {}", self.get_current_color().color, note, from, to,);
         }
 
         self.board[from.y as usize][from.x as usize] = Field::Empty;
@@ -228,15 +229,18 @@ impl GameState {
     }
 
     fn update_moves(&mut self) {
-        self.moves = HashMap::new();
-        for player in &self.players{
-            let moves = self.possible_moves(player);
-            self.moves.insert(player.clone(), *moves);
-        }
+        let white_moves = self.possible_moves(&White);
+        let black_moves = self.possible_moves(&Black);
+
+        self.moves.insert(White, white_moves);
+        self.moves.insert(Black, black_moves);
     }
 
     fn swap_player(&mut self) {
-        self.current_player = ((self.current_player as i8 * -1) + 1) as usize;
+        match self.current_color{
+            Black => self.current_color = White,
+            White => self.current_color = Black,
+        }
     }
 
     fn verify_on_board(&self, pos:Point) -> bool {
@@ -261,32 +265,32 @@ impl GameState {
         }
     }
 
-    fn produce_pawn_moves(&self, pos:Point, player:&Player, moves: &mut Vec<Move>) {
+    fn produce_pawn_moves(&self, pos:Point, color:&Color, moves: &mut Vec<Move>) {
         // TODO produce_pawn_moves can be shortened
         let Point{x,y} = pos; //origin
-        let possible_move   = Move::new(pos, Point{x:x,y:y+1i8*player.direction},"pawn normal"); // normal move one forward
-        let possible_charge = Move::new(pos, Point{x:x,y:y+2i8*player.direction},"pawn charge");    //  only from start point
+        let possible_move   = Move::new(pos, Point{x:x,y:y+1i8*Self::directition(color)},"pawn normal"); // normal move one forward
+        let possible_charge = Move::new(pos, Point{x:x,y:y+2i8*Self::directition(color)},"pawn charge");    //  only from start point
 
         let possible_capture_l = Move ::capture(
             pos,
             Point{
-                x:x-1i8*player.direction,
-                y:y+1i8*player.direction
+                x:x-1i8*Self::directition(color),
+                y:y+1i8*Self::directition(color)
             },"capture r"); // capture to the right
 
         let possible_capture_r = Move::capture(
             pos,
             Point{
-                x:x+1i8*player.direction,
-                y:y+1i8*player.direction
+                x:x+1i8*Self::directition(color),
+                y:y+1i8*Self::directition(color)
             }, "capture l"); // capture to the left
 
         // verify moves
-        if self.verify_on_board(possible_move.to) && !self.field_contains_opponent(possible_move.to, player){ // no opponent figure directly infront of pawn
+        if self.verify_on_board(possible_move.to) && !self.field_contains_opponent(possible_move.to, color){ // no opponent figure directly infront of pawn
             moves.push(possible_move);
 
             if self.verify_on_board(possible_charge.to)
-            && (pos.y - player.direction ) % 7 == 0 // pawns may only charge from their start os
+            && (pos.y - Self::directition(color) ) % 7 == 0 // pawns may only charge from their start os
             {
                 moves.push(possible_charge);
             }
@@ -295,13 +299,13 @@ impl GameState {
         };
 
         // verify captures
-        if self.verify_on_board(possible_capture_l.to) && self.field_contains_opponent(possible_capture_l.to, player){
+        if self.verify_on_board(possible_capture_l.to) && self.field_contains_opponent(possible_capture_l.to, color){
             moves.push(possible_capture_l)};
-        if self.verify_on_board(possible_capture_r.to) && self.field_contains_opponent(possible_capture_r.to, player){
+        if self.verify_on_board(possible_capture_r.to) && self.field_contains_opponent(possible_capture_r.to, color){
             moves.push(possible_capture_r)};
     }
 
-    fn produce_knight_moves(&self, pos:Point, player:&Player, moves: &mut Vec<Move>) {
+    fn produce_knight_moves(&self, pos:Point, color:&Color, moves: &mut Vec<Move>) {
         for i in 0..4{
             let x_dir = (i/2)*2-1;
             let y_dir = (i%2)*2-1;
@@ -311,12 +315,11 @@ impl GameState {
                 Move::new(pos, Point{ x:pos.x + x_dir, y:pos.y + y_dir*2, }, "knight normal")
             ].iter(){
 
-                    let field = self.get_field(mov.to);
-                    match field {
+                    match self.get_field(mov.to) {
                         Field::Outside => () ,
                         Field::Empty => moves.push(mov.clone()),
                         Field::Piece(piece) =>
-                            if piece.color != player.color{
+                            if piece.color != *color{
                                 let mov = mov.to_capture();
                                 //self.test_check(&mov);
                                 moves.push(mov);
@@ -326,30 +329,30 @@ impl GameState {
         }
     }
 
-    fn produce_bishop_moves(&self, pos:Point, player:&Player, moves: &mut Vec<Move>) {
+    fn produce_bishop_moves(&self, pos:Point, color:&Color, moves: &mut Vec<Move>) {
         for i in 0..4{
-            self.produce_moves_for_dir(pos,player,moves,(i/2)*2-1, (i%2)*2-1, self.board.len() as i8)
+            self.produce_moves_for_dir(pos,color,moves,(i/2)*2-1, (i%2)*2-1, self.board.len() as i8)
         }
     }
 
-    fn produce_rook_moves(&self, pos:Point, player:&Player, moves: &mut Vec<Move>) {
-        for (x_dir, y_dir) in vec![ (0,1), (1,0), (0,-1), (-1,0) ]{ self.produce_moves_for_dir(pos,player,moves,x_dir, y_dir, self.board.len() as i8) }
+    fn produce_rook_moves(&self, pos:Point, color:&Color, moves: &mut Vec<Move>) {
+        for (x_dir, y_dir) in vec![ (0,1), (1,0), (0,-1), (-1,0) ]{ self.produce_moves_for_dir(pos,color,moves,x_dir, y_dir, self.board.len() as i8) }
     }
 
-    fn produce_queen_moves(&self, pos:Point, player:&Player, moves: &mut Vec<Move>) {
-        self.produce_rook_moves(pos,player,moves);
-        self.produce_bishop_moves(pos,player,moves);
+    fn produce_queen_moves(&self, pos:Point, color:&Color, moves: &mut Vec<Move>) {
+        self.produce_rook_moves(pos,color,moves);
+        self.produce_bishop_moves(pos,color,moves);
     }
 
-    fn produce_king_moves(&self, pos:Point, player:&Player, moves: &mut Vec<Move>) {
+    fn produce_king_moves(&self, pos:Point, color:&Color, moves: &mut Vec<Move>) {
         // am I threatened
         for i in 0..4{
-            self.produce_moves_for_dir(pos,player,moves,(i/2)*2-1, (i%2)*2-1, 1)
+            self.produce_moves_for_dir(pos,color,moves,(i/2)*2-1, (i%2)*2-1, 1)
         }
-        for (x_dir, y_dir) in vec![ (0,1), (1,0), (0,-1), (-1,0) ]{ self.produce_moves_for_dir(pos,player,moves,x_dir, y_dir,1) }
+        for (x_dir, y_dir) in vec![ (0,1), (1,0), (0,-1), (-1,0) ]{ self.produce_moves_for_dir(pos,color,moves,x_dir, y_dir,1) }
     }
 
-    fn produce_moves_for_dir (&self, pos:Point, player:&Player, moves: &mut Vec<Move>, x_dir:i8,y_dir:i8, dist:i8) {
+    fn produce_moves_for_dir (&self, pos:Point, color:&Color, moves: &mut Vec<Move>, x_dir:i8,y_dir:i8, dist:i8) {
         let mut check_pos = pos;
 
         for _ in 0..dist{
@@ -362,7 +365,7 @@ impl GameState {
                     moves.push(possible_move);
                 }
                 Field::Piece(piece) => {
-                    if piece.color != player.color{
+                    if piece.color != *color{
                         let possible_capture = Move::new(pos, check_pos, "capture"); // normal move one forward
                         //self.test_check(&possible_capture);
                         moves.push(possible_capture);

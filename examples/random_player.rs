@@ -12,20 +12,19 @@ fn run_games(interactive:bool) {
     let max_count = 1_000;
 
     loop {
-        let len = game.get_current_players_moves().len();
+        let len = game.get_current_colors_moves().len();
         if len == 0 {
             game.print_board();
-            println!("No more moves for player {:?} after {} rounds", game.get_current_player().color, count);
+            println!("No more moves for player {:?} after {} rounds", game.get_current_color(), count);
             break; }
         if count >= max_count{
             game.print_board();
             println!("Terminated after {} rounds ", count);
             break; }
         let move_choice = rand::random::<usize>() % len;
-        //for mov in game.get_current_players_moves(){ println!("{}", mov); }
 
-        let mov = game.get_current_players_moves()[move_choice];
-        println!("{}", mov);
+        let mov = game.get_current_colors_moves()[move_choice];
+        println!("{}: {}", count, mov);
         game.performe_move_index(move_choice); count += 1;
         game.print_board();
 
