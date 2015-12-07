@@ -1,24 +1,65 @@
-use piece::*;
-use piece::Color::*;
-use board::*;
-use player::Player;
+//! Encapsulates the current state of a game.
+
 use std::io::stdin;
 use std::collections::HashMap;
 
+use piece::Color::*;
+use piece::{Suit, Piece};
+use player::Player;
+use chesspieces;
+
+
+/// A Function that produces all possible moves for a specific ChessPiece on the Board.
 pub type ProduceFn = fn(&GameState, Point, &Player, &mut Vec<Move>);
 
 //enum CheckState {CheckMate, Threatened, StaleMate, Alive}
 
+/// XY Cooardinates on the board
+#[derive(Copy,Clone,Debug)]
+pub struct Point {
+    pub x:i8,
+    pub y:i8
+}
+
+/// Holds from, to and a description of the moves.
+#[derive(Debug,Clone)]
+pub struct Move {
+    pub from: Point,
+    pub to: Point,
+    pub note:&'static str
+}
+
+/// All possible states of a Field.
+#[derive(Clone,Copy,Debug)]
+pub enum Field { Outside, Empty, Piece(Piece) }
+
+impl Field {
+    /// Returns the character associated with the Field
+    pub fn char(self) -> char{
+        match self {
+            Field::Outside  => '☠', //💀
+            Field::Empty    => '⬚',
+            Field::Piece(p) => p.sym,
+        }
+    }
+}
+
+/// Encapsulates the current state of a game.
 #[derive(Debug)]
 pub struct GameState {
+    /// The 8x8 Fields.
     pub board: [[Field;8];8],
+    /// Array of 2 possible players.
     pub players: [Player;2],
-    pub moves: HashMap<Player, Vec<Move>>,
+    /// Always currently possible moves by player.
+    moves: HashMap<Player, Vec<Move>>,
+    /// Index into self.players
     pub current_player: usize
 }
 
 impl GameState {
 
+    /// Generate a hole new game.
     pub fn new() -> GameState {
         let mut game = GameState {
             board: [[Field::Empty; 8]; 8],
@@ -30,6 +71,7 @@ impl GameState {
             moves: HashMap::with_capacity(2),
             current_player: 0
         } ;
+        println!("{:?}", game.players);
         game.init_board();
         game.update_moves();
         game
@@ -40,25 +82,27 @@ impl GameState {
         let mut board = self.board;
 
         for i in 0..8{
-            board[1][i] = Field::Piece(BL_PAWN );
-            board[6][i] = Field::Piece(WH_PAWN );
+            board[1][i] = Field::Piece(chesspieces::BL_PAWN );
+            board[6][i] = Field::Piece(chesspieces::WH_PAWN );
         }
 
         //black side                             //white side
-        board[0][0] = Field::Piece(BL_ROOK   );  board[7][0] = Field::Piece(WH_ROOK   );
-        board[0][7] = Field::Piece(BL_ROOK   );  board[7][7] = Field::Piece(WH_ROOK   );
-        board[0][1] = Field::Piece(BL_KNIGHT );  board[7][1] = Field::Piece(WH_KNIGHT );
-        board[0][6] = Field::Piece(BL_KNIGHT );  board[7][6] = Field::Piece(WH_KNIGHT );
-        board[0][2] = Field::Piece(BL_BISHOP );  board[7][2] = Field::Piece(WH_BISHOP );
-        board[0][5] = Field::Piece(BL_BISHOP );  board[7][5] = Field::Piece(WH_BISHOP );
-        board[0][4] = Field::Piece(BL_KING   );  board[7][4] = Field::Piece(WH_KING   );
-        board[0][3] = Field::Piece(BL_QUEEN  );  board[7][3] = Field::Piece(WH_QUEEN  );
+        board[0][0] = Field::Piece(chesspieces::BL_ROOK   );  board[7][0] = Field::Piece(chesspieces::WH_ROOK   );
+        board[0][7] = Field::Piece(chesspieces::BL_ROOK   );  board[7][7] = Field::Piece(chesspieces::WH_ROOK   );
+        board[0][1] = Field::Piece(chesspieces::BL_KNIGHT );  board[7][1] = Field::Piece(chesspieces::WH_KNIGHT );
+        board[0][6] = Field::Piece(chesspieces::BL_KNIGHT );  board[7][6] = Field::Piece(chesspieces::WH_KNIGHT );
+        board[0][2] = Field::Piece(chesspieces::BL_BISHOP );  board[7][2] = Field::Piece(chesspieces::WH_BISHOP );
+        board[0][5] = Field::Piece(chesspieces::BL_BISHOP );  board[7][5] = Field::Piece(chesspieces::WH_BISHOP );
+        board[0][4] = Field::Piece(chesspieces::BL_KING   );  board[7][4] = Field::Piece(chesspieces::WH_KING   );
+        board[0][3] = Field::Piece(chesspieces::BL_QUEEN  );  board[7][3] = Field::Piece(chesspieces::WH_QUEEN  );
 
         self.board = board;
     }
 
     /// Tests whether the current players king is threatened.
+    /// TODO disabled because it blocks
     pub fn test_check(&self,mov:&Move) -> bool {
+        return false;
         match ( self.get_field(mov.from), self.get_field(mov.to) ){
 
             (Field::Piece(me), Field::Piece(you))  => {
@@ -78,6 +122,14 @@ impl GameState {
         &self.players[self.current_player]
     }
 
+    /// The player whos turn it currently is.
+    pub fn get_current_players_moves(&self) -> &Vec<Move> {
+        &self.moves[
+        &self.players[self.current_player]
+        ]
+    }
+
+    /// Returns the content of the field at position.
     pub fn get_field(&self,pos:Point) -> Field {
         match pos {
             Point{x:0...7,y:0...7} => self.board[pos.y as usize][pos.x as usize],
@@ -180,8 +232,8 @@ impl GameState {
     fn produce_pawn_moves(&self, pos:Point, player:&Player, moves: &mut Vec<Move>) {
         // TODO produce_pawn_moves can be shortened
         let Point{x,y} = pos; //origin
-        let possible_move = Move{from:pos, to:Point{x:x,y:y+1i8*player.direction}, note:"normale"}; // normal move one forward
-        let possible_rush = Move{from:pos, to:Point{x:x,y:y+2i8*player.direction}, note: "rush"}; //  only from start point
+        let possible_move = Move{from:pos, to:Point{x:x,y:y+1i8*player.direction}, note:"pawn normal"}; // normal move one forward
+        let possible_rush = Move{from:pos, to:Point{x:x,y:y+2i8*player.direction}, note:"pawn rush"};    //  only from start point
         let possible_capture_l = Move {
             from:pos,
             to:Point{
@@ -286,4 +338,3 @@ impl GameState {
         }
     }
 }
-

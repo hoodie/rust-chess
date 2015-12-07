@@ -4,7 +4,7 @@ use clap::{App, Arg};
 
 extern crate chess;
 
-use chess::GameState;
+use chess::gamestate::GameState;
 
 fn run_games(interactive:bool) {
     let mut game = GameState::new();
@@ -12,7 +12,7 @@ fn run_games(interactive:bool) {
     let max_count = 1_000;
 
     loop {
-        let len = game.moves[game.get_current_player()].len();
+        let len = game.get_current_players_moves().len();
         if len == 0 {
             game.print_board();
             println!("No more moves for player {:?} after {} rounds", game.get_current_player().color, count);
@@ -22,17 +22,18 @@ fn run_games(interactive:bool) {
             println!("Terminated after {} rounds ", count);
             break; }
         let move_choice = rand::random::<usize>() % len;
+        for mov in game.get_current_players_moves(){
+            println!("{}", mov);
+        }
         game.performe_move(move_choice); count += 1;
         game.print_board();
 
         if interactive {
             let mut devnull= String::new();
             std::io::stdin().read_line(&mut devnull).unwrap();
-        }
-        else{
+        } else{
             std::thread::sleep(std::time::Duration::from_millis(150));
         }
-
     }
 }
 fn main() {

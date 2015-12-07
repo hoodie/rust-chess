@@ -1,6 +1,8 @@
-mod board;
-mod piece;
-mod player;
-mod gamestate;
+//! Very simple chess board.
+//!
+
+pub mod piece;
+pub mod player;
+pub mod gamestate;
+pub mod chesspieces;
 mod display;
-pub use gamestate::GameState;

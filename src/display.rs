@@ -1,12 +1,13 @@
 use std::fmt;
 
-use board::*;
-use piece::*;
+use gamestate::*;
+use piece::{Suit, Color, Piece};
+
 
 impl fmt::Display for Point {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
         let x = "ABCDEFGH".chars().collect::<Vec<char>>();
-        write!(f, "({col}{row})", col= x[self.x as usize], row=self.y+1)
+        write!(f, "{col}{row}", col= x[self.x as usize], row=self.y+1)
     }
 }
 
@@ -22,6 +23,12 @@ impl fmt::Display for Color {
             &Color::White  => write!(f, "White"),
             &Color::Black  => write!(f, "Black")
         }
+    }
+}
+
+impl fmt::Display for Move {
+    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
+        write!(f, "{from} -> {to} ({note})", from=self.from, to=self.to, note=self.note)
     }
 }
 

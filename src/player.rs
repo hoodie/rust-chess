@@ -1,3 +1,7 @@
+//! Describes a single player.
+//!
+//! A player has a color and a direction to move to.
+
 use piece::Color;
 
 #[derive(Debug,PartialEq,Eq,Hash,Clone)]
