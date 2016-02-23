@@ -4,5 +4,5 @@ version = "0.1.0"
 authors = ["Hendrik Sollich <hendrik@hoodie.de>"]
 
 [dependencies]
-rand = "*"
-clap = "*"
+rand = "^0.3.14"
+clap = "^1.5.5"

@@ -2,4 +2,3 @@ target
 *.swp
 *.swo
 .directory
-Cargo.lock
