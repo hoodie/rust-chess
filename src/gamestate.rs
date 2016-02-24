@@ -14,14 +14,14 @@ pub type ProduceFn = fn(&GameState, Point, &Color, &mut Vec<Move>);
 //enum CheckState {CheckMate, Threatened, StaleMate, Alive}
 
 /// XY Cooardinates on the board
-#[derive(Copy,Clone,Debug)]
+#[derive(Copy,Clone,Debug,Hash)]
 pub struct Point {
     pub x:i8,
     pub y:i8
 }
 
 /// Holds from, to and a description of the moves.
-#[derive(Copy,Debug,Clone)] //TODO remove Clone and copy
+#[derive(Copy,Debug,Clone,Hash)] //TODO remove Clone and copy
 pub struct Move {
     pub from: Point,
     pub to:   Point,
@@ -50,7 +50,7 @@ impl Move{
     }
 }
 
-#[derive(Copy,Debug,Clone)] //TODO remove Clone and copy
+#[derive(Copy,Debug,Clone, Hash)] //TODO remove Clone and copy
 pub enum MoveType { Move, Capture }
 
 /// All possible states of a Field.
@@ -84,15 +84,13 @@ pub struct GameState {
 }
 
 impl GameState {
-
-
     /// Generate a hole new game.
     pub fn new() -> GameState {
         let mut game = GameState {
             board: Self::standard_board(),
             moves: HashMap::with_capacity(2),
             current_color: Color::White
-        } ;
+        };
         //println!("{:?}", game.players);
         game.update_moves();
         game
@@ -176,9 +174,9 @@ impl GameState {
     fn possible_moves(&self, color:&Color) -> Vec<Move> {
         //iterate over all fields
         //if my chesspiece get all moves
-        let mut my_moves = vec![];
+        let mut moves = vec![];
         {
-            let moves = &mut my_moves;
+            let moves = &mut moves;
             for y in 0..8 { for x in 0..8 {
                 let pos = Point{x:x,y:y};
                 if let Field::Piece(piece) = self.get_field(pos){
@@ -189,7 +187,7 @@ impl GameState {
                 }
             } }
         }
-        return my_moves;
+        return moves;
     }
 
     /// Prints the board to the command line.
@@ -213,10 +211,10 @@ impl GameState {
     }
 
     pub fn performe_move(&mut self, mov:&Move) {
-        let &Move{to,from, note, ty} = mov;
+        let &Move{to, from, note:_, ty:_} = mov;
         let from_field = self.board[from.y as usize][from.x as usize];
 
-        if let Field::Piece(piece) = from_field{
+        if let Field::Piece(_piece) = from_field{
            // println!("{}: \"{}\" {} -> {}", piece, note, from, to,);
         } else{
             //println!("{} EMPTY: \"{}\" {} -> {}", self.get_current_color().color, note, from, to,);

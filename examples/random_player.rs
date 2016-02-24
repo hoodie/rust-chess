@@ -1,3 +1,5 @@
+#![feature(alloc_system)]
+extern crate alloc_system;
 extern crate rand;
 extern crate clap;
 use clap::{App, Arg};
@@ -32,7 +34,7 @@ fn run_games(interactive:bool) {
             let mut devnull= String::new();
             std::io::stdin().read_line(&mut devnull).unwrap();
         } else{
-            std::thread::sleep(std::time::Duration::from_millis(150));
+            //std::thread::sleep(std::time::Duration::from_millis(150));
         }
     }
 }

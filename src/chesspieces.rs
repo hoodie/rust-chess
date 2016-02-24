@@ -1,5 +1,4 @@
 //! Predefined constant ChessPieces
-use piece::Color::*;
 use piece::{Suit, Color, Piece};
 
 ///♚
