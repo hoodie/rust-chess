@@ -19,9 +19,9 @@ impl fmt::Display for Piece {
 
 impl fmt::Display for Color {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-        match self {
-            &Color::White  => write!(f, "White"),
-            &Color::Black  => write!(f, "Black")
+        match *self {
+            Color::White  => write!(f, "White"),
+            Color::Black  => write!(f, "Black")
         }
     }
 }

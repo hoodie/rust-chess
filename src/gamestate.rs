@@ -21,7 +21,7 @@ pub struct Point {
 }
 
 /// Holds from, to and a description of the moves.
-#[derive(Copy,Debug,Clone,Hash)] //TODO remove Clone and copy
+#[derive(Debug,Hash)] //TODO remove Clone and copy
 pub struct Move {
     pub from: Point,
     pub to:   Point,
@@ -50,7 +50,7 @@ impl Move{
     }
 }
 
-#[derive(Copy,Debug,Clone, Hash)] //TODO remove Clone and copy
+#[derive(Debug,Hash)] //TODO remove Clone and copy
 pub enum MoveType { Move, Capture }
 
 /// All possible states of a Field.
@@ -159,7 +159,7 @@ impl GameState {
     pub fn get_field(&self,pos:Point) -> Field {
         match pos {
             Point{x:0...7,y:0...7} => self.board[pos.y as usize][pos.x as usize],
-            Point{x:_,y:_} => Field::Outside,
+            Point{..} => Field::Outside,
         }
     }
 
@@ -187,7 +187,8 @@ impl GameState {
                 }
             } }
         }
-        return moves;
+
+        moves
     }
 
     /// Prints the board to the command line.
@@ -195,8 +196,7 @@ impl GameState {
         for y in 0..8 {
             let row = self.board[y];
             print!("{}|", y+1);
-            for x in 0..8 {
-                let col = row[x];
+            for col in row.iter().take(8) {
                 print!("{} ", col.char());
             }
             println!("");
@@ -206,12 +206,15 @@ impl GameState {
 
     /// Performs one of the possible moves for the current player, by index.
     pub fn performe_move_index(&mut self, index:usize) {
-        let mov = self.moves.get(&self.get_current_color()).unwrap()[index];
-        self.performe_move(&Move{..mov});
+        let color = self.get_current_color();
+        let mov = self.moves
+            .get_mut(&color).unwrap()
+            .remove(index);
+        self.performe_move(&mov);
     }
 
     pub fn performe_move(&mut self, mov:&Move) {
-        let &Move{to, from, note:_, ty:_} = mov;
+        let &Move{to, from, ..} = mov;
         let from_field = self.board[from.y as usize][from.x as usize];
 
         if let Field::Piece(_piece) = from_field{
@@ -266,21 +269,21 @@ impl GameState {
     fn produce_pawn_moves(&self, pos:Point, color:&Color, moves: &mut Vec<Move>) {
         // TODO produce_pawn_moves can be shortened
         let Point{x,y} = pos; //origin
-        let possible_move   = Move::new(pos, Point{x:x,y:y+1i8*Self::directition(color)},"pawn normal"); // normal move one forward
+        let possible_move   = Move::new(pos, Point{x:x,y:y+    Self::directition(color)},"pawn normal"); // normal move one forward
         let possible_charge = Move::new(pos, Point{x:x,y:y+2i8*Self::directition(color)},"pawn charge");    //  only from start point
 
         let possible_capture_l = Move ::capture(
             pos,
             Point{
-                x:x-1i8*Self::directition(color),
-                y:y+1i8*Self::directition(color)
+                x:x-Self::directition(color),
+                y:y+Self::directition(color)
             },"capture r"); // capture to the right
 
         let possible_capture_r = Move::capture(
             pos,
             Point{
-                x:x+1i8*Self::directition(color),
-                y:y+1i8*Self::directition(color)
+                x:x+Self::directition(color),
+                y:y+Self::directition(color)
             }, "capture l"); // capture to the left
 
         // verify moves
@@ -308,22 +311,26 @@ impl GameState {
             let x_dir = (i/2)*2-1;
             let y_dir = (i%2)*2-1;
 
-            for mov in [
-                Move::new(pos, Point{ x:pos.x + x_dir*2, y:pos.y + y_dir, }, "knight normal"),
-                Move::new(pos, Point{ x:pos.x + x_dir, y:pos.y + y_dir*2, }, "knight normal")
-            ].iter(){
-
-                    match self.get_field(mov.to) {
-                        Field::Outside => () ,
-                        Field::Empty => moves.push(mov.clone()),
-                        Field::Piece(piece) =>
-                            if piece.color != *color{
-                                let mov = mov.to_capture();
-                                //self.test_check(&mov);
-                                moves.push(mov);
-                            }
+            let mov = Move::new(pos, Point{ x:pos.x + x_dir*2, y:pos.y + y_dir, }, "knight normal");
+            match self.get_field(mov.to) {
+                Field::Outside => () ,
+                Field::Empty => moves.push(mov),
+                Field::Piece(piece) =>
+                    if piece.color != *color{
+                        moves.push(mov.to_capture());
                     }
-                }
+            }
+
+            let mov = Move::new(pos, Point{ x:pos.x + x_dir, y:pos.y + y_dir*2, }, "knight normal");
+            match self.get_field(mov.to) {
+                Field::Outside => () ,
+                Field::Empty => moves.push(mov),
+                Field::Piece(piece) =>
+                    if piece.color != *color{
+                        moves.push(mov.to_capture());
+                    }
+            }
+
         }
     }
 

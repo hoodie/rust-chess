@@ -1,3 +1,7 @@
+#![cfg_attr(feature = "dev", allow(unstable_features))]
+#![cfg_attr(feature = "dev", feature(plugin))]
+#![cfg_attr(feature = "dev", plugin(clippy))]
+
 #![feature(alloc_system)]
 extern crate alloc_system;
 extern crate rand;
@@ -25,8 +29,7 @@ fn run_games(interactive:bool) {
             break; }
         let move_choice = rand::random::<usize>() % len;
 
-        let mov = game.get_current_colors_moves()[move_choice];
-        println!("{}: {}", count, mov);
+        println!("{}: {}", count, game.get_current_colors_moves().get(move_choice).unwrap());
         game.performe_move_index(move_choice); count += 1;
         game.print_board();
 
