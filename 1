@@ -252,7 +252,7 @@ impl GameState {
     }
 
 
-    /// `ChessPiece-Moves
+    /// ChessPiece-Moves
 
     fn produce_moves(&self, piece:Suit) -> ProduceFn {
         match piece{
@@ -341,7 +341,7 @@ impl GameState {
     }
 
     fn produce_rook_moves(&self, pos:Point, color:&Color, moves: &mut Vec<Move>) {
-        for &(x_dir, y_dir) in &[ (0,1), (1,0), (0,-1), (-1,0) ]{ self.produce_moves_for_dir(pos,color,moves,x_dir, y_dir, self.board.len() as i8) }
+        for (x_dir, y_dir) in [ (0,1), (1,0), (0,-1), (-1,0) ]{ self.produce_moves_for_dir(pos,color,moves,x_dir, y_dir, self.board.len() as i8) }
     }
 
     fn produce_queen_moves(&self, pos:Point, color:&Color, moves: &mut Vec<Move>) {
@@ -354,7 +354,7 @@ impl GameState {
         for i in 0..4{
             self.produce_moves_for_dir(pos,color,moves,(i/2)*2-1, (i%2)*2-1, 1)
         }
-        for &(x_dir, y_dir) in &[ (0,1), (1,0), (0,-1), (-1,0) ]{ self.produce_moves_for_dir(pos,color,moves,x_dir, y_dir,1) }
+        for (x_dir, y_dir) in [ (0,1), (1,0), (0,-1), (-1,0) ]{ self.produce_moves_for_dir(pos,color,moves,x_dir, y_dir,1) }
     }
 
     fn produce_moves_for_dir (&self, pos:Point, color:&Color, moves: &mut Vec<Move>, x_dir:i8,y_dir:i8, dist:i8) {
