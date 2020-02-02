@@ -1,5 +1,5 @@
 //! Predefined constant ChessPieces
-use piece::{Suit, Color, Piece};
+use crate::piece::{Suit, Color, Piece};
 
 ///♚
 pub const BL_KING:Piece =

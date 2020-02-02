@@ -1,14 +1,8 @@
-#![cfg_attr(feature = "dev", allow(unstable_features))]
-#![cfg_attr(feature = "dev", feature(plugin))]
-#![cfg_attr(feature = "dev", plugin(clippy))]
+use rand;
 
-#![feature(alloc_system)]
-extern crate alloc_system;
-extern crate rand;
-extern crate clap;
 use clap::{App, Arg};
 
-extern crate chess;
+
 
 use chess::gamestate::GameState;
 

@@ -3,13 +3,9 @@ name = "chess"
 version = "0.1.0"
 authors = ["Hendrik Sollich <hendrik@hoodie.de>"]
 publish = false
+edition = "2018"
 
 [dependencies]
 rand = "*"
 clap = "*"
 #api_diff = {path="../api_diff"}
-clippy = {version = "*", optional = true}
-
-[features]
-default = []
-dev = ["clippy"]
